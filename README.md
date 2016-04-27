@@ -1,6 +1,5 @@
 ### Introduction
-* This is my thesis docs repo, where I will be (quite obviously) uploading my thesis docs.
-* Thanks to Dr. Shumway and his github repo, which you can find here: https://github.com/shumway/asudis
+* This is my thesis paper repo, where I will be (quite obviously) uploading my thesis paper.
 * I used the following tools to make my thesis writing a loooot easier:
 	*(Will update this list)
 	* TeXStudio --> Is very good, allows you to define macros and has a nice pdf viewer.
