@@ -1,0 +1,42 @@
+\section[Mitigation Strategy]{How to prevent this attack}
+\label{disc:mitigation}
+This section describes the most common measures that can be taken to prevent the occurrence of this vulnerability, or at least reduce the impact.
+\begin{itemize}
+	\item Use Mail Libraries\\
+	This is the preferred way of combating this vulnerability. Using a library that is well tested can remove the burden of input sanitization from the developer. Also, since most of these libraries are open-source, bugs are identified quicker and fixes are readily available.
+	A list of known secure libraries for each popular language and framework is shown in Table~\ref{tab:maillib}.
+	
+	Using libraries such as PEAR Mail, PHPMailer, Apache Commons E-Mail, Contact Form 7, and Swiftmailer can significantly reduce the occurrence of E-Mail Header Injection vulnerability.
+	\begin{table}[!htbp]
+		\centering
+		\begin{tabular}{|l|l|}
+			\hline
+			\multicolumn{1}{|c|}{\textbf{Language}} &
+			\multicolumn{1}{c|}{\textbf{Mail Libraries}} \\
+			\hline
+			PHP & {{PEAR Mail\tablefootnote{PEAR Mail Website: https://pear.php.net/package/Mail}, PHPMailer\tablefootnote{PHPMailer Website: https://github.com/PHPMailer/PHPMailer}, Swiftmailer\tablefootnote{Swiftmailer Website: http://swiftmailer.org/}}}\\
+			\hline
+			Python & SMTPLib with email.header.Header\tablefootnote{instead of using email.parser.Parser to parse the header}\\
+			\hline
+			Java & Apache Commons E-Mail\tablefootnote{Apache Commons E-Mail: https://commons.apache.org/proper/commons-email/}\\
+			\hline
+			Ruby & Ruby Mail \textgreater{}= 2.6\tablefootnote{Ruby Mail Website: https://rubygems.org/gems/mail}\\
+			\hline
+			WordPress & Contact Form 7\tablefootnote{Contact Form 7 Download: https://wordpress.org/plugins/contact-form-7/}\\
+			\hline
+		\end{tabular}
+		\caption[\titlecap{Mail libraries that prevent e-mail header injection}]{Mail libraries that prevent e-mail header injection.}
+		\label{tab:maillib}
+	\end{table}
+	% changes to be made amrked in sublime
+	\item Use a Content Management System (CMS) \\
+	Content management systems like WordPress and Drupal include certain libraries and plugins to prevent E-Mail Header Injection. Thus, websites built with such CMS' are usually resistant to these attacks. However, it is advised to use the right E-Mail plugins when using such CMS', as not all plugins might be secure.
+	An example of a secure plug-in is included as part of Table~\ref{tab:maillib}.
+	
+	\item Input Validation\\
+	If neither of the two options above is feasible, due to reasons such as the website being an in-house production, or due to lack of support infrastructure, developers can choose to perform proper input sanitization. Sanitization should be done keeping in mind RFC5322 \cite{rfc5322}, and care must be taken to ensure that all edge cases are taken into account.
+	
+	Client Side validation alone is not sufficient, and must be supplemented by server-side validation to mitigate the attack. Constant updates to validation methods are required so that new attack vectors do not harm the website in any way.
+	Test driven development for such validation methods is also encouraged so that we can be reasonably sure of our defense mechanisms.
+\end{itemize}
+

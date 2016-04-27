@@ -1,0 +1,12 @@
+\lstset{language=PHP,caption={PHP program with e-mail header injection vulnerability.},label={code:phpemi}}
+\begin{lstlisting}
+$from = $_REQUEST['email'];
+$subject = "Hello Sai Pc";
+$message = "We need you to reset your password";
+$to = "schand31@asu.edu";
+
+// example attack string to be injected as the value for
+// $_REQUEST['email'] => 'sai@sai.com\nCC:spc@spc.com'
+$retValue = mail($to, $subject, $message, "From: $from");
+// E-Mail gets sent to both schand31@asu.edu AND spc@spc.com
+\end{lstlisting}

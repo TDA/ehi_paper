@@ -1,0 +1,7 @@
+1, Crawled URLs ,"14,356,141", ---
+2, Forms found ,"5,562,533",28.19%
+3, E-Mail Forms found ,"918,988",15.85%
+4, Fuzzed with regular payload ,"519,251",80.95%
+5, Received e-mails ,"44,735",8.20%
+6, Fuzzed with malicious payload ,"37,121",87.16%
+7, Successful attacks ,414,1.12%

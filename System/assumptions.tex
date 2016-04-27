@@ -1,0 +1,18 @@
+\section{Assumptions}
+We made certain assumptions while building the system. This section describes the assumptions and explores to what extent these hold true:
+\begin{enumerate}
+	\item \textbf{Crawler is not blocked by firewalls}\\
+	This is a requisite for our system to work. If the Crawler is blocked for any reason, we do not get the data feed for our system, and without this input, it is almost impossible to set our system up.
+	\item \textbf{The Crawler feed is an ideal representation of the World Wide Web} \\
+	This is a reasonable expectation, albeit an unrealistic one.
+	
+	It is unrealistic because Crawlers work on the concept of proximity. They detect for the presence of In-Links and Out-Links from a particular URL, and hence the returned URLs are usually related to each other (at least the ones that are returned adjacent to each other).
+	
+	However, this assumption is reasonable due to the `Law of averages' \cite{wiki:Law_of_averages}, the `Law of big numbers' \cite{wiki:Law_of_large_numbers}, and the concept of `Regression to the mean' \cite{wiki:Regression_toward_the_mean}. Simply stated, a crawl of this large magnitude should give us a very distributed sample of the overall Web, eventually converging to the average of all websites in existence.
+	
+	\item \textbf{Injection of \dq{\texttt{bcc}} indicates the existence of E-Mail Header Injection Vulnerability} \\
+	We assume that the ability to inject a \dq{\texttt{bcc}} header field is proof that the E-Mail Header Injection vulnerability exists in the application. We do not inject any additional payloads that can modify the subject, message body, etc.\ as this analysis is designed to be as benign as possible.
+	We believe that this is a reasonable assumption, as altering e-mail headers is a goal of exploiting E-Mail Header Injection vulnerability.
+\end{enumerate}
+
+That concludes our discussion about the design of the system. To recap, we discussed our approach, the system architecture and how the components fit into our architecture. We also discussed the issues faced, and the assumptions that we made while building the system. %The next chapter describes, in brief, the experimental setup we used for our system.

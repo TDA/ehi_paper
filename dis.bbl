@@ -1,0 +1,305 @@
+\begin{thebibliography}{59}
+\newcommand{\enquote}[1]{``#1''}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[Bau \emph{et~al.}(2010)]{black-box}
+Bau, J., E.~Bursztein, D.~Gupta and J.~Mitchell, \enquote{State of the art:
+  Automated black-box web application vulnerability testing}, in
+  \enquote{Security and Privacy (SP), 2010 IEEE Symposium on}, pp. 332--345
+  (2010).
+
+\bibitem[Beizer(1995)]{Beizer:1995:BTT:202699}
+Beizer, B., \emph{Black-box Testing: Techniques for Functional Testing of
+  Software and Systems} (John Wiley \& Sons, Inc., New York, NY, USA, 1995).
+
+\bibitem[Berners-Lee \emph{et~al.}(2008)]{rfc1738}
+Berners-Lee, T., L.~Masinter and M.~McCahill, \enquote{{Internet Message Format
+  - RFC 1738}},  \urlprefix\url{https://www.ietf.org/rfc/rfc1738.txt} (2008).
+
+\bibitem[BestWebSoft(2016)]{BestWebSoft2016}
+BestWebSoft, \enquote{{Contact Form by BestWebSoft — WordPress Plugins}},
+  \urlprefix\url{https://wordpress.org/plugins/contact-form-plugin/} (2016).
+
+\bibitem[Boyd and Keromytis(2004)]{sql1}
+Boyd, S.~W. and A.~D. Keromytis, \enquote{Sqlrand: Preventing sql injection
+  attacks}, in \enquote{Applied Cryptography and Network Security}, pp.
+  292--302 (Springer, 2004).
+
+\bibitem[Calin(2013)]{Calin}
+Calin, B., \enquote{{Email Header Injection Web Vulnerability - Acunetix}},
+  \urlprefix\url{https://www.acunetix.com/blog/articles/email-header-injection-web-vulnerability-detection/}
+  (2013).
+
+\bibitem[Celery(2016)]{Celery}
+Celery, \enquote{{Celery Homepage}},
+  \urlprefix\url{http://www.celeryproject.org/} (2016).
+
+\bibitem[Christey and Martin(2007)]{christey2007vulnerability}
+Christey, S. and R.~A. Martin, \enquote{Vulnerability type distributions in
+  cve}, Mitre report, May  (2007).
+
+\bibitem[Doup{\'{e}} \emph{et~al.}(2011)]{Doupe2011}
+Doup{\'{e}}, A., B.~Boe, C.~Kruegel and G.~Vigna, \enquote{{Fear the EAR :
+  Discovering and Mitigating Execution After Redirect Vulnerabilities}}, in
+  \enquote{Computer and Communications Security (CCS)}, CCS '11, pp. 251--261
+  (ACM Press, 2011).
+
+\bibitem[Doup{\'e} \emph{et~al.}(2012)]{Doupe2012}
+Doup{\'e}, A., L.~Cavedon, C.~Kruegel and G.~Vigna, \enquote{Enemy of the
+  state: A state-aware black-box web vulnerability scanner}, in
+  \enquote{Presented as part of the 21st USENIX Security Symposium (USENIX
+  Security 12)}, pp. 523--538 (USENIX, Bellevue, WA, 2012),
+  \urlprefix\url{https://www.usenix.org/system/files/conference/usenixsecurity12/sec12-final225.pdf}.
+
+\bibitem[Doup{\'e} \emph{et~al.}(2010)]{Doupe2010}
+Doup{\'e}, A., M.~Cova and G.~Vigna, \enquote{Why johnny can't pentest: An
+  analysis of black-box web vulnerability scanners}, in \enquote{Detection of
+  Intrusions and Malware, and Vulnerability Assessment}, pp. 111--131
+  (Springer, 2010).
+
+\bibitem[{Email Injection - Secure PHP Wiki}(2010)]{Injection}
+{Email Injection - Secure PHP Wiki},
+  \urlprefix\url{http://securephpwiki.com/index.php/Email Injection} (2010).
+
+\bibitem[Franklin \emph{et~al.}(2007)]{franklin2007inquiry}
+Franklin, J., A.~Perrig, V.~Paxson and S.~Savage, \enquote{An inquiry into the
+  nature and causes of the wealth of internet miscreants.}, in \enquote{ACM
+  conference on Computer and communications security}, pp. 375--388 (2007).
+
+\bibitem[Halfond \emph{et~al.}(2006)]{sql0}
+Halfond, W.~G., J.~Viegas and A.~Orso, \enquote{A classification of
+  sql-injection attacks and countermeasures}, in \enquote{Proceedings of the
+  IEEE International Symposium on Secure Software Engineering}, vol.~1, pp.
+  13--15 (IEEE, 2006).
+
+\bibitem[Herzog(2014)]{Herzog.2014}
+Herzog, A., \enquote{{Full Disclosure: JavaMail SMTP Header Injection via
+  method setSubject [CSNC-2014-001]}},
+  \urlprefix\url{http://seclists.org/fulldisclosure/2014/May/81} (2014).
+
+\bibitem[Hodges \emph{et~al.}(2012)]{hodges2012http}
+Hodges, J., C.~Jackson and A.~Barth, \enquote{Http strict transport security
+  (hsts)}, URL: http://tools. ietf.
+  org/html/draft-ietf-websec-strict-transport-sec-04  (2012).
+
+\bibitem[Huang \emph{et~al.}(2003)]{Huang}
+Huang, Y.-W., S.-K. Huang, T.-P. Lin and C.-H. Tsai, \enquote{Web application
+  security assessment by fault injection and behavior monitoring}, in
+  \enquote{Proceedings of the 12th International Conference on World Wide Web},
+  WWW '03, pp. 148--159 (ACM, New York, NY, USA, 2003),
+  \urlprefix\url{http://doi.acm.org/10.1145/775152.775174}.
+
+\bibitem[Injection(2016)]{wiki:HTTP_headerinjection}
+Injection, H.~H., \enquote{{HTTP header injection} --- {W}ikipedia{,} the free
+  encyclopedia},
+  \url{http://en.wikipedia.org/w/index.php?title=HTTP%20header%20injection&oldid=713295668},
+  [Online; accessed 18-April-2016] (2016).
+
+\bibitem[{Internet Live Stats}(2016)]{InternetLiveStats2016}
+{Internet Live Stats}, \enquote{{Total Number of Websites}},  (2016).
+
+\bibitem[Jim \emph{et~al.}(2007)]{Injection1}
+Jim, T., N.~Swamy and M.~Hicks, \enquote{Defeating script injection attacks
+  with browser-enforced embedded policies}, in \enquote{Proceedings of the 16th
+  International Conference on World Wide Web}, WWW '07, pp. 601--610 (ACM, New
+  York, NY, USA, 2007),
+  \urlprefix\url{http://doi.acm.org/10.1145/1242572.1242654}.
+
+\bibitem[Johns and Winter(2006)]{sessionride}
+Johns, M. and J.~Winter, \enquote{Requestrodeo: Client side protection against
+  session riding}, in \enquote{Proceedings of the OWASP Europe 2006
+  Conference},  (2006).
+
+\bibitem[Kals \emph{et~al.}(2006)]{kals2006secubat}
+Kals, S., E.~Kirda, C.~Kruegel and N.~Jovanovic, \enquote{Secubat: a web
+  vulnerability scanner}, in \enquote{Proceedings of the 15th international
+  conference on World Wide Web}, pp. 247--256 (ACM, 2006).
+
+\bibitem[Klein(2005)]{KleinAmit}
+Klein, A., \enquote{{[DOM Based Cross Site Scripting or XSS of the Third Kind]
+  Web Security Articles - Web Application Security Consortium}},
+  \urlprefix\url{http://www.webappsec.org/projects/articles/071105.shtml}
+  (2005).
+
+\bibitem[Kohler(2008)]{DK}
+Kohler, D., \enquote{{damonkohler.com: Email Injection}},
+  \urlprefix\url{http://www.damonkohler.com/2008/12/email-injection.html}
+  (2008).
+
+\bibitem[McGrath(2009)]{McGrath2009}
+McGrath, D., \enquote{{HTTP requests optimization}},  (2009).
+
+\bibitem[Mohamed(2013)]{Injection2}
+Mohamed, A., \enquote{{PHP Email Injection Example - InfoSec Resources}},
+  \urlprefix\url{http://resources.infosecinstitute.com/email-injection/}
+  (2013).
+
+\bibitem[Murray(2009)]{PyBug}
+Murray, D., \enquote{{Email.header.Header too lax with embedded newlines}},
+  \urlprefix\url{http://bugs.python.org/issue5871} (2009).
+
+\bibitem[Nicol(2006)]{Nicol}
+Nicol, J., \enquote{{Securing PHP Contact Forms}},
+  \urlprefix\url{http://jonathannicol.com/blog/2006/12/09/securing-php-contact-forms/}
+  (2006).
+
+\bibitem[OWASP(2013)]{OWASPT10}
+OWASP, \enquote{{OWASP Top Ten Project}},
+  \urlprefix\url{https://www.owasp.org/index.php/OWASP_Top_10} (2013).
+
+\bibitem[Payet \emph{et~al.}(2013)]{payet13:ears-in-the-wild}
+Payet, P., A.~Doup\'e, C.~Kruegel and G.~Vigna, \enquote{{EARs in the Wild:
+  Large-Scale Analysis of Execution After Redirect Vulnerabilities}}, in
+  \enquote{Proceedings of the ACM Symposium on Applied Computing (SAC)},
+  (Coimbra, Portugal, 2013).
+
+\bibitem[Phishing(2016)]{wiki:Phishing}
+Phishing, \enquote{{Phishing} --- {W}ikipedia{,} the free encyclopedia},
+  \url{http://en.wikipedia.org/w/index.php?title=Phishing&oldid=706223617},
+  [Online; accessed 27-February-2016] (2016).
+
+\bibitem[PHP-Manual(2016)]{PHPDocs}
+PHP-Manual, \enquote{{PHP mail - Send mail}},
+  \urlprefix\url{http://php.net/manual/en/function.mail.php} (2016).
+
+\bibitem[Pietraszek and Berghe(2005)]{pietraszek2005defending}
+Pietraszek, T. and C.~V. Berghe, \enquote{Defending against injection attacks
+  through context-sensitive string evaluation}, in \enquote{Recent Advances in
+  Intrusion Detection}, pp. 124--145 (Springer, 2005).
+
+\bibitem[Pope(2008)]{Pope}
+Pope, A., \enquote{{Prevent Contact Form Spam Email Header Injection | Storm
+  Consultancy – Web Design Bath}},
+  \urlprefix\url{https://www.stormconsultancy.co.uk/blog/development/dev-tutorials/secure-your-contact-form-against-spam-email-header-injection/}
+  (2008).
+
+\bibitem[Pope and Kaur(2005)]{captchas3}
+Pope, C. and K.~Kaur, \enquote{Is it human or computer? defending e-commerce
+  with captchas}, IT Professional \textbf{7}, 2, 43--49 (2005).
+
+\bibitem[Python(2016{\natexlab{a}})]{PyDocs}
+Python, \enquote{email {-} an email and mime handling package},
+  \urlprefix\url{https://docs.python.org/2/library/email-examples.html}
+  (2016{\natexlab{a}}).
+
+\bibitem[Python(2016{\natexlab{b}})]{PyDocs2}
+Python, \enquote{{email.parser: Parsing email messages}},
+  \urlprefix\url{https://docs.python.org/2/library/email.parser.html}
+  (2016{\natexlab{b}}).
+
+\bibitem[Python(2016{\natexlab{c}})]{PyWiki}
+Python, \enquote{{Python Global Interpreter Lock}},
+  \urlprefix\url{https://wiki.python.org/moin/GlobalInterpreterLock}
+  (2016{\natexlab{c}}).
+
+\bibitem[Resnick(2001)]{rfc822}
+Resnick, P.~W., \enquote{{Internet Message Format - RFC 822}},
+  \urlprefix\url{https://tools.ietf.org/html/rfc2822} (2001).
+
+\bibitem[Resnick(2008)]{rfc5322}
+Resnick, P.~W., \enquote{{Internet Message Format - RFC 5322}},
+  \urlprefix\url{https://tools.ietf.org/html/rfc5322} (2008).
+
+\bibitem[Ruby(2016)]{RubyDocs}
+Ruby, \enquote{{Ruby mail - Net::SMTP}},
+  \urlprefix\url{http://ruby-doc.org/stdlib-2.0.0/libdoc/net/smtp/rdoc/Net/SMTP.html}
+  (2016).
+
+\bibitem[RubySec(2015)]{RubySec}
+RubySec, \enquote{{Mail Gem for Ruby vulnerable to SMTP Injection via recipient
+  email addresses}},
+  \urlprefix\url{http://rubysec.com/advisories/OSVDB-131677/} (2015).
+
+\bibitem[Sadeghian \emph{et~al.}(2013)]{sql2}
+Sadeghian, A., M.~Zamani and A.~A. Manaf, \enquote{A taxonomy of sql injection
+  detection and prevention techniques}, in \enquote{Informatics and Creative
+  Multimedia (ICICM), 2013 International Conference on}, pp. 53--56 (IEEE,
+  2013).
+
+\bibitem[{Shkapenyuk Torsten Suel}(2001)]{ShkapenyukTorstenSuel2001}
+{Shkapenyuk Torsten Suel}, V., \enquote{{Design and Implementation of a
+  High-Performance Distributed Web Crawler}},   (2001).
+
+\bibitem[Stuttard and Pinto(2011)]{stuttard2011web}
+Stuttard, D. and M.~Pinto, \emph{The Web Application Hacker's Handbook: Finding
+  and Exploiting Security Flaws} (John Wiley \& Sons, 2011).
+
+\bibitem[Tendencies(2014)]{Tendencies2014}
+Tendencies, V., \enquote{{WordPress Plugin Vulnerability Dump – Part 2 |
+  Vexatious Tendencies}},
+  \urlprefix\url{https://vexatioustendencies.com/wordpress-plugin-vulnerability-dump-part-2/}
+  (2014).
+
+\bibitem[Terada(2015)]{Terada2015}
+Terada, T., \enquote{{SMTP Injection via recipient email addresses}}, {MBSD
+  White Paper}  (2015).
+
+\bibitem[Tobozo(2004)]{Tobozo}
+Tobozo, \enquote{{Mail headers injections with PHP}},
+  \urlprefix\url{http://www.phpsecure.info/v2/article/MailHeadersInject.en.php}
+  (2004).
+
+\bibitem[von Ahn \emph{et~al.}(2004)]{captchas2}
+von Ahn, L., M.~Blum and J.~Langford, \enquote{Telling humans and computers
+  apart automatically}, Commun. ACM \textbf{47}, 2, 56--60,
+  \urlprefix\url{http://doi.acm.org/10.1145/966389.966390} (2004).
+
+\bibitem[W3techs(2016)]{W3techs}
+W3techs, \enquote{{Usage Statistics and Market Share of PHP for Websites,
+  February 2016}},
+  \urlprefix\url{http://w3techs.com/technologies/details/pl-php/all/all}
+  (2016).
+
+\bibitem[Wikipedia(2016{\natexlab{a}})]{wiki:Black-box_testing}
+Wikipedia, \enquote{{Black-box testing} --- {W}ikipedia{,} the free
+  encyclopedia},
+  \url{http://en.wikipedia.org/w/index.php?title=Black-box%20testing&oldid=702083755},
+  [Online; accessed 02-March-2016] (2016{\natexlab{a}}).
+
+\bibitem[Wikipedia(2016{\natexlab{b}})]{wiki:Law_of_averages}
+Wikipedia, \enquote{{Law of averages} --- {W}ikipedia{,} the free
+  encyclopedia},
+  \url{http://en.wikipedia.org/w/index.php?title=Law%20of%20averages&oldid=706716293},
+  [Online; accessed 08-March-2016] (2016{\natexlab{b}}).
+
+\bibitem[Wikipedia(2016{\natexlab{c}})]{wiki:Law_of_large_numbers}
+Wikipedia, \enquote{{Law of large numbers} --- {W}ikipedia{,} the free
+  encyclopedia},
+  \url{http://en.wikipedia.org/w/index.php?title=Law%20of%20large%20numbers&oldid=706596753},
+  [Online; accessed 08-March-2016] (2016{\natexlab{c}}).
+
+\bibitem[Wikipedia(2016{\natexlab{d}})]{wiki:Newline}
+Wikipedia, \enquote{{Newline} --- {W}ikipedia{,} the free encyclopedia},
+  \url{http://en.wikipedia.org/w/index.php?title=Newline&oldid=704759213},
+  [Online; accessed 05-March-2016] (2016{\natexlab{d}}).
+
+\bibitem[Wikipedia(2016{\natexlab{e}})]{wiki:RabbitMQ}
+Wikipedia, \enquote{{RabbitMQ} --- {W}ikipedia{,} the free encyclopedia},
+  \url{http://en.wikipedia.org/w/index.php?title=RabbitMQ&oldid=708777848},
+  [Online; accessed 09-March-2016] (2016{\natexlab{e}}).
+
+\bibitem[Wikipedia(2016{\natexlab{f}})]{wiki:Regression_toward_the_mean}
+Wikipedia, \enquote{{Regression toward the mean} --- {W}ikipedia{,} the free
+  encyclopedia},
+  \url{http://en.wikipedia.org/w/index.php?title=Regression%20toward%20the%20mean&oldid=703369877},
+  [Online; accessed 08-March-2016] (2016{\natexlab{f}}).
+
+\bibitem[Wikipedia(2016{\natexlab{g}})]{wiki:Spoofing_attack}
+Wikipedia, \enquote{{Spoofing attack} --- {W}ikipedia{,} the free
+  encyclopedia},
+  \url{http://en.wikipedia.org/w/index.php?title=Spoofing%20attack&oldid=711407565},
+  [Online; accessed 23-April-2016] (2016{\natexlab{g}}).
+
+\bibitem[Yan and Ahmad(2007)]{captchas}
+Yan, J. and A.~S.~E. Ahmad, \enquote{Breaking visual captchas with naive
+  pattern recognition algorithms}, in \enquote{Computer Security Applications
+  Conference, 2007. ACSAC 2007. Twenty-Third Annual}, pp. 279--291 (2007).
+
+\bibitem[Zanero \emph{et~al.}(2005)]{zanero2005automatic}
+Zanero, S., L.~Carettoni and M.~Zanchetta, \enquote{Automatic detection of web
+  application security flaws}, Black Hat Briefings  (2005).
+
+\end{thebibliography}

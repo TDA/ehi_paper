@@ -1,0 +1,30 @@
+\begin{table}[!htbp]
+	\centering
+	\begin{tabular}{|c|l|c|}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{S.No}} &
+		\multicolumn{1}{c|}{\textbf{Type of Injection}} &
+		\multicolumn{1}{p{3cm}|}{\centering \textbf{No. of e-mails received}}\\
+		\hline
+		1 & E-Mail Header Injections with `bcc' header & 265\\
+		\hline
+		2 & E-Mail Header Injections with `x-check' header & 214\\
+		\hline
+		3 & `To header' injections alone & 142\\
+		\hline
+		4 & E-Mail Header Injections with `bcc' and `x-check' headers & 188\\
+		\hline
+		5 & Both `To header' injections and x-check headers &
+		11\\
+		\hline
+		6 & `x-check' headers found in `nuser' e-mails & 56\\
+		\hline
+		7 & Unique `x-check' headers found in `nuser' e-mails & 26\\
+		\hline
+		8 & Total successful injections (1 + 3 + 7) & 433\\
+		
+		\hline
+	\end{tabular}
+	\caption[\titlecap{Analysis of the data}]{Classification of the e-mails that we received into broad categories of the vulnerability.}
+	\label{tab:analysis}
+\end{table}

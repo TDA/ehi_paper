@@ -1,0 +1,5 @@
+\section{Problem Background}
+
+E-Mail Header Injection belongs to a broad class of vulnerabilities known simply as injection attacks. However, unlike its more popular siblings, SQL injection \cite{sql1}, \cite{sql0}, \cite{sql2}, Cross-Site Scripting (XSS) \cite{Injection1}, \cite{KleinAmit} or even HTTP Header Injection \cite{sessionride}, relatively little research is available on E-Mail Header Injection.
+
+As with other vulnerabilities in this class, E-Mail Header Injection is caused due to improper sanitization (or lack thereof) of user input. If the script that constructs e-mails from user input fails to check for the presence of e-mail headers in the user input, a malicious user --- using a well-crafted payload --- can control the headers set for this particular e-mail. This can be leveraged to enable malicious attacks, including, but not limited to, spoofing, phishing, etc.

@@ -1,0 +1,22 @@
+\begin{tabular}{|p{1cm}|p{5cm}|p{8cm}|}
+	\hline
+	\multicolumn{1}{|c|}{\textbf{S.No}} & \multicolumn{1}{c}{\textbf{Table Name}} & 
+	\multicolumn{1}{|c|}{\textbf{Purpose}}\\
+	\hline
+	1 & form & To hold data about all the forms that we receive from the Form Parser.\\
+	\hline
+	2 & {{email\_forms}} & Holds the output of the E-Mail Field Checker, i.e.\ references to the ID's of the forms that contain E-Mail fields. \\
+	\hline
+	3 & params & Holds the actual input fields of the forms, including their default values.\\
+	\hline
+	4 & {{fuzzed\_forms}} & Holds the data of the forms that were injected, including the payload used to inject and the URL to which the HTTP Request was delivered.\\
+	\hline
+	5 & {{received\_emails}} & Contains data about the E-Mails received for the regular payload, including which injected data fields were present in the E-Mail.\\
+	\hline
+	6 & {{successful\_attack\_emails}} & Contains data about the E-Mails received for the malicious payload. This contains the end result of the payload injection pipeline.\\
+	\hline
+	7 & requests & Contains data about the requests generated for each URL.\\
+	\hline
+	8 & {{blacklisted\_urls}} & Used for skipping certain websites that may blacklist our Crawler-Fuzzer.\\
+	\hline
+\end{tabular}

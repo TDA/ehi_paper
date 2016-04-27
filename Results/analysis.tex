@@ -1,0 +1,37 @@
+\section[Analysis of Data]{Our Analysis of the received e-mail Data}
+During our analysis of the received e-mails, we found that the e-mails that we received belonged to one of three broad categories:
+\begin{enumerate}
+	\item E-Mails with the \dq{\texttt{bcc}} header successfully injected\\
+	This form of injection was our initial objective and we found 265 such e-mails in our received e-mails. This indicates that the websites that sent out these e-mails are vulnerable to e-mail header injection, where we could inject and manipulate any header.
+	
+	\item E-Mails with the \dq{\texttt{to}} header successfully injected\\
+	We discovered an unintended vulnerability which we would like to christen `TO~header injection'. These injections reflect the ability to inject any number of e-mail addresses into the \dq{\texttt{to}} field while being unable to inject any other header into the e-mails. We attribute this behavior to inconsistent sanitization by the application. 
+	The vulnerability is further aided by the leniency shown by mail servers, wherein they parsed malformed e-mail addresses and delivered it to the right mail server, and on the receiving end, the mail was delivered to the right mailbox. 
+	
+	While not allowing us complete control over the e-mails sent, `TO header injection' makes it possible to append any number of e-mail addresses, thereby enabling us to leak information, and/or perform DoS (Denial of Service) attacks.
+	
+	\item E-Mails with the \dq{\texttt{x-check}} header successfully injected\\
+    The third category of e-mails received were e-mails with the \dq{\texttt{x-check}} header injected. As discussed in Section~\ref{analyze:detect_x_check}, 
+    these let us differentiate between unsuccessful attempts and successful attempts by injecting the additional header, allowing us to check whether headers other than the \dq{\texttt{bcc}} header can be injected into the generated e-mail. 
+\end{enumerate}
+We list each category and the number of e-mails received by the category in Table~\ref{tab:analysis}. 
+
+\input{Results/data_analysis}
+We explain the combination of these header injections (4-7) as follows:
+\begin{itemize}
+	\item E-Mail Header Injections with \dq{\texttt{bcc}} and \dq{\texttt{x-check}} headers\\
+	These represent the perfect attack scenario where we are able to inject multiple headers into the e-mails. We can see that over 75\% of the received \dq{\texttt{bcc}} header injected e-mails are also susceptible to other header injections.
+	
+	\item Both \dq{\texttt{To}} header injections and \dq{\texttt{x-check}} headers \\
+	This combination shows us that in addition to being able to inject into the \dq{\texttt{To}} fields, we are able to inject additional headers into the e-mail. It is not clear what causes this behavior; however, these can be exploited to achieve the same result as a regular E-Mail Header Injection.
+	
+	\item \dq{\texttt{x-check}} headers found in `nuser' e-mails\\
+	In addition to analyzing the `maluser' account, we also analyze emails received by the `nuser' account. We explain the presence of these headers in the following paragraph.
+
+	\item Unique \dq{\texttt{x-check}} headers found in `nuser' e-mails\\
+	These represent the e-mails with \lstinline|form_ids| that were \emph{not} already found in the `maluser' account. We attribute these e-mails to (probably) having a backend that was built with Python or another language having a similar behavior with respect to constructing headers.
+	
+	\item Total successful injections\\
+	This represents the total number of successful injections our system made. This includes the E-Mail Header Injections with \dq{\texttt{bcc}} header\,(1), \dq{\texttt{To}} header injections alone\,(3), and Unique \dq{\texttt{x-check}} headers found in `nuser' e-mails\,(7). This is the total number of vulnerabilities that were found by our system.
+	
+\end{itemize}

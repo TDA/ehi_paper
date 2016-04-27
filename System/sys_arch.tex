@@ -1,0 +1,36 @@
+\section{System Architecture}
+\label{sys:arch}
+The black-box testing system can be divided broadly into two modules; Data Gathering and Payload Injection.
+\begin{enumerate}
+	\item Data Gathering\\
+	The Data Gathering module (shown in Figure~\ref{fig:crawler}) is primarily responsible for the following activities:
+	\begin{itemize}
+		\item Interface with the Crawler (Section \ref{Comp:Crawler}) and receive the URLs.
+		\item Parse the HTML for the corresponding URL and store the relevant form data (Section \ref{Comp:FP}).
+		\item Check for the presence of forms that allow the user to send/receive e-mail, and store references to these forms (Section \ref{Comp:EMFC}).
+	\end{itemize} 
+	\item Payload Injection\\
+	The Payload Injection module (shown in Figure~\ref{fig:fuzzer}) is primarily responsible for the following activities:
+	\begin{itemize}
+		\item Retrieve the forms that allow users of a website to send/receive e-mail and reconstruct these forms (Section \ref{Comp:EMFR}).
+		\item Inject these forms with benign data (non-malicious payloads) and generate an HTTP request to the corresponding URL (Section \ref{Comp:Fuzzer:nmp}).
+		\item Analyze the e-mails, extracting the header fields and checking for the presence of the injected payloads (Section \ref{Comp:EMA}).
+		\item Inject the forms that sent us e-mails with malicious payloads, and generate an HTTP request to the corresponding URL to check if E-Mail Header Injection vulnerability exists in that form (Section \ref{Comp:Fuzzer:mp}).
+	\end{itemize} 
+	The functionality of each component is discussed further in the `Components' section (Section~\ref{Comp}). The Payload Injection pipeline is not a linear, but cyclic process, as we inject different payloads and analyze the received e-mails.
+\end{enumerate}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=14cm, height=7cm]{System/crawler_design}
+	\caption[\titlecap{System architecture - crawler}]{System architecture - crawler \& form parser.}
+	\label{fig:crawler}
+\end{figure}
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=16cm, height=9cm]{System/fuzzer_design}
+	\caption[\titlecap{System architecture - fuzzer {\&} e-mail analyzer}]{System architecture - fuzzer {\&} e-mail analyzer.}
+	\label{fig:fuzzer}
+\end{figure}

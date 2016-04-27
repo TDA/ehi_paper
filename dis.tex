@@ -1,0 +1,167 @@
+\documentclass[12pt,letterpaper]{report}
+\usepackage[square,numbers]{natbib}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{afterpage}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsbsy}
+\usepackage{dcolumn,array}
+\usepackage{tocloft}
+
+% for title case
+\usepackage{titlecaps}
+\Addlcwords{and, the, or, of, that, our, by}
+
+% avoid widows
+\usepackage[all]{nowidow}
+\clubpenalty=10000
+
+\usepackage{asudis}
+%% These are for including code
+%% and for upquotes
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{listings}
+\usepackage{listingsutf8}
+\usepackage{comment}
+\usepackage{color}
+\usepackage{dirtytalk} % for quotations
+\usepackage[justification=centering]{caption}
+\usepackage[pageanchor=true,plainpages=false,pdfpagelabels,bookmarks,bookmarksnumbered,hidelinks]{hyperref}
+
+
+% for footnotes in tables
+\usepackage{tablefootnote}
+
+% for arithmetic
+\usepackage{xintexpr}
+
+\usepackage{textcomp}     % access \textquotesingle
+
+\definecolor{mygray}{rgb}{0.6,0.6,0.6}
+\definecolor{lightgray}{rgb}{0.92,0.92,0.92}
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+% default options for listings
+\lstset{
+	backgroundcolor=\color{lightgray},
+	basicstyle=\footnotesize,
+	breaklines=true, 
+	captionpos=b,
+	commentstyle=\color{darkgreen}, 
+	frame=single,
+	keywordstyle=\color{blue}, 
+	numbers=left,
+	numbersep=5pt,
+	numberstyle=\tiny\color{mygray},
+	rulecolor=\color{black},
+	showstringspaces=false,
+	upquote=true
+}
+
+	
+\newcommand{\dq}[1]{``{#1}''}
+%% THIS IS THE DATA FOR OUR THESIS, UPDATING HERE WILL UPDATE EVERYWHERE %%
+\newcommand{\urls}{17,686,161}
+
+\newcommand{\forms}{5,562,533}
+\newcommand{\formsDelta}{31.45\%}
+
+\newcommand{\emailforms}{918,988}
+\newcommand{\emailformsDelta}{16.52\%}
+
+\newcommand{\fuzzed}{756,588}
+\newcommand{\fuzzedDelta}{82.33\%}
+
+\newcommand{\recd}{44,735}
+\newcommand{\recdDelta}{5.91\%}
+
+\newcommand{\malfuzzed}{38,989}
+\newcommand{\malfuzzedDelta}{87.16\%}
+
+\newcommand{\success}{433}
+\newcommand{\successDelta}{1.11\%}
+
+\newcommand{\domains}{182}
+
+% these refer to unique domains, not unique forms
+\newcommand{\uniqueforms}{650,394}
+\newcommand{\uniqueemailforms}{151,795}
+
+\begin{document}
+%-----------------------front matter
+\pagenumbering{roman}
+\title{E-Mail Header Injections\\
+	An Analysis of the World Wide Web}
+
+\author{Sai Prashanth Chandramouli}
+\degreeName{Master of Science}
+\paperType{Thesis}
+\defensemonth{April}
+\defenseyear{2016}
+\gradmonth{May}
+\gradyear{2016}
+\chair{Adam Doup\'{e}}
+\memberOne{Gail-Joon Ahn}
+\memberTwo{Ziming Zhao}
+%%\memberThree{Your third member}
+%%\memberFour{Your third member}
+
+\maketitle
+\doublespace
+\include{abstract}
+\dedicationpage{To my mother and father, for giving me the life I dreamt of,\\
+To my sister, who constantly made me do better just to keep up with her,\\
+To my family in Phoenix, for always being there,\\
+To God, for making me so lucky, for letting me be strong when I had nothing, and making me believe when no one else would have.}
+\begin{acknowledgements}
+	\input{sample_acknowledgements}
+\end{acknowledgements}
+\tableofcontents
+% This puts the word "Page" right justified above everything else.
+\addtocontents{toc}{~\hfill Page\par}
+% Asking LaTeX for a new page here guarantees that the LOF is on a separate page
+% after the TOC ends.
+\newpage
+% Making the LOT and LOF "parts" rather than chapters gets them indented at
+% level -1 according to the chart: top of page 4 of the document at
+% ftp://tug.ctan.org/pub/tex-archive/macros/latex/contrib/tocloft/tocloft.pdf
+\addcontentsline{toc}{part}{LIST OF TABLES}
+\renewcommand{\cftlabel}{Table}
+\listoftables
+% This gets the headers for the LOT right on the first page.  Subsequent pages
+% are handled by the fancyhdr code in the asudis.sty file.
+\addtocontents{lot}{Table~\hfill Page \par}
+\newpage
+\addcontentsline{toc}{part}{LIST OF FIGURES}
+\addtocontents{toc}{CHAPTER \par}
+\renewcommand{\cftlabel}{Figure}
+% This gets the headers for the LOF right on the first page.  Subsequent pages
+% are handled by the fancyhdr code in the asudis.sty file.
+\addtocontents{lof}{Figure~\hfill Page \par}
+\listoffigures
+%-----------------------body
+\doublespace
+\pagenumbering{arabic}
+\include{introduction}
+\include{problem_background}
+\include{sys_design}
+\include{exp_setup}
+\include{results}
+\include{discussion}
+\include{rel_work}
+\include{conclusion}
+
+%-----------------------back matter
+{\singlespace
+% Making the references a "part" rather than a chapter gets it indented at
+% level -1 according to the chart: top of page 4 of the document at
+% ftp://tug.ctan.org/pub/tex-archive/macros/latex/contrib/tocloft/tocloft.pdf
+\addcontentsline{toc}{part}{REFERENCES}
+\bibliographystyle{asudis}
+\bibliography{biblio}}
+\nocite{*}
+\renewcommand{\chaptername}{APPENDIX}
+\addtocontents{toc}{APPENDIX \par}
+\appendix
+\include{appendix1}
+\end{document}

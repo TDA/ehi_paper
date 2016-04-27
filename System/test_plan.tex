@@ -1,0 +1,44 @@
+\section{Test Suite}
+\label{Arch:Test}
+The test plan for our system includes a set of unit tests for each module in the pipeline. Further, we have unit tests for every %every instead of each
+individual function in the modules. The functions are tested separately, using mocks and stubs, so as to ensure isolated testing.
+This section outlines the test plan in the following manner. We list the modules that are tested, and then describe what each unit test tests for.
+\begin{itemize}
+	\item Form Parser
+	\begin{itemize}
+		\item \colorbox{lightgray}{\lstinline{test_url_exception}} - Tests whether the system handles incorrect or malformed URLs properly and terminates cleanly.
+		\item \colorbox{lightgray}{\lstinline{test_db_connection}} - Tests whether the Database Connection is set up and queries can be executed.
+		\item \colorbox{lightgray}{\lstinline{test_form_parser}} - Tests for the proper parsing of HTML, and if the system exits cleanly in case parsing is not possible.
+	\end{itemize}
+	
+	\item E-Mail Field Checker
+	\begin{itemize}
+		\item \colorbox{lightgray}{\lstinline{test_check_for_email}} - Tests whether the system finds E-Mail fields in the form when the words `e-mail' or `email' are present in the form (case insensitive).
+		\item \colorbox{lightgray}{\lstinline{test_check_for_no_email}} - Tests whether the system finds no E-Mail fields when the words `e-mail' or `email' are \emph{not} present in the form (case insensitive).
+	\end{itemize}
+	
+	\item E-Mail Form Retriever
+	\begin{itemize}
+		\item \colorbox{lightgray}{\lstinline{test_reconstruct_form}} - Tests for the proper reconstruction of the form stored in the Database.
+		\item \colorbox{lightgray}{\lstinline{test_construct_url}} - Tests whether the URL for submission was constructed properly, includes checks for relative URLs, absolute URLs, and presence of \lstinline{`base'} tags.
+		\item \colorbox{lightgray}{\lstinline{test_email_form_retriever_already_fuzzed}} - Tests for duplicate fuzz requests, and whether the system rejects these requests.
+		\item \colorbox{lightgray}{\lstinline{test_email_form_retriever_calls_fuzzer_for_new_fuzz}} - Tests whether the E-Mail Form Retriever calls the Fuzzer module with the proper data when it gets a new fuzz request.
+	\end{itemize}
+	
+	\item Fuzzer
+	\begin{itemize}
+		\item \colorbox{lightgray}{\lstinline{test_send_get_request}} - Tests for the proper handling of GET requests.
+		\item \colorbox{lightgray}{\lstinline{test_send_post_request}} - Tests for the proper handling of POST requests.
+		\item \colorbox{lightgray}{\lstinline{test_correct_fuzzer_data}} - Tests whether the payload generated for the given form data is correct and consistent. Also tests whether the payload was part of the resulting HTTP request.
+		\item \colorbox{lightgray}{\lstinline{test_incorrect_fuzzer_data}} - Tests for incorrect form data, and ensures that a payload does not end up in the wrong input field in the resulting HTTP request.
+	\end{itemize}
+	\item E-Mail Analyzer
+	\begin{itemize}
+		\item \colorbox{lightgray}{\lstinline{test_load_mail}} - Tests whether the E-Mails are loaded and parsed correctly by the E-Mail Analyzer.
+		\item \colorbox{lightgray}{\lstinline{test_parse_headers}} - Tests for the proper parsing of headers present in the E-Mail.
+		\item \colorbox{lightgray}{\lstinline{test_analyze_regular_mail}} - Tests whether the E-Mail Analyzer parses the regular E-Mail properly and extracts the injected input fields that are present in the E-Mail.
+		\item \colorbox{lightgray}{\lstinline{test_analyze_malicious_mail}} - Tests whether the E-Mail Analyzer parses the E-Mails received due to the malicious payloads properly, is able to extract the `bcc' headers, and is able to link them to the proper fuzzing request and payload.
+		\item \colorbox{lightgray}{\lstinline{test_analyze_x_check_header}} - Tests whether the `x-check' header is read by the E-Mail Analyzer.
+	\end{itemize}
+\end{itemize}
+The unit tests were written using Python's built-in `Unittest' module, mocking was done using the built-in `MagicMock' module. The tests allow us to be reasonably certain that our system works as expected.

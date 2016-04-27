@@ -1,0 +1,65 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: dis.aux
+A level-1 auxiliary file: abstract.aux
+A level-1 auxiliary file: introduction.aux
+A level-1 auxiliary file: problem_background.aux
+A level-1 auxiliary file: sys_design.aux
+A level-1 auxiliary file: exp_setup.aux
+A level-1 auxiliary file: results.aux
+A level-1 auxiliary file: discussion.aux
+A level-1 auxiliary file: rel_work.aux
+A level-1 auxiliary file: conclusion.aux
+The style file: asudis.bst
+A level-1 auxiliary file: appendix1.aux
+Database file #1: biblio.bib
+Repeated entry---line 251 of file biblio.bib
+ : @inproceedings{captchas2
+ :                         ,
+I'm skipping whatever remains of this entry
+Warning--empty journal in rfc1738
+Warning--empty journal in rfc822
+Warning--empty journal in rfc5322
+Warning--empty journal in ShkapenyukTorstenSuel2001
+You've used 59 entries,
+            2456 wiz_defined-function locations,
+            899 strings with 14239 characters,
+and the built_in function-call counts, 21160 in all, are:
+= -- 1911
+> -- 728
+< -- 57
++ -- 279
+- -- 204
+* -- 1770
+:= -- 3769
+add.period$ -- 59
+call.type$ -- 59
+change.case$ -- 404
+chr.to.int$ -- 51
+cite$ -- 63
+duplicate$ -- 1055
+empty$ -- 1752
+format.name$ -- 298
+if$ -- 4275
+int.to.chr$ -- 9
+int.to.str$ -- 1
+missing$ -- 29
+newline$ -- 185
+num.names$ -- 174
+pop$ -- 302
+preamble$ -- 1
+purify$ -- 398
+quote$ -- 0
+skip$ -- 722
+stack$ -- 0
+substring$ -- 1160
+swap$ -- 298
+text.length$ -- 14
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 350
+warning$ -- 4
+while$ -- 156
+width$ -- 0
+write$ -- 623
+(There was 1 error message)

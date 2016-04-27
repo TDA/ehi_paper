@@ -1,0 +1,15 @@
+\section{Fuzzed data}
+We performed our fuzzing attempts on the gathered data with both the regular payload and malicious payload. Table~\ref{tab:fuzzed_data} shows the quantity of e-mails that we received for each payload. We explain in detail what each piece of data shown in the table represents, in the following sections.
+\input{Results/fuzzed_data}
+\paragraph{E-Mail received from forms}
+The e-mails that we received can be broadly categorized into two categories:
+\begin{enumerate}
+	\item E-Mails due to regular payload\\
+	This represents the total number of websites that sent e-mails to us. This indicates that we were able to successfully submit the forms on these sites.
+	
+	\item E-Mails due to malicious payload\\
+    Once we receive an e-mail from a website due to the regular payload, we go back and fuzz those forms with more malicious payloads. This field, in essence, represents the total number of unique URLs that contain E-Mail Header Injection vulnerability.
+\end{enumerate}
+
+
+

@@ -1,0 +1,29 @@
+\begin{table}[!htbp]
+	\centering
+	\begin{tabular}{|c|l|c|c|}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{S.No}} &
+		\multicolumn{1}{c|}{\textbf{Pipeline Stage}} &
+		\multicolumn{1}{p{3cm}|}{\centering \textbf{Quantity}} &
+		\multicolumn{1}{p{2.8cm}|}{\centering \textbf{Differential}
+		$\Delta$ d2/d1 * 100}\\
+		\hline
+		1 &  Crawled URLs  & \urls &  --- \\
+		\hline
+		2 &  Forms found  & \forms & \formsDelta \\
+		\hline
+		3 &  E-Mail Forms found  & \emailforms & \emailformsDelta \\
+		\hline
+		4 &  Fuzzed with regular payload  & \fuzzed & \fuzzedDelta \\
+		\hline
+		5 &  Received e-mails  & \recd & \recdDelta \\
+		\hline
+		6 &  Fuzzed with malicious payload  & \malfuzzed & \malfuzzedDelta \\
+		\hline
+		7 &  Successful attacks  & \success & \successDelta \\
+		\hline
+
+	\end{tabular}
+	\caption[\titlecap{Data gathered by our pipeline}]{Data gathered by our pipeline at each stage, with the differential between the stages.}
+	\label{tab:pipeline}
+\end{table}

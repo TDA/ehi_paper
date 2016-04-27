@@ -1,0 +1,24 @@
+\lstset{language=Ruby,caption={Ruby program with e-mail header injection vulnerability.},label={code:rubyemi}}
+\begin{lstlisting}
+require 'sinatra'
+require 'net/smtp'
+
+get '/hello' do
+email = params[:email]
+
+message = """
+From: Sai <schand31@asu.edu>
+Subject: SMTP e-mail test
+To: #{email}
+
+This is a test e-mail message.
+"""
+# construct a post request with email set to attack_string
+# attack_string => sai@sai.com%0abcc:spc@spc.com%0aSubject:Hello
+Net::SMTP.start('localhost', 1025) do |smtp|
+smtp.send_message message, 'schand31@asu.edu',
+'to@todomain.com'
+end
+# Headers get added, and Subject field changes to what we set.
+end
+\end{lstlisting}
