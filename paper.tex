@@ -58,6 +58,10 @@
 % for footnotes in tables
 \usepackage{tablefootnote}
 
+% for title caps
+\usepackage{titlecaps}
+\Addlcwords{and, the, or, of, that, our, by, a, prevent, for}
+
 % default options for listings
 \usepackage{listings}
 \usepackage{listingsutf8}
@@ -78,35 +82,34 @@
 	upquote=true
 }
 
+	
 \newcommand{\dq}[1]{``{#1}''}
 %% THIS IS THE DATA FOR OUR THESIS, UPDATING HERE WILL UPDATE EVERYWHERE %%
-\newcommand{\urls}{17,686,161}
+\newcommand{\urls}{21,675,680}
 
-\newcommand{\forms}{5,562,533}
-\newcommand{\formsDelta}{31.45\%}
+\newcommand{\forms}{6,794,917}
+\newcommand{\formsDelta}{31.35\%}
 
-\newcommand{\emailforms}{918,988}
-\newcommand{\emailformsDelta}{16.52\%}
+\newcommand{\emailforms}{1,132,157}
+\newcommand{\emailformsDelta}{16.66\%}
 
-\newcommand{\fuzzed}{756,588}
-\newcommand{\fuzzedDelta}{82.33\%}
+\newcommand{\fuzzed}{934,016}
+\newcommand{\fuzzedDelta}{82.50\%}
 
-\newcommand{\recd}{44,735}
-\newcommand{\recdDelta}{5.91\%}
+\newcommand{\recd}{52,724}
+\newcommand{\recdDelta}{5.64\%}
 
-\newcommand{\malfuzzed}{38,989}
-\newcommand{\malfuzzedDelta}{87.16\%}
+\newcommand{\malfuzzed}{46,156}
+\newcommand{\malfuzzedDelta}{87.54\%}
 
-\newcommand{\success}{433}
-\newcommand{\successDelta}{1.11\%}
+\newcommand{\success}{496}
+\newcommand{\successDelta}{1.07\%}
 
-\newcommand{\domains}{182}
-
+\newcommand{\domains}{222}
+\newcommand{\ips}{292}
 % these refer to unique domains, not unique forms
-\newcommand{\uniqueforms}{650,394}
-\newcommand{\uniqueemailforms}{151,795}
-
-
+\newcommand{\uniqueforms}{1,019,921}
+\newcommand{\uniqueemailforms}{197,570}
 
 
 \begin{document}
@@ -289,32 +292,10 @@
 	\keywords{ACM proceedings; \LaTeX; text tagging}
 	
 	\section{Introduction}
-	The \textit{proceedings} are the records of a conference.
-	ACM seeks to give these conference by-products a uniform,
-	high-quality appearance.  To do this, ACM has some rigid
-	requirements for the format of the proceedings documents: there
-	is a specified format (balanced  double columns), a specified
-	set of fonts (Arial or Helvetica and Times Roman) in
-	certain specified sizes (for instance, 9 point for body copy),
-	a specified live area (18 $\times$ 23.5 cm [7" $\times$ 9.25"]) centered on
-	the page, specified size of margins (1.9 cm [0.75"]) top, (2.54 cm [1"]) bottom
-	and (1.9 cm [.75"]) left and right; specified column width
-	(8.45 cm [3.33"]) and gutter size (.83 cm [.33"]).
+	\input{introduction}
 	
-	The good news is, with only a handful of manual
-	settings\footnote{Two of these, the {\texttt{\char'134 numberofauthors}}
-		and {\texttt{\char'134 alignauthor}} commands, you have
-		already used; another, {\texttt{\char'134 balancecolumns}}, will
-		be used in your very last run of \LaTeX\ to ensure
-		balanced column heights on the last page.}, the \LaTeX\ document
-	class file handles all of this for you.
-	
-	The remainder of this document is concerned with showing, in
-	the context of an ``actual'' document, the \LaTeX\ commands
-	specifically available for denoting the structure of a
-	proceedings paper, rather than with giving rigorous descriptions
-	or explanations of such commands.
-	
+	\input{problem_background}
+
 	\section{The {\secit Body} of The Paper}
 	Typically, the body of a paper is organized
 	into a hierarchical structure, with numbered or unnumbered

@@ -1,26 +1,34 @@
 \BOOKMARK [1][-]{section.1}{1 Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{2 The Body of The Paper}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{2.1 Type Changes and Special Characters}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{2.2 Math Equations}{section.2}% 4
-\BOOKMARK [3][-]{subsubsection.2.2.1}{2.2.1 Inline \(In-text\) Equations}{subsection.2.2}% 5
-\BOOKMARK [3][-]{subsubsection.2.2.2}{2.2.2 Display Equations}{subsection.2.2}% 6
-\BOOKMARK [2][-]{subsection.2.3}{2.3 Citations}{section.2}% 7
-\BOOKMARK [2][-]{subsection.2.4}{2.4 Tables}{section.2}% 8
-\BOOKMARK [2][-]{subsection.2.5}{2.5 Figures}{section.2}% 9
-\BOOKMARK [2][-]{subsection.2.6}{2.6 Theorem-like Constructs}{section.2}% 10
-\BOOKMARK [1][-]{section.3}{3 Conclusions}{}% 11
-\BOOKMARK [1][-]{section.4}{4 Acknowledgments}{}% 12
-\BOOKMARK [1][-]{appendix.A}{A Headings in Appendices}{}% 13
-\BOOKMARK [2][-]{subsection.A.1}{A.1 Introduction}{appendix.A}% 14
-\BOOKMARK [2][-]{subsection.A.2}{A.2 The Body of the Paper}{appendix.A}% 15
-\BOOKMARK [3][-]{subsubsection.A.2.1}{A.2.1 Type Changes and Special Characters}{subsection.A.2}% 16
-\BOOKMARK [3][-]{subsubsection.A.2.2}{A.2.2 Math Equations}{subsection.A.2}% 17
-\BOOKMARK [3][-]{subsubsection.A.2.3}{A.2.3 Citations}{subsection.A.2}% 18
-\BOOKMARK [3][-]{subsubsection.A.2.4}{A.2.4 Tables}{subsection.A.2}% 19
-\BOOKMARK [3][-]{subsubsection.A.2.5}{A.2.5 Figures}{subsection.A.2}% 20
-\BOOKMARK [3][-]{subsubsection.A.2.6}{A.2.6 Theorem-like Constructs}{subsection.A.2}% 21
-\BOOKMARK [2][-]{subsection.A.3}{A.3 Conclusions}{appendix.A}% 22
-\BOOKMARK [2][-]{subsection.A.4}{A.4 Acknowledgments}{appendix.A}% 23
-\BOOKMARK [2][-]{subsection.A.5}{A.5 Additional Authors}{appendix.A}% 24
-\BOOKMARK [2][-]{subsection.A.6}{A.6 References}{appendix.A}% 25
-\BOOKMARK [1][-]{appendix.B}{B More Help for the Hardy}{}% 26
+\BOOKMARK [1][-]{section.2}{2 Problem Background}{}% 2
+\BOOKMARK [1][-]{section.3}{3 History of E-Mail Injection}{}% 3
+\BOOKMARK [1][-]{section.4}{4 Languages Affected}{}% 4
+\BOOKMARK [2][-]{subsubsection.4.0.1}{4.0.1 PHP}{section.4}% 5
+\BOOKMARK [3][-]{subsubsection.4.0.2}{4.0.2 Python}{subsubsection.4.0.1}% 6
+\BOOKMARK [3][-]{subsubsection.4.0.3}{4.0.3 Java}{subsubsection.4.0.1}% 7
+\BOOKMARK [3][-]{subsubsection.4.0.4}{4.0.4 Ruby}{subsubsection.4.0.1}% 8
+\BOOKMARK [1][-]{section.5}{5 Potential Impact}{}% 9
+\BOOKMARK [1][-]{section.6}{6 The Body of The Paper}{}% 10
+\BOOKMARK [2][-]{subsection.6.1}{6.1 Type Changes and Special Characters}{section.6}% 11
+\BOOKMARK [2][-]{subsection.6.2}{6.2 Math Equations}{section.6}% 12
+\BOOKMARK [3][-]{subsubsection.6.2.1}{6.2.1 Inline \(In-text\) Equations}{subsection.6.2}% 13
+\BOOKMARK [3][-]{subsubsection.6.2.2}{6.2.2 Display Equations}{subsection.6.2}% 14
+\BOOKMARK [2][-]{subsection.6.3}{6.3 Citations}{section.6}% 15
+\BOOKMARK [2][-]{subsection.6.4}{6.4 Tables}{section.6}% 16
+\BOOKMARK [2][-]{subsection.6.5}{6.5 Figures}{section.6}% 17
+\BOOKMARK [2][-]{subsection.6.6}{6.6 Theorem-like Constructs}{section.6}% 18
+\BOOKMARK [1][-]{section.7}{7 Conclusions}{}% 19
+\BOOKMARK [1][-]{section.8}{8 Acknowledgments}{}% 20
+\BOOKMARK [1][-]{appendix.A}{A Headings in Appendices}{}% 21
+\BOOKMARK [2][-]{subsection.A.1}{A.1 Introduction}{appendix.A}% 22
+\BOOKMARK [2][-]{subsection.A.2}{A.2 The Body of the Paper}{appendix.A}% 23
+\BOOKMARK [3][-]{subsubsection.A.2.1}{A.2.1 Type Changes and Special Characters}{subsection.A.2}% 24
+\BOOKMARK [3][-]{subsubsection.A.2.2}{A.2.2 Math Equations}{subsection.A.2}% 25
+\BOOKMARK [3][-]{subsubsection.A.2.3}{A.2.3 Citations}{subsection.A.2}% 26
+\BOOKMARK [3][-]{subsubsection.A.2.4}{A.2.4 Tables}{subsection.A.2}% 27
+\BOOKMARK [3][-]{subsubsection.A.2.5}{A.2.5 Figures}{subsection.A.2}% 28
+\BOOKMARK [3][-]{subsubsection.A.2.6}{A.2.6 Theorem-like Constructs}{subsection.A.2}% 29
+\BOOKMARK [2][-]{subsection.A.3}{A.3 Conclusions}{appendix.A}% 30
+\BOOKMARK [2][-]{subsection.A.4}{A.4 Acknowledgments}{appendix.A}% 31
+\BOOKMARK [2][-]{subsection.A.5}{A.5 Additional Authors}{appendix.A}% 32
+\BOOKMARK [2][-]{subsection.A.6}{A.6 References}{appendix.A}% 33
+\BOOKMARK [1][-]{appendix.B}{B More Help for the Hardy}{}% 34
