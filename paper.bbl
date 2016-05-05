@@ -1,3 +1,97 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
+
+\bibitem{sql1}
+S.~W. Boyd and A.~D. Keromytis.
+\newblock Sqlrand: Preventing sql injection attacks.
+\newblock In {\em Applied Cryptography and Network Security}, pages 292--302.
+  Springer, 2004.
+
+\bibitem{Injection}
+2010.
+
+\bibitem{sql0}
+W.~G. Halfond, J.~Viegas, and A.~Orso.
+\newblock A classification of sql-injection attacks and countermeasures.
+\newblock In {\em Proceedings of the IEEE International Symposium on Secure
+  Software Engineering}, volume~1, pages 13--15. IEEE, 2006.
+
+\bibitem{Herzog.2014}
+A.~Herzog.
+\newblock {Full Disclosure: JavaMail SMTP Header Injection via method
+  setSubject [CSNC-2014-001]}, 2014.
+
+\bibitem{wiki:HTTP_headerinjection}
+H.~H. Injection.
+\newblock {HTTP header injection} --- {W}ikipedia{,} the free encyclopedia.
+\newblock
+  \url{http://en.wikipedia.org/w/index.php?title=HTTP%20header%20injection&oldid=713295668},
+  2016.
+\newblock [Online; accessed 18-April-2016].
+
+\bibitem{Injection1}
+T.~Jim, N.~Swamy, and M.~Hicks.
+\newblock Defeating script injection attacks with browser-enforced embedded
+  policies.
+\newblock In {\em Proceedings of the 16th International Conference on World
+  Wide Web}, WWW '07, pages 601--610, New York, NY, USA, 2007. ACM.
+
+\bibitem{sessionride}
+M.~Johns and J.~Winter.
+\newblock Requestrodeo: Client side protection against session riding.
+\newblock In {\em Proceedings of the OWASP Europe 2006 Conference}, 2006.
+
+\bibitem{KleinAmit}
+A.~Klein.
+\newblock {[DOM Based Cross Site Scripting or XSS of the Third Kind] Web
+  Security Articles - Web Application Security Consortium}, 2005.
+
+\bibitem{DK}
+D.~Kohler.
+\newblock {damonkohler.com: Email Injection}, 2008.
+
+\bibitem{OWASPT10}
+OWASP.
+\newblock {OWASP Top Ten Project}, 2013.
+
+\bibitem{wiki:Phishing}
+Phishing.
+\newblock {Phishing} --- {W}ikipedia{,} the free encyclopedia.
+\newblock
+  \url{http://en.wikipedia.org/w/index.php?title=Phishing&oldid=706223617},
+  2016.
+\newblock [Online; accessed 27-February-2016].
+
+\bibitem{PHPDocs}
+PHP-Manual.
+\newblock {PHP mail - Send mail}, 2016.
+
+\bibitem{sql2}
+A.~Sadeghian, M.~Zamani, and A.~A. Manaf.
+\newblock A taxonomy of sql injection detection and prevention techniques.
+\newblock In {\em Informatics and Creative Multimedia (ICICM), 2013
+  International Conference on}, pages 53--56. IEEE, 2013.
+
+\bibitem{stuttard2011web}
+D.~Stuttard and M.~Pinto.
+\newblock {\em The Web Application Hacker's Handbook: Finding and Exploiting
+  Security Flaws}.
+\newblock John Wiley \& Sons, 2011.
+
+\bibitem{Tobozo}
+Tobozo.
+\newblock {Mail headers injections with PHP}, 2004.
+
+\bibitem{W3techs}
+W3techs.
+\newblock {Usage Statistics and Market Share of PHP for Websites, February
+  2016}, 2016.
+
+\bibitem{wiki:Spoofing_attack}
+Wikipedia.
+\newblock {Spoofing attack} --- {W}ikipedia{,} the free encyclopedia.
+\newblock
+  \url{http://en.wikipedia.org/w/index.php?title=Spoofing%20attack&oldid=711407565},
+  2016.
+\newblock [Online; accessed 23-April-2016].
 
 \end{thebibliography}
