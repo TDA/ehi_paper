@@ -3,7 +3,7 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: paper.aux
 The style file: abbrv.bst
 I couldn't open database file sigproc.bib
----line 82 of file paper.aux
+---line 83 of file paper.aux
  : \bibdata{sigproc
  :                 }
 I'm skipping whatever remains of this command
