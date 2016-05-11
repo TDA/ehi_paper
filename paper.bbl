@@ -1,9 +1,26 @@
 \begin{thebibliography}{10}
 
+\bibitem{black-box}
+J.~Bau, E.~Bursztein, D.~Gupta, and J.~Mitchell.
+\newblock State of the art: Automated black-box web application vulnerability
+  testing.
+\newblock In {\em Security and Privacy (SP), 2010 IEEE Symposium on}, pages
+  332--345, May 2010.
+
+\bibitem{Beizer:1995:BTT:202699}
+B.~Beizer.
+\newblock {\em Black-box Testing: Techniques for Functional Testing of Software
+  and Systems}.
+\newblock John Wiley \& Sons, Inc., New York, NY, USA, 1995.
+
 \bibitem{rfc1738}
 T.~Berners-Lee, L.~Masinter, and M.~McCahill.
 \newblock {Internet Message Format - RFC 1738}.
 \newblock 2008.
+
+\bibitem{BestWebSoft2016}
+BestWebSoft.
+\newblock {Contact Form by BestWebSoft — WordPress Plugins}, 2016.
 
 \bibitem{sql1}
 S.~W. Boyd and A.~D. Keromytis.
@@ -11,9 +28,27 @@ S.~W. Boyd and A.~D. Keromytis.
 \newblock In {\em Applied Cryptography and Network Security}, pages 292--302.
   Springer, 2004.
 
+\bibitem{Calin}
+B.~Calin.
+\newblock {Email Header Injection Web Vulnerability - Acunetix}, 2013.
+
 \bibitem{Celery}
 Celery.
 \newblock {Celery Homepage}, 2016.
+
+\bibitem{Doupe2012}
+A.~Doup{\'e}, L.~Cavedon, C.~Kruegel, and G.~Vigna.
+\newblock Enemy of the state: A state-aware black-box web vulnerability
+  scanner.
+\newblock In {\em Presented as part of the 21st USENIX Security Symposium
+  (USENIX Security 12)}, pages 523--538, Bellevue, WA, 2012. USENIX.
+
+\bibitem{Doupe2010}
+A.~Doup{\'e}, M.~Cova, and G.~Vigna.
+\newblock Why johnny can't pentest: An analysis of black-box web vulnerability
+  scanners.
+\newblock In {\em Detection of Intrusions and Malware, and Vulnerability
+  Assessment}, pages 111--131. Springer, 2010.
 
 \bibitem{Injection}
 2010.
@@ -28,6 +63,13 @@ W.~G. Halfond, J.~Viegas, and A.~Orso.
 A.~Herzog.
 \newblock {Full Disclosure: JavaMail SMTP Header Injection via method
   setSubject [CSNC-2014-001]}, 2014.
+
+\bibitem{Huang}
+Y.-W. Huang, S.-K. Huang, T.-P. Lin, and C.-H. Tsai.
+\newblock Web application security assessment by fault injection and behavior
+  monitoring.
+\newblock In {\em Proceedings of the 12th International Conference on World
+  Wide Web}, WWW '03, pages 148--159, New York, NY, USA, 2003. ACM.
 
 \bibitem{wiki:HTTP_headerinjection}
 H.~H. Injection.
@@ -53,6 +95,12 @@ M.~Johns and J.~Winter.
 \newblock Requestrodeo: Client side protection against session riding.
 \newblock In {\em Proceedings of the OWASP Europe 2006 Conference}, 2006.
 
+\bibitem{kals2006secubat}
+S.~Kals, E.~Kirda, C.~Kruegel, and N.~Jovanovic.
+\newblock Secubat: a web vulnerability scanner.
+\newblock In {\em Proceedings of the 15th international conference on World
+  Wide Web}, pages 247--256. ACM, 2006.
+
 \bibitem{KleinAmit}
 A.~Klein.
 \newblock {[DOM Based Cross Site Scripting or XSS of the Third Kind] Web
@@ -66,9 +114,24 @@ D.~Kohler.
 D.~McGrath.
 \newblock {HTTP requests optimization}, 2009.
 
+\bibitem{Injection2}
+A.~Mohamed.
+\newblock {PHP Email Injection Example - InfoSec Resources}, 2013.
+
+\bibitem{Nicol}
+J.~Nicol.
+\newblock {Securing PHP Contact Forms}, 2006.
+
 \bibitem{OWASPT10}
 OWASP.
 \newblock {OWASP Top Ten Project}, 2013.
+
+\bibitem{payet13:ears-in-the-wild}
+P.~Payet, A.~Doup\'e, C.~Kruegel, and G.~Vigna.
+\newblock {EARs in the Wild: Large-Scale Analysis of Execution After Redirect
+  Vulnerabilities}.
+\newblock In {\em Proceedings of the ACM Symposium on Applied Computing (SAC)},
+  Coimbra, Portugal, March 2013.
 
 \bibitem{wiki:Phishing}
 Phishing.
@@ -81,6 +144,11 @@ Phishing.
 \bibitem{PHPDocs}
 PHP-Manual.
 \newblock {PHP mail - Send mail}, 2016.
+
+\bibitem{Pope}
+A.~Pope.
+\newblock {Prevent Contact Form Spam Email Header Injection | Storm Consultancy
+  – Web Design Bath}, 2008.
 
 \bibitem{captchas3}
 C.~Pope and K.~Kaur.
@@ -109,6 +177,16 @@ D.~Stuttard and M.~Pinto.
 \newblock {\em The Web Application Hacker's Handbook: Finding and Exploiting
   Security Flaws}.
 \newblock John Wiley \& Sons, 2011.
+
+\bibitem{Tendencies2014}
+V.~Tendencies.
+\newblock {WordPress Plugin Vulnerability Dump – Part 2 | Vexatious
+  Tendencies}, 2014.
+
+\bibitem{Terada2015}
+T.~Terada.
+\newblock {SMTP Injection via recipient email addresses}.
+\newblock {\em {MBSD White Paper}}, December 2015.
 
 \bibitem{Tobozo}
 Tobozo.
@@ -178,5 +256,10 @@ J.~Yan and A.~S.~E. Ahmad.
 \newblock Breaking visual captchas with naive pattern recognition algorithms.
 \newblock In {\em Computer Security Applications Conference, 2007. ACSAC 2007.
   Twenty-Third Annual}, pages 279--291, Dec 2007.
+
+\bibitem{zanero2005automatic}
+S.~Zanero, L.~Carettoni, and M.~Zanchetta.
+\newblock Automatic detection of web application security flaws.
+\newblock {\em Black Hat Briefings}, 2005.
 
 \end{thebibliography}

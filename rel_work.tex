@@ -1,4 +1,4 @@
-\chapter{Related Work}
+\section{Related Work}
 
 There are different approaches to finding vulnerabilities in web applications, two of them being Black-Box testing and White-Box testing.
 Our work is based on the black-box testing approach to finding vulnerabilities on websites, and there has been plenty of research that has made use of this methodology \cite{Beizer:1995:BTT:202699}, \cite{Huang}, \cite{kals2006secubat}, \cite{payet13:ears-in-the-wild}, \cite{zanero2005automatic}. There has been significant discussion on both the benefits of such an approach \cite{black-box} and its shortcomings \cite{Doupe2012}, \cite{Doupe2010}.
@@ -18,5 +18,3 @@ Another blog post written by user Voxel@Night on Vexatious Tendencies \cite{Tend
 The vulnerability was described briefly by Stuttard and Pinto in their book, ``\emph{The Web Application Hacker's Handbook: Discovering and Exploiting Security Flaws}'' \cite{stuttard2011web}. The book, however, does not go into detail on either the attack or the ways to mitigate such an attack. Our work, on the other hand discusses the means to mitigate the attack. We also describe, in detail, the payloads that can be used and the need for varying the payloads (Section. \ref{Comp:Fuzzer:mp}).
 
 To the best of our knowledge, no other research has been conducted to determine the prevalence of this vulnerability across the World Wide Web. We have managed to, on a large scale, crawl and inject websites with comparatively benign payloads (such as the BCC header) to identify the existence of this vulnerability without causing any ostensible harm to the website. Our injected payloads do not contain any special characters other than the newline characters and thus cannot cause any unintended consequences. Also, since we are only injecting a payload with the `bcc' header, the underlying mail servers should not be affected by the additional load. Our work serves to not only prove the existence of the vulnerability on the World Wide Web but to quantify it.
-
-%The next and final chapter starts by outlining our contributions and closes with concluding remarks about the project.

@@ -4,6 +4,7 @@ The top-level auxiliary file: paper.aux
 A level-1 auxiliary file: exp_setup.aux
 A level-1 auxiliary file: results.aux
 A level-1 auxiliary file: discussion.aux
+A level-1 auxiliary file: rel_work.aux
 The style file: abbrv.bst
 Database file #1: biblio.bib
 Repeated entry---line 251 of file biblio.bib
@@ -15,45 +16,45 @@ Warning--I didn't find a database entry for "salas:calculus"
 Warning--empty journal in rfc1738
 Warning--empty journal in rfc5322
 Warning--empty journal in ShkapenyukTorstenSuel2001
-You've used 31 entries,
+You've used 46 entries,
             2118 wiz_defined-function locations,
-            660 strings with 8186 characters,
-and the built_in function-call counts, 8066 in all, are:
-= -- 780
-> -- 296
-< -- 6
-+ -- 124
-- -- 90
-* -- 369
-:= -- 1298
-add.period$ -- 93
-call.type$ -- 31
-change.case$ -- 137
+            741 strings with 10539 characters,
+and the built_in function-call counts, 12868 in all, are:
+= -- 1250
+> -- 503
+< -- 11
++ -- 207
+- -- 158
+* -- 635
+:= -- 2052
+add.period$ -- 136
+call.type$ -- 46
+change.case$ -- 215
 chr.to.int$ -- 0
-cite$ -- 34
-duplicate$ -- 322
-empty$ -- 768
-format.name$ -- 90
-if$ -- 1775
+cite$ -- 49
+duplicate$ -- 526
+empty$ -- 1183
+format.name$ -- 158
+if$ -- 2838
 int.to.chr$ -- 0
-int.to.str$ -- 31
-missing$ -- 13
-newline$ -- 154
-num.names$ -- 60
-pop$ -- 247
+int.to.str$ -- 46
+missing$ -- 23
+newline$ -- 223
+num.names$ -- 90
+pop$ -- 374
 preamble$ -- 1
-purify$ -- 108
+purify$ -- 172
 quote$ -- 0
-skip$ -- 277
+skip$ -- 443
 stack$ -- 0
-substring$ -- 332
-swap$ -- 75
-text.length$ -- 6
+substring$ -- 563
+swap$ -- 137
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 122
+type$ -- 180
 warning$ -- 3
-while$ -- 77
-width$ -- 33
-write$ -- 314
+while$ -- 121
+width$ -- 48
+write$ -- 466
 (There was 1 error message)
