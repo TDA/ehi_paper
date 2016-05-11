@@ -10,24 +10,6 @@
 	
 	We performed an expansive crawl of the web, extracting forms with e-mail fields, and injecting them with different payloads to infer the existence of E-Mail Header Injection vulnerability. We then audited received e-mails to see if any of the injected data was present. This allowed us to classify whether a particular URL was vulnerable to the attack. The entire system works in a black-box manner, without looking at the web application's source code, and only analyzes the e-mails we receive based on the injected payloads.
 
-\subsection*{Structure of document} % describes the remaining sections and gives a short desc about them
-This thesis document is divided logically into the following sections:
-\begin{itemize}
-	\item Chapter 2 discusses the background of E-Mail Header Injection, a brief history of the vulnerability, and enumerates the languages and platforms affected by this vulnerability.
-	
-	\item Chapter 3 discusses the System design, the architecture, and the components of the system.
-	
-	\item Chapter 4 describes the experimental setup and sheds light on how we overcame the issues and assumptions discussed in Chapter 3.
-	
-	\item Chapter 5 presents our findings and our analysis of the results.
-	
-	\item Chapter 6 continues the discussion of the results; the lessons learned over the course of the project, limitations, and a suitable mitigation strategy to overcome the vulnerability.
-	
-	\item Chapter 7 explores related work in the area.
-	
-	\item Chapter 8 concludes this thesis, with ideas to expand the research in this area.
-\end{itemize} 
-
 We hope that our research sheds some light on this relatively less well-known vulnerability, and find out its prevalence on the World Wide Web. In summary, we make the following contributions:
 \begin{itemize}
 	
