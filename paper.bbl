@@ -1,10 +1,19 @@
 \begin{thebibliography}{10}
 
+\bibitem{rfc1738}
+T.~Berners-Lee, L.~Masinter, and M.~McCahill.
+\newblock {Internet Message Format - RFC 1738}.
+\newblock 2008.
+
 \bibitem{sql1}
 S.~W. Boyd and A.~D. Keromytis.
 \newblock Sqlrand: Preventing sql injection attacks.
 \newblock In {\em Applied Cryptography and Network Security}, pages 292--302.
   Springer, 2004.
+
+\bibitem{Celery}
+Celery.
+\newblock {Celery Homepage}, 2016.
 
 \bibitem{Injection}
 2010.
@@ -129,6 +138,14 @@ Wikipedia.
   \url{http://en.wikipedia.org/w/index.php?title=Law%20of%20large%20numbers&oldid=706596753},
   2016.
 \newblock [Online; accessed 08-March-2016].
+
+\bibitem{wiki:RabbitMQ}
+Wikipedia.
+\newblock {RabbitMQ} --- {W}ikipedia{,} the free encyclopedia.
+\newblock
+  \url{http://en.wikipedia.org/w/index.php?title=RabbitMQ&oldid=708777848},
+  2016.
+\newblock [Online; accessed 09-March-2016].
 
 \bibitem{wiki:Regression_toward_the_mean}
 Wikipedia.
