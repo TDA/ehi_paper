@@ -33,24 +33,28 @@
 \BOOKMARK [2][-]{subsection.5.2}{5.2 Fuzzed data}{section.5}% 33
 \BOOKMARK [2][-]{subsection.5.3}{5.3 Analysis of Data}{section.5}% 34
 \BOOKMARK [2][-]{subsection.5.4}{5.4 The Pipeline}{section.5}% 35
-\BOOKMARK [1][-]{section.6}{6 The Body of The Paper}{}% 36
-\BOOKMARK [2][-]{subsection.6.1}{6.1 Type Changes and Special Characters}{section.6}% 37
-\BOOKMARK [2][-]{subsection.6.2}{6.2 Tables}{section.6}% 38
-\BOOKMARK [2][-]{subsection.6.3}{6.3 Figures}{section.6}% 39
-\BOOKMARK [2][-]{subsection.6.4}{6.4 Theorem-like Constructs}{section.6}% 40
-\BOOKMARK [1][-]{section.7}{7 Conclusions}{}% 41
-\BOOKMARK [1][-]{section.8}{8 Acknowledgments}{}% 42
-\BOOKMARK [1][-]{appendix.A}{A Headings in Appendices}{}% 43
-\BOOKMARK [2][-]{subsection.A.1}{A.1 Introduction}{appendix.A}% 44
-\BOOKMARK [2][-]{subsection.A.2}{A.2 The Body of the Paper}{appendix.A}% 45
-\BOOKMARK [3][-]{subsubsection.A.2.1}{A.2.1 Type Changes and Special Characters}{subsection.A.2}% 46
-\BOOKMARK [3][-]{subsubsection.A.2.2}{A.2.2 Math Equations}{subsection.A.2}% 47
-\BOOKMARK [3][-]{subsubsection.A.2.3}{A.2.3 Citations}{subsection.A.2}% 48
-\BOOKMARK [3][-]{subsubsection.A.2.4}{A.2.4 Tables}{subsection.A.2}% 49
-\BOOKMARK [3][-]{subsubsection.A.2.5}{A.2.5 Figures}{subsection.A.2}% 50
-\BOOKMARK [3][-]{subsubsection.A.2.6}{A.2.6 Theorem-like Constructs}{subsection.A.2}% 51
-\BOOKMARK [2][-]{subsection.A.3}{A.3 Conclusions}{appendix.A}% 52
-\BOOKMARK [2][-]{subsection.A.4}{A.4 Acknowledgments}{appendix.A}% 53
-\BOOKMARK [2][-]{subsection.A.5}{A.5 Additional Authors}{appendix.A}% 54
-\BOOKMARK [2][-]{subsection.A.6}{A.6 References}{appendix.A}% 55
-\BOOKMARK [1][-]{appendix.B}{B More Help for the Hardy}{}% 56
+\BOOKMARK [1][-]{section.6}{6 Discussion}{}% 36
+\BOOKMARK [2][-]{subsection.6.1}{6.1 Lessons Learned}{section.6}% 37
+\BOOKMARK [2][-]{subsection.6.2}{6.2 Limitations}{section.6}% 38
+\BOOKMARK [2][-]{subsection.6.3}{6.3 Mitigation Strategy}{section.6}% 39
+\BOOKMARK [1][-]{section.7}{7 The Body of The Paper}{}% 40
+\BOOKMARK [2][-]{subsection.7.1}{7.1 Type Changes and Special Characters}{section.7}% 41
+\BOOKMARK [2][-]{subsection.7.2}{7.2 Tables}{section.7}% 42
+\BOOKMARK [2][-]{subsection.7.3}{7.3 Figures}{section.7}% 43
+\BOOKMARK [2][-]{subsection.7.4}{7.4 Theorem-like Constructs}{section.7}% 44
+\BOOKMARK [1][-]{section.8}{8 Conclusions}{}% 45
+\BOOKMARK [1][-]{section.9}{9 Acknowledgments}{}% 46
+\BOOKMARK [1][-]{appendix.A}{A Headings in Appendices}{}% 47
+\BOOKMARK [2][-]{subsection.A.1}{A.1 Introduction}{appendix.A}% 48
+\BOOKMARK [2][-]{subsection.A.2}{A.2 The Body of the Paper}{appendix.A}% 49
+\BOOKMARK [3][-]{subsubsection.A.2.1}{A.2.1 Type Changes and Special Characters}{subsection.A.2}% 50
+\BOOKMARK [3][-]{subsubsection.A.2.2}{A.2.2 Math Equations}{subsection.A.2}% 51
+\BOOKMARK [3][-]{subsubsection.A.2.3}{A.2.3 Citations}{subsection.A.2}% 52
+\BOOKMARK [3][-]{subsubsection.A.2.4}{A.2.4 Tables}{subsection.A.2}% 53
+\BOOKMARK [3][-]{subsubsection.A.2.5}{A.2.5 Figures}{subsection.A.2}% 54
+\BOOKMARK [3][-]{subsubsection.A.2.6}{A.2.6 Theorem-like Constructs}{subsection.A.2}% 55
+\BOOKMARK [2][-]{subsection.A.3}{A.3 Conclusions}{appendix.A}% 56
+\BOOKMARK [2][-]{subsection.A.4}{A.4 Acknowledgments}{appendix.A}% 57
+\BOOKMARK [2][-]{subsection.A.5}{A.5 Additional Authors}{appendix.A}% 58
+\BOOKMARK [2][-]{subsection.A.6}{A.6 References}{appendix.A}% 59
+\BOOKMARK [1][-]{appendix.B}{B More Help for the Hardy}{}% 60

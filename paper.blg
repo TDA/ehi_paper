@@ -2,6 +2,8 @@ This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: paper.aux
 A level-1 auxiliary file: exp_setup.aux
+A level-1 auxiliary file: results.aux
+A level-1 auxiliary file: discussion.aux
 The style file: abbrv.bst
 Database file #1: biblio.bib
 Repeated entry---line 251 of file biblio.bib
@@ -11,46 +13,47 @@ I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "Lamport:LaTeX"
 Warning--I didn't find a database entry for "salas:calculus"
 Warning--empty journal in rfc1738
+Warning--empty journal in rfc5322
 Warning--empty journal in ShkapenyukTorstenSuel2001
-You've used 28 entries,
+You've used 31 entries,
             2118 wiz_defined-function locations,
-            644 strings with 7804 characters,
-and the built_in function-call counts, 7223 in all, are:
-= -- 700
-> -- 269
-< -- 5
-+ -- 113
-- -- 82
-* -- 330
-:= -- 1168
-add.period$ -- 85
-call.type$ -- 28
-change.case$ -- 124
+            660 strings with 8186 characters,
+and the built_in function-call counts, 8066 in all, are:
+= -- 780
+> -- 296
+< -- 6
++ -- 124
+- -- 90
+* -- 369
+:= -- 1298
+add.period$ -- 93
+call.type$ -- 31
+change.case$ -- 137
 chr.to.int$ -- 0
-cite$ -- 30
-duplicate$ -- 282
-empty$ -- 688
-format.name$ -- 82
-if$ -- 1586
+cite$ -- 34
+duplicate$ -- 322
+empty$ -- 768
+format.name$ -- 90
+if$ -- 1775
 int.to.chr$ -- 0
-int.to.str$ -- 28
-missing$ -- 11
-newline$ -- 140
-num.names$ -- 54
-pop$ -- 224
+int.to.str$ -- 31
+missing$ -- 13
+newline$ -- 154
+num.names$ -- 60
+pop$ -- 247
 preamble$ -- 1
-purify$ -- 98
+purify$ -- 108
 quote$ -- 0
-skip$ -- 241
+skip$ -- 277
 stack$ -- 0
-substring$ -- 289
-swap$ -- 63
-text.length$ -- 5
+substring$ -- 332
+swap$ -- 75
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 110
-warning$ -- 2
-while$ -- 69
-width$ -- 30
-write$ -- 286
+type$ -- 122
+warning$ -- 3
+while$ -- 77
+width$ -- 33
+write$ -- 314
 (There was 1 error message)
