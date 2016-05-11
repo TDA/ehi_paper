@@ -49,6 +49,10 @@ A.~Klein.
 D.~Kohler.
 \newblock {damonkohler.com: Email Injection}, 2008.
 
+\bibitem{McGrath2009}
+D.~McGrath.
+\newblock {HTTP requests optimization}, 2009.
+
 \bibitem{OWASPT10}
 OWASP.
 \newblock {OWASP Top Ten Project}, 2013.
@@ -65,11 +69,22 @@ Phishing.
 PHP-Manual.
 \newblock {PHP mail - Send mail}, 2016.
 
+\bibitem{captchas3}
+C.~Pope and K.~Kaur.
+\newblock Is it human or computer? defending e-commerce with captchas.
+\newblock {\em IT Professional}, 7(2):43--49, Mar 2005.
+
 \bibitem{sql2}
 A.~Sadeghian, M.~Zamani, and A.~A. Manaf.
 \newblock A taxonomy of sql injection detection and prevention techniques.
 \newblock In {\em Informatics and Creative Multimedia (ICICM), 2013
   International Conference on}, pages 53--56. IEEE, 2013.
+
+\bibitem{ShkapenyukTorstenSuel2001}
+V.~{Shkapenyuk Torsten Suel}.
+\newblock {Design and Implementation of a High-Performance Distributed Web
+  Crawler}.
+\newblock 2001.
 
 \bibitem{stuttard2011web}
 D.~Stuttard and M.~Pinto.
@@ -81,10 +96,48 @@ D.~Stuttard and M.~Pinto.
 Tobozo.
 \newblock {Mail headers injections with PHP}, 2004.
 
+\bibitem{captchas2}
+L.~von Ahn, M.~Blum, and J.~Langford.
+\newblock Telling humans and computers apart automatically.
+\newblock {\em Commun. ACM}, 47(2):56--60, Feb. 2004.
+
 \bibitem{W3techs}
 W3techs.
 \newblock {Usage Statistics and Market Share of PHP for Websites, February
   2016}, 2016.
+
+\bibitem{wiki:Black-box_testing}
+Wikipedia.
+\newblock {Black-box testing} --- {W}ikipedia{,} the free encyclopedia.
+\newblock
+  \url{http://en.wikipedia.org/w/index.php?title=Black-box%20testing&oldid=702083755},
+  2016.
+\newblock [Online; accessed 02-March-2016].
+
+\bibitem{wiki:Law_of_averages}
+Wikipedia.
+\newblock {Law of averages} --- {W}ikipedia{,} the free encyclopedia.
+\newblock
+  \url{http://en.wikipedia.org/w/index.php?title=Law%20of%20averages&oldid=706716293},
+  2016.
+\newblock [Online; accessed 08-March-2016].
+
+\bibitem{wiki:Law_of_large_numbers}
+Wikipedia.
+\newblock {Law of large numbers} --- {W}ikipedia{,} the free encyclopedia.
+\newblock
+  \url{http://en.wikipedia.org/w/index.php?title=Law%20of%20large%20numbers&oldid=706596753},
+  2016.
+\newblock [Online; accessed 08-March-2016].
+
+\bibitem{wiki:Regression_toward_the_mean}
+Wikipedia.
+\newblock {Regression toward the mean} --- {W}ikipedia{,} the free
+  encyclopedia.
+\newblock
+  \url{http://en.wikipedia.org/w/index.php?title=Regression%20toward%20the%20mean&oldid=703369877},
+  2016.
+\newblock [Online; accessed 08-March-2016].
 
 \bibitem{wiki:Spoofing_attack}
 Wikipedia.
