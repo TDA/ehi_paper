@@ -17,7 +17,7 @@ headers = FeedParser.close(f)
 # attack string => 'sai@sai.com\nBCC:spc@spc.com'
 # for form["email"]
 
-# both to:sai@sai.com AND bcc:spc@spc.com 
+# to:sai@sai.com AND bcc:spc@spc.com 
 # are added to the headers
 print 'To: %s' % headers['to']
 print 'BCC: %s' % headers['bcc']
