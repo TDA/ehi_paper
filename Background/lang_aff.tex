@@ -3,7 +3,7 @@
 This section describes the popular languages which exhibit this type of vulnerability. This section is not intended as a complete reference of vulnerable functions and methods, but rather as a guide that specifies which parts of the language are known to have the vulnerability.
 
 \begin{itemize}
-\item{\textbf{PHP}} - PHP was one of the first languages found to have this vulnerability in its implementation of the \texttt{mail()} function. The early finding of this vulnerability can be attributed in part to the success and popularity of the language for creating web pages. According to w3techs \cite{W3techs}, PHP is used by 81.9\% of all the websites in existence, thereby creating the possibility of this vulnerability to be widespread.
+\item{\textbf{PHP}} - PHP was one of the first languages found to have this vulnerability in its implementation of the \texttt{mail()} function at the time of release of PHP~4.0. The early finding of this vulnerability can be attributed in part to the success and popularity of the language for creating web pages. According to w3techs \cite{W3techs}, PHP is used by 81.9\% of all the websites in existence, thereby creating the possibility of this vulnerability to be widespread.
 
 After 13 further iterations of the language since the 4.0 release (the current version is 7.1), the \texttt{mail()} function is yet to be fixed after 15 years. However, it is specified in the PHP documentation \cite{PHPDocs} that the \texttt{mail()} function does not protect against this vulnerability.
 A working code sample of the vulnerability, written in PHP~5.6 (latest well-supported version), is shown in  Listing~\ref{code:phpemi}.
