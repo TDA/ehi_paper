@@ -40,12 +40,12 @@ PHP, Java, Python, and Ruby (combined) account for over 85\%\,\footnotemark{} of
     E-Mail Header Injection gives attackers the ability to inject arbitrary headers into an e-mail sent by a website and control the output of the e-mail. This adds credibility to the generated e-mail, as it is sent right from the websites and people are more ready to trust e-mail that is received from the website directly and can thus result in more successful phishing attacks.
 	
 	\item Spam Networks\\
-	Spam networks can use E-Mail Header Injection vulnerabilities on the ability to send a large amount of e-mail from servers that are trusted. By adding additional \dq{\texttt{cc}} or \dq{\texttt{bcc}} headers to the generated e-mail, attackers can easily achieve this effect. 
+	Spam networks can use E-Mail Header Injection vulnerabilities on the ability to send a large amount of e-mail from servers that are trusted. By adding additional \texttt{cc} or \texttt{bcc} headers to the generated e-mail, attackers can easily achieve this effect. 
 	
 	Due to the e-mails being from trusted domains, recipient e-mail clients might not flag them as spam. If they do flag them as spam, then that can lead to the website being blacklisted as a spam generator. 
 	
 	\item Information Extraction of legitimate users\\
-	E-Mails can contains sensitive data that is meant to be accessed only by the user. Due to E-Mail Header Injection, an attacker can easily add a \dq{\texttt{bcc}} header, and send the e-mail to himself, thereby extracting important information.
+	E-Mails can contains sensitive data that is meant to be accessed only by the user. Due to E-Mail Header Injection, an attacker can easily add a \texttt{bcc} header, and send the e-mail to himself, thereby extracting important information.
 	User privacy can thus be compromised, and loss of private information can by itself lead to other attacks.
 	
 	\item Denial of service by attacking the underlying mail server\\

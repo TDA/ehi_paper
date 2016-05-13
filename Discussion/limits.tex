@@ -10,7 +10,7 @@
 		Since this would add unnecessary bulk and complexity to our application, we chose not to do it, and thus, we consider this to be a limitation.
 		
 		\item Blogs powered by WordPress/Drupal\\
-        In addition to what was discussed in Section \ref{issues:cms}, we found that certain WordPress `plugins' also prevent the E-Mail Header Injection attack by sanitizing user input on Contact Forms. Some of these plugins are discussed in the following section. Although not all websites built with WordPress are secure from the attack, between the presence of the plugins on some websites, and getting tagged as `spambots' by others, we were able to do vulnerability analysis on very few sites powered by WordPress.
+        In addition to what was discussed in Section \ref{issues:cms}, we found that certain WordPress plugins also prevent the E-Mail Header Injection attack by sanitizing user input on Contact Forms. Some of these plugins are discussed in the following section. Although not all websites built with WordPress are secure from the attack, between the presence of the plugins on some websites, and getting tagged as `spambots' by others, we were able to do vulnerability analysis on very few sites powered by WordPress.
 		
 		\item Blacklisting by websites and ISPs\\
         During the actual crawl, our system was blacklisted by a few websites (mostly WordPress ones), and Internet Service Providers (ISPs). We then created a blacklist of our own to ensure that we did not inject these websites. The result was that we could not gather any data about these websites.
@@ -20,7 +20,7 @@
         A few other libraries for each language are discussed in the following section.
         
         \item Websites that are not in English\\
-        Because we are only searching for the words `e-mail', `mail' or `email' within the form, if the website does not use English names for its forms, our system will not be able to find the presence of an e-mail field. An example is shown in Listing~\ref{code:htmlfrench}. Here, the French word for `e-mail' --- courrier électronique --- is used, and our system is unable to find the presence of the e-mail form.
+        Because we are only searching for the words \texttt{e-mail}, \texttt{mail} or \texttt{email} within the form, if the website does not use English names for its forms, our system will not be able to find the presence of an e-mail field. An example is shown in Listing~\ref{code:htmlfrench}. Here, the French word for \texttt{e-mail} --- courrier électronique --- is used, and our system is unable to find the presence of the e-mail form.
 	\end{itemize}
 	
 \lstset{language=HTML,caption={HTML page with e-mail form, written in a different language - French.},label={code:htmlfrench}, literate=%
