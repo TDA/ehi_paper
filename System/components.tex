@@ -14,7 +14,7 @@ The actual pipeline begins at the Form Parser. This module is responsible for pa
 	\item Form attributes, such as method and action. These dictate where we send the HTTP request and what kind of request it is (GET or POST).
 	\item Data about the input fields, such as their attributes, names, and default values. The default values are essential for fields like \colorbox{lightgray}{\lstinline{<input type="hidden">}} as these fields are usually used to check for the submission of forms by bots.
 	\item Presence of the \colorbox{lightgray}{\lstinline{<base>}} element in the HTML, as this affects the final URL to which the form is to be submitted.
-	\item Headers associated with the page, such as \emph{referrer}. Once again, these were required to avoid the website from ignoring our system as a bot.
+	\item Headers associated with the page, such as \texttt{referrer}. Once again, these were required to avoid the website from ignoring our system as a bot.
 \end{itemize} 
 The Form Parser stores all this data in our database, so as to allow us to reconstruct the forms later for fuzzing, as required.
 
