@@ -1,0 +1,14 @@
+\subsection{Responsible Disclosure of Discovered Vulnerabilities}
+After we had discovered E-Mail Header Injection vulnerability on a particular website, we e-mailed the developers of these vulnerable websites disclosing the pages that contained the vulnerability, along with a brief description of the vulnerability.
+We chose to e-mail the following mailboxes, following the rules specified in RFC~2142~\cite{rfc2142}:
+\begin{itemize}
+	\item security@domain.com - Used for Security bulletins or queries.
+	\item admin@domain.com - Used to contact the administrator of a website.
+	\item webmaster@domain.com - Synonym for administrator, same functionality as admin.
+\end{itemize}
+
+Out of the \domains\ vulnerable domains found, only 108 websites had the mailboxes specified above set-up to receive e-mails. For the remaining domains, we used the \dq{\texttt{whois}}~\cite{whois} data to get the contact details of the owner, and then e-mailed them with the same disclosure data.
+
+We received 13 developer responses, confirming 9 discovered vulnerabilities. Two of the developers fixed the vulnerability on their website.
+
+From our research, it is clear that E-Mail Header Injection is quite widespread as a vulnerability, appearing on \successDelta\ of forms that we were able to perform automated attacks on. This value acts as a \dq{lower bound} for E-Mail Header Injection vulnerability, and can quite easily be much more if the attacks were of a more concentrated nature, crafted for the individual websites and less automated. We discuss this possibility, and other concepts such as limitations and methods for mitigation of the vulnerability in the following section.

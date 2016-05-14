@@ -14,14 +14,15 @@
 \BOOKMARK [3][-]{subsubsection.3.3.5}{3.3.5 Fuzzer}{subsection.3.3}% 14
 \BOOKMARK [3][-]{subsubsection.3.3.6}{3.3.6 Injection Verification}{subsection.3.3}% 15
 \BOOKMARK [1][-]{section.4}{4 Implementation}{}% 16
-\BOOKMARK [1][-]{section.5}{5 Results}{}% 17
+\BOOKMARK [1][-]{section.5}{5 Evaluation}{}% 17
 \BOOKMARK [2][-]{subsection.5.1}{5.1 Collected Data}{section.5}% 18
 \BOOKMARK [2][-]{subsection.5.2}{5.2 Fuzzed data}{section.5}% 19
-\BOOKMARK [2][-]{subsection.5.3}{5.3 Analysis of Data}{section.5}% 20
+\BOOKMARK [2][-]{subsection.5.3}{5.3 Analysis of the received e-mail data}{section.5}% 20
 \BOOKMARK [2][-]{subsection.5.4}{5.4 The Pipeline}{section.5}% 21
-\BOOKMARK [1][-]{section.6}{6 Discussion}{}% 22
-\BOOKMARK [2][-]{subsection.6.1}{6.1 Lessons Learned}{section.6}% 23
-\BOOKMARK [2][-]{subsection.6.2}{6.2 Limitations}{section.6}% 24
-\BOOKMARK [2][-]{subsection.6.3}{6.3 Mitigation Strategy}{section.6}% 25
-\BOOKMARK [1][-]{section.7}{7 Related Work}{}% 26
-\BOOKMARK [1][-]{section.8}{8 Conclusions}{}% 27
+\BOOKMARK [2][-]{subsection.5.5}{5.5 Responsible Disclosure of Discovered Vulnerabilities}{section.5}% 22
+\BOOKMARK [1][-]{section.6}{6 Discussion}{}% 23
+\BOOKMARK [2][-]{subsection.6.1}{6.1 Lessons Learned}{section.6}% 24
+\BOOKMARK [2][-]{subsection.6.2}{6.2 Limitations}{section.6}% 25
+\BOOKMARK [2][-]{subsection.6.3}{6.3 Mitigation Strategy}{section.6}% 26
+\BOOKMARK [1][-]{section.7}{7 Related Work}{}% 27
+\BOOKMARK [1][-]{section.8}{8 Conclusions}{}% 28

@@ -1,60 +1,55 @@
 This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: paper.aux
-A level-1 auxiliary file: exp_setup.aux
-A level-1 auxiliary file: results.aux
-A level-1 auxiliary file: discussion.aux
-A level-1 auxiliary file: rel_work.aux
 The style file: abbrv.bst
 Database file #1: biblio.bib
 Repeated entry---line 251 of file biblio.bib
  : @inproceedings{captchas2
  :                         ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "Lamport:LaTeX"
-Warning--I didn't find a database entry for "salas:calculus"
 Warning--empty journal in rfc1738
+Warning--empty journal in rfc2142
 Warning--empty journal in rfc5322
 Warning--empty journal in ShkapenyukTorstenSuel2001
-You've used 46 entries,
+You've used 42 entries,
             2118 wiz_defined-function locations,
-            741 strings with 10539 characters,
-and the built_in function-call counts, 12868 in all, are:
-= -- 1250
-> -- 503
+            713 strings with 9565 characters,
+and the built_in function-call counts, 11896 in all, are:
+= -- 1151
+> -- 469
 < -- 11
-+ -- 207
-- -- 158
-* -- 635
-:= -- 2052
-add.period$ -- 136
-call.type$ -- 46
-change.case$ -- 215
++ -- 193
+- -- 148
+* -- 594
+:= -- 1890
+add.period$ -- 120
+call.type$ -- 42
+change.case$ -- 198
 chr.to.int$ -- 0
-cite$ -- 49
-duplicate$ -- 526
-empty$ -- 1183
-format.name$ -- 158
-if$ -- 2838
+cite$ -- 46
+duplicate$ -- 497
+empty$ -- 1087
+format.name$ -- 148
+if$ -- 2622
 int.to.chr$ -- 0
-int.to.str$ -- 46
+int.to.str$ -- 42
 missing$ -- 23
-newline$ -- 223
-num.names$ -- 90
-pop$ -- 374
+newline$ -- 199
+num.names$ -- 82
+pop$ -- 345
 preamble$ -- 1
-purify$ -- 172
+purify$ -- 159
 quote$ -- 0
-skip$ -- 443
+skip$ -- 418
 stack$ -- 0
-substring$ -- 563
-swap$ -- 137
+substring$ -- 528
+swap$ -- 132
 text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 180
-warning$ -- 3
-while$ -- 121
-width$ -- 48
-write$ -- 466
+type$ -- 164
+warning$ -- 4
+while$ -- 112
+width$ -- 44
+write$ -- 416
 (There was 1 error message)

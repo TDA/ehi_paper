@@ -1,30 +1,29 @@
-\begin{table}[!htbp]
+\begin{table*}[!htbp]
 	\centering
-	\begin{tabular}{|c|l|c|}
+	\begin{tabular}{|l|c|}
 		\hline
-		\multicolumn{1}{|c|}{\textbf{S.No}} &
-		\multicolumn{1}{c|}{\textbf{Type of Injection}} &
+		\multicolumn{1}{|c|}{\textbf{Type of Injection}} &
 		\multicolumn{1}{p{3cm}|}{\centering \textbf{No. of e-mails received}}\\
 		\hline
-		1 & E-Mail Header Injections with \texttt{bcc} header & 265\\
+		E-Mail Header Injections with \texttt{bcc} header & 304\\
 		\hline
-		2 & E-Mail Header Injections with \texttt{x-check} header & 214\\
+		E-Mail Header Injections with \texttt{x-check} header & 252\\
 		\hline
-		3 & \texttt{To header} injections alone & 142\\
+		\texttt{To header} injections alone & 157\\
 		\hline
-		4 & E-Mail Header Injections with \texttt{bcc} and \texttt{x-check} headers & 188\\
+		E-Mail Header Injections with \texttt{bcc} and \texttt{x-check} headers & 216\\
 		\hline
-		5 & Both \texttt{To header} injections and x-check headers &
-		11\\
+		Both \texttt{To header} injections and x-check headers &
+		12\\
 		\hline
-		6 & \texttt{x-check} headers found in \texttt{nuser} e-mails & 56\\
+		\texttt{x-check} headers found in \texttt{nuser} e-mails & 67\\
 		\hline
-		7 & Unique \texttt{x-check} headers found in \texttt{nuser} e-mails & 26\\
+		Unique \texttt{x-check} headers found in \texttt{nuser} e-mails & 35\\
 		\hline
-		8 & Total successful injections (1 + 3 + 7) & 433\\
+		Total successful injections (1 + 3 + 7) & 496\\
 		
 		\hline
 	\end{tabular}
 	\caption[\titlecap{Analysis of the data}]{Classification of the e-mails that we received into broad categories of the vulnerability.}
 	\label{tab:analysis}
-\end{table}
+\end{table*}

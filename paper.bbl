@@ -32,9 +32,10 @@ S.~W. Boyd and A.~D. Keromytis.
 B.~Calin.
 \newblock {Email Header Injection Web Vulnerability - Acunetix}, 2013.
 
-\bibitem{Celery}
-Celery.
-\newblock {Celery Homepage}, 2016.
+\bibitem{rfc2142}
+D.~Crocker.
+\newblock {Internet Message Format - RFC 2142}.
+\newblock 1997.
 
 \bibitem{Doupe2012}
 A.~Doup{\'e}, L.~Cavedon, C.~Kruegel, and G.~Vigna.
@@ -70,6 +71,10 @@ Y.-W. Huang, S.-K. Huang, T.-P. Lin, and C.-H. Tsai.
   monitoring.
 \newblock In {\em Proceedings of the 12th International Conference on World
   Wide Web}, WWW '03, pages 148--159, New York, NY, USA, 2003. ACM.
+
+\bibitem{whois}
+ICANN.
+\newblock {ICANN WHOIS Data}, 2016.
 
 \bibitem{wiki:HTTP_headerinjection}
 H.~H. Injection.
@@ -148,12 +153,7 @@ PHP-Manual.
 \bibitem{Pope}
 A.~Pope.
 \newblock {Prevent Contact Form Spam Email Header Injection | Storm Consultancy
-  – Web Design Bath}, 2008.
-
-\bibitem{captchas3}
-C.~Pope and K.~Kaur.
-\newblock Is it human or computer? defending e-commerce with captchas.
-\newblock {\em IT Professional}, 7(2):43--49, Mar 2005.
+  \– Web Design Bath}, 2008.
 
 \bibitem{rfc5322}
 P.~W. Resnick.
@@ -180,7 +180,7 @@ D.~Stuttard and M.~Pinto.
 
 \bibitem{Tendencies2014}
 V.~Tendencies.
-\newblock {WordPress Plugin Vulnerability Dump – Part 2 | Vexatious
+\newblock {WordPress Plugin Vulnerability Dump \– Part 2 | Vexatious
   Tendencies}, 2014.
 
 \bibitem{Terada2015}
@@ -209,39 +209,6 @@ Wikipedia.
   \url{http://en.wikipedia.org/w/index.php?title=Black-box%20testing&oldid=702083755},
   2016.
 \newblock [Online; accessed 02-March-2016].
-
-\bibitem{wiki:Law_of_averages}
-Wikipedia.
-\newblock {Law of averages} --- {W}ikipedia{,} the free encyclopedia.
-\newblock
-  \url{http://en.wikipedia.org/w/index.php?title=Law%20of%20averages&oldid=706716293},
-  2016.
-\newblock [Online; accessed 08-March-2016].
-
-\bibitem{wiki:Law_of_large_numbers}
-Wikipedia.
-\newblock {Law of large numbers} --- {W}ikipedia{,} the free encyclopedia.
-\newblock
-  \url{http://en.wikipedia.org/w/index.php?title=Law%20of%20large%20numbers&oldid=706596753},
-  2016.
-\newblock [Online; accessed 08-March-2016].
-
-\bibitem{wiki:RabbitMQ}
-Wikipedia.
-\newblock {RabbitMQ} --- {W}ikipedia{,} the free encyclopedia.
-\newblock
-  \url{http://en.wikipedia.org/w/index.php?title=RabbitMQ&oldid=708777848},
-  2016.
-\newblock [Online; accessed 09-March-2016].
-
-\bibitem{wiki:Regression_toward_the_mean}
-Wikipedia.
-\newblock {Regression toward the mean} --- {W}ikipedia{,} the free
-  encyclopedia.
-\newblock
-  \url{http://en.wikipedia.org/w/index.php?title=Regression%20toward%20the%20mean&oldid=703369877},
-  2016.
-\newblock [Online; accessed 08-March-2016].
 
 \bibitem{wiki:Spoofing_attack}
 Wikipedia.
