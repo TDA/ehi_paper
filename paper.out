@@ -12,25 +12,22 @@
 \BOOKMARK [3][-]{subsubsection.3.3.3}{3.3.3 E-Mail Field Checker}{subsection.3.3}% 12
 \BOOKMARK [3][-]{subsubsection.3.3.4}{3.3.4 E-Mail Form Retriever}{subsection.3.3}% 13
 \BOOKMARK [3][-]{subsubsection.3.3.5}{3.3.5 Fuzzer}{subsection.3.3}% 14
-\BOOKMARK [3][-]{subsubsection.3.3.6}{3.3.6 E-Mail Analyzer}{subsection.3.3}% 15
-\BOOKMARK [3][-]{subsubsection.3.3.7}{3.3.7 Database}{subsection.3.3}% 16
-\BOOKMARK [2][-]{subsection.3.4}{3.4 Issues}{section.3}% 17
-\BOOKMARK [2][-]{subsection.3.5}{3.5 Assumptions}{section.3}% 18
-\BOOKMARK [1][-]{section.4}{4 Evaluation}{}% 19
-\BOOKMARK [2][-]{subsection.4.1}{4.1 System Configuration}{section.4}% 20
-\BOOKMARK [2][-]{subsection.4.2}{4.2 Platform}{section.4}% 21
-\BOOKMARK [2][-]{subsection.4.3}{4.3 Languages Used}{section.4}% 22
-\BOOKMARK [2][-]{subsection.4.4}{4.4 Celery Queues}{section.4}% 23
-\BOOKMARK [2][-]{subsection.4.5}{4.5 Test Suite}{section.4}% 24
-\BOOKMARK [2][-]{subsection.4.6}{4.6 Proof of Concept Attacks}{section.4}% 25
-\BOOKMARK [1][-]{section.5}{5 Results}{}% 26
-\BOOKMARK [2][-]{subsection.5.1}{5.1 Collected Data}{section.5}% 27
-\BOOKMARK [2][-]{subsection.5.2}{5.2 Fuzzed data}{section.5}% 28
-\BOOKMARK [2][-]{subsection.5.3}{5.3 Analysis of Data}{section.5}% 29
-\BOOKMARK [2][-]{subsection.5.4}{5.4 The Pipeline}{section.5}% 30
-\BOOKMARK [1][-]{section.6}{6 Discussion}{}% 31
-\BOOKMARK [2][-]{subsection.6.1}{6.1 Lessons Learned}{section.6}% 32
-\BOOKMARK [2][-]{subsection.6.2}{6.2 Limitations}{section.6}% 33
-\BOOKMARK [2][-]{subsection.6.3}{6.3 Mitigation Strategy}{section.6}% 34
-\BOOKMARK [1][-]{section.7}{7 Related Work}{}% 35
-\BOOKMARK [1][-]{section.8}{8 Conclusions}{}% 36
+\BOOKMARK [3][-]{subsubsection.3.3.6}{3.3.6 Injection Verification}{subsection.3.3}% 15
+\BOOKMARK [1][-]{section.4}{4 Evaluation}{}% 16
+\BOOKMARK [2][-]{subsection.4.1}{4.1 System Configuration}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.2}{4.2 Platform}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.3}{4.3 Languages Used}{section.4}% 19
+\BOOKMARK [2][-]{subsection.4.4}{4.4 Celery Queues}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.5}{4.5 Test Suite}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.6}{4.6 Proof of Concept Attacks}{section.4}% 22
+\BOOKMARK [1][-]{section.5}{5 Results}{}% 23
+\BOOKMARK [2][-]{subsection.5.1}{5.1 Collected Data}{section.5}% 24
+\BOOKMARK [2][-]{subsection.5.2}{5.2 Fuzzed data}{section.5}% 25
+\BOOKMARK [2][-]{subsection.5.3}{5.3 Analysis of Data}{section.5}% 26
+\BOOKMARK [2][-]{subsection.5.4}{5.4 The Pipeline}{section.5}% 27
+\BOOKMARK [1][-]{section.6}{6 Discussion}{}% 28
+\BOOKMARK [2][-]{subsection.6.1}{6.1 Lessons Learned}{section.6}% 29
+\BOOKMARK [2][-]{subsection.6.2}{6.2 Limitations}{section.6}% 30
+\BOOKMARK [2][-]{subsection.6.3}{6.3 Mitigation Strategy}{section.6}% 31
+\BOOKMARK [1][-]{section.7}{7 Related Work}{}% 32
+\BOOKMARK [1][-]{section.8}{8 Conclusions}{}% 33
