@@ -40,7 +40,7 @@ The E-Mail Form Retriever is the first stage in the Payload Injection Pipeline. 
 
 \subsubsection{Fuzzer}
 \label{Comp:Fuzzer}
-The Fuzzer is the heart of the system and is the only component that interacts directly with the external websites. The Fuzzer is split into smaller modules, each of which is responsible for a particular type of fuzzing.  We inject payloads in two different stages, to improve the efficiency, and reduce the total number of HTTP requests we generate. This is because making HTTP requests is an expensive process \cite{McGrath2009}, and can be a cause of bottlenecks in a Crawler-Fuzzer system \cite{ShkapenyukTorstenSuel2001}.
+The Fuzzer is the heart of the system and is the only component that interacts directly with the external websites. The Fuzzer is split into smaller modules, each of which is responsible for a particular type of fuzzing.  We inject payloads in two different stages, to improve the efficiency, and reduce the total number of HTTP requests we generate. This is because making HTTP requests is an expensive process~\cite{McGrath2009}, and can be a cause of bottlenecks in a Crawler-Fuzzer system~\cite{ShkapenyukTorstenSuel2001}.
 The two different types of payloads we use for fuzzing are:
 \paragraph{Non-Malicious Payload}
 \label{Comp:Fuzzer:nmp}
@@ -100,11 +100,11 @@ To find this, we read through each received e-mail, and check whether \emph{any}
 
 \paragraph{Analyzing e-mail with payloads}
 The `e-mails with payloads' refer to e-mails received by either the \colorbox{lightgray}{\lstinline{nuser(xxxx)@example.com}} or \colorbox{lightgray}{\lstinline{maluser(xxxx)@example.com}} accounts. These e-mails were received due to injecting the malicious payloads that were discussed in Section. \ref{Comp:Fuzzer:mp}. Analysis of these e-mails is considerably simpler than that of the regular e-mails. This is due to the fact that this involves lesser processing of the contents of the e-mail compared to the previous section.
-\paragraph{Detecting injected bcc headers}
+\paragraph{Detecting injected \texttt{bcc} headers}
 As discussed in the payloads section (\ref{Comp:Fuzzer:mp}), the payloads were crafted in such a way that the e-mails received by \texttt{maluser} account directly indicate the presence of the injected \texttt{bcc} field. Thus, we simply parse the E-Mails and store them in the Database.
 
 \label{analyze:detect_x_check}
-\paragraph{Detecting injected x-check headers}
+\paragraph{Detecting injected \texttt{x-check} headers}
 E-Mails not received by the \texttt{maluser} account but by the \texttt{nuser} account constitute a special category of e-mails.
 These e-mails could have been generated due to two reasons:
 \begin{enumerate}

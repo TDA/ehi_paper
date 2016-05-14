@@ -1,12 +1,12 @@
 \subsection{Celery Queues}
 \label{exp:Celery}
-We used a Celery task queue running on RabbitMQ to overcome the GIL. According to Celery Project Homepage \cite{Celery}:
+We used a Celery task queue running on RabbitMQ to overcome the GIL. According to Celery Project Homepage~\cite{Celery}:
 \begin{quotation}
 ``Celery is an asynchronous task queue/job queue based on distributed message passing.''
 \end{quotation}
 
 Simply put, Celery allows us to process multiple tasks in parallel by making use of what is known as a task queue. Celery instantiates multiple workers that listen to these queues and processes each task individually. This simulates pseudo-parallel processing to a certain degree, by allowing us to run multiple instances of the same program. It does this by using a message broker called RabbitMQ.
-According to RabbitMQ's Wikipedia page \cite{wiki:RabbitMQ},
+According to RabbitMQ's Wikipedia page~\cite{wiki:RabbitMQ},
 \begin{quotation}
 ``RabbitMQ is an open source message broker software that implements the Advanced Message Queuing Protocol (AMQP)''
 \end{quotation}
