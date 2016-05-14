@@ -58,11 +58,21 @@ The malicious payloads consist of 4 different payloads. Each of these payloads i
 \lstset{language=html}
 \begin{enumerate}
 	\item
-	%inside the lstinline, we need to use \\ for \textbackslash
-	\colorbox{lightgray}{\lstinline{nuser(xxxx)@example.com\\nbcc:maluser(xxxx)@example.com}} - This is the most minimal payload, it injects a `newline' character followed by the \texttt{bcc} field.
-	\item \colorbox{lightgray}{\lstinline{nuser(xxxx)@example.com\\r\\nbcc:maluser(xxxx)@example.com}} - This payload is added for purposes of cross-platform fuzzing: \texttt{\textbackslash{}r\textbackslash{}n} is the `Carriage Return - New Line (CRLF)' used on Windows systems. 
-	\item \colorbox{lightgray}{\lstinline{nuser(xxxx)@example.com\\nbcc:maluser(xxxx)@example.com\\nx-check:in}} - As discussed above, the addition of the \texttt{x-check:in} header is to inject Python based websites.
-	\item \colorbox{lightgray}{\lstinline{nuser(xxxx)@example.com\\r\\nbcc:maluser(xxxx)@example.com\\r\\nx-check:in}} - Same as the previous payload, but containing the additional \texttt{\textbackslash{}r} for Windows compatibility.
+	\texttt{nuser(xxxx)@example.com\textbackslash{}n\\bcc:maluser(xxxx)@example.com} 
+	
+	This is the most minimal payload, it injects a `newline' character followed by the \texttt{bcc} field.
+	
+	\item \texttt{nuser(xxxx)@example.com\textbackslash{}r\textbackslash{}n\\bcc:maluser(xxxx)@example.com}
+	
+	This payload is added for purposes of cross-platform fuzzing: \texttt{\textbackslash{}r\textbackslash{}n} is the `Carriage Return - New Line (CRLF)' used on Windows systems. 
+	
+	\item \texttt{nuser(xxxx)@example.com\textbackslash{}n\\bcc:maluser(xxxx)@example.com\textbackslash{}nx-check:in}
+	
+	As discussed above, the addition of the \texttt{x-check:in} header is to inject Python based websites.
+	
+	\item \texttt{nuser(xxxx)@example.com\textbackslash{}r\textbackslash{}n\\bcc:maluser(xxxx)@example.com\textbackslash{}r\textbackslash{}nx-check:in}
+	
+	Same as the previous payload, but containing the additional \texttt{\textbackslash{}r} for Windows compatibility.
 	
 \end{enumerate}
 The \texttt{xxxx} in all of the payloads is replaced by our internal \texttt{form\_id}, so as to create a one-to-one mapping of the payloads to the forms. The coverage provided by each payload is shown in Table~\ref{tab:payloadcov}.\\
@@ -94,6 +104,7 @@ Once the data (including the payload) for the form is ready, the Fuzzer construc
 \label{Comp:EMA}
 The Injection Verification module checks for the presence of injected data in the received e-mails. This module works on the e-mails received and stored by our Postfix server, and depending on the user who received the e-mail, it performs different functions.
 \paragraph{Analyzing regular e-mail}
+\sloppy
 `Regular e-mail' refers to the e-mails received by the \colorbox{lightgray}{\lstinline{reguser(xxxx)@example.com}} --- where \texttt{xxxx} is our internal \texttt{form\_id} --- that were sent due to injecting the `regular or non-malicious' payload (discussed in Section~\ref{Comp:Fuzzer:nmp}). The objective of the analysis on this e-mail is identify if the input fields that we injected with data appear on the resulting e-mail, and if so, which fields appear where.
 
 To find this, we read through each received e-mail, and check whether \emph{any} of the fields we injected with data appear as part of either the headers or the body of the e-mail. If they do, we add them to the list of fields that can potentially result in an E-Mail Header Injection for the given e-mail. we then pass on this information back to the Fuzzer pipeline, along with the \texttt{form\_id}, so that the Fuzzer can now inject the malicious payloads into the same form.
