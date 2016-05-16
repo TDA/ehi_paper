@@ -152,7 +152,13 @@ PHP-Manual.
 
 \bibitem{Pope}
 A.~Pope.
-\newblock {Prevent Contact Form Spam Email Header Injection | Storm Consultancy Web Design Bath}, 2008.
+\newblock {Prevent Contact Form Spam Email Header Injection | Storm Consultancy
+  – Web Design Bath}, 2008.
+
+\bibitem{captchas3}
+C.~Pope and K.~Kaur.
+\newblock Is it human or computer? defending e-commerce with captchas.
+\newblock {\em IT Professional}, 7(2):43--49, Mar 2005.
 
 \bibitem{rfc5322}
 P.~W. Resnick.
@@ -179,8 +185,8 @@ D.~Stuttard and M.~Pinto.
 
 \bibitem{Tendencies2014}
 V.~Tendencies.
-\newblock {WordPress Plugin Vulnerability Dump Part 2 | Vexatious
-  Tendencies}, 2014.
+\newblock {WordPress Plugin Vulnerability Dump Part 2 | Vexatious Tendencies},
+  2014.
 
 \bibitem{Terada2015}
 T.~Terada.
@@ -208,6 +214,31 @@ Wikipedia.
   \url{http://en.wikipedia.org/w/index.php?title=Black-box%20testing&oldid=702083755},
   2016.
 \newblock [Online; accessed 02-March-2016].
+
+\bibitem{wiki:Law_of_averages}
+Wikipedia.
+\newblock {Law of averages} --- {W}ikipedia{,} the free encyclopedia.
+\newblock
+  \url{http://en.wikipedia.org/w/index.php?title=Law%20of%20averages&oldid=706716293},
+  2016.
+\newblock [Online; accessed 08-March-2016].
+
+\bibitem{wiki:Law_of_large_numbers}
+Wikipedia.
+\newblock {Law of large numbers} --- {W}ikipedia{,} the free encyclopedia.
+\newblock
+  \url{http://en.wikipedia.org/w/index.php?title=Law%20of%20large%20numbers&oldid=706596753},
+  2016.
+\newblock [Online; accessed 08-March-2016].
+
+\bibitem{wiki:Regression_toward_the_mean}
+Wikipedia.
+\newblock {Regression toward the mean} --- {W}ikipedia{,} the free
+  encyclopedia.
+\newblock
+  \url{http://en.wikipedia.org/w/index.php?title=Regression%20toward%20the%20mean&oldid=703369877},
+  2016.
+\newblock [Online; accessed 08-March-2016].
 
 \bibitem{wiki:Spoofing_attack}
 Wikipedia.

@@ -1,19 +1,28 @@
 \subsection[Limitations]{Limitations of the Project}
 \label{limitations}
-	This section complements Section \ref{sys:issues}, and discusses the limitations of our project. The following list, although not exhaustive, goes into the limitations of our project in detail: 
+	This section discusses the limitations of our project. The following list, although not exhaustive, goes into some of them in detail: 
 	\begin{itemize}
-		\item CAPTCHAs - As noted in section \ref*{issues:captcha}, CAPTCHAs pose a significant problem to our automated system. As CAPTCHAs are designed to be robust, there is no easy way to break them. There has been considerable research in this area~\cite{captchas2}, \cite{captchas} to name a few and although not impossible to break, it remains out of the scope of this project, and thus, we chose to ignore websites which require CAPTCHA verification.
-		\item JavaScript Apps - Due to the growing emphasis on responsive web applications, more and more single-page web applications are being built purely with JavaScript. Even conventional applications are now making use of JavaScript to dynamically insert content and update the pages. This means that these dynamically injected components are not a part of the initial source code that is sent to the client by the web server.
+		\item Bot Blockers and CAPTCHAs\\
+		Because our system is fully automated, it is also susceptible to being stopped by `bot-blockers' i.e.\ mechanisms built-in to a website to prevent automated crawls or form submissions. Measures like CAPTCHA (Completely Automated Public Turing test to tell Computers and Humans Apart) and hidden form fields are often used to detect bots~\cite{captchas3}, \cite{captchas2}.
 		
-		Thus, our system never receives dynamically injected forms from the web server and hence is unable to detect whether these vulnerabilities are present in such forms. The only workaround would be, to use a JavaScript engine to query for the \lstinline|document.getElementsByTagName('html')[0].innerHTML| (from inside web browser automation tools like Selenium, etc.), and then use that as the source code for our URL.
+		We have made sure that we do not affect hidden fields in the form, however, despite considerable research in breaking CAPTCHAs~\cite{captchas2}, \cite{captchas} and although not impossible to break, breaking CAPTCHAs remains out of the scope of this project, and thus, we chose to ignore websites which require CAPTCHA verification.
+		
+		\item JavaScript Apps - Due to the growing emphasis on responsive web applications, more and more single-page web applications are being built purely with JavaScript. Even conventional applications are now making use of JavaScript to dynamically insert content and update the pages. This means that these dynamically injected components are not a part of the initial source code that is sent to the client by the server.
+		
+		Thus, our system never receives dynamically injected forms from the server and hence is unable to detect whether these vulnerabilities are present in such forms. The only workaround would be, to use a JavaScript engine to query for the \texttt{document.getElementsByTagName('html')[0].innerHTML} (from inside web browser automation tools like Selenium, etc.), and then use that as the source code for our URL.
 		
 		Since this would add unnecessary bulk and complexity to our application, we chose not to do it, and thus, we consider this to be a limitation.
 		
-		\item Blogs powered by WordPress/Drupal\\
-        In addition to what was discussed in Section \ref{issues:cms}, we found that certain WordPress plugins also prevent the E-Mail Header Injection attack by sanitizing user input on Contact Forms. Some of these plugins are discussed in the following section. Although not all websites built with WordPress are secure from the attack, between the presence of the plugins on some websites, and getting tagged as `spambots' by others, we were able to do vulnerability analysis on very few sites powered by WordPress.
-		
 		\item Blacklisting by websites and ISPs\\
-        During the actual crawl, our system was blacklisted by a few websites (mostly WordPress ones), and Internet Service Providers (ISPs). We then created a blacklist of our own to ensure that we did not inject these websites. The result was that we could not gather any data about these websites.
+		During the actual crawl, our system was blacklisted by a few websites (mostly WordPress ones), and Internet Service Providers (ISPs).
+		To overcome this, we did two things:
+		\begin{enumerate}
+			\item Used an IP range of 60 different IP addresses. 
+			\item Used a blacklist of our own to prevent our Fuzzer from fuzzing websites that are known to blacklist automated crawlers.  The result was that we could not gather any data about these websites.
+		\end{enumerate}
+		
+		\item Blogs powered by WordPress/Drupal\\
+		We found that certain WordPress plugins prevent the E-Mail Header Injection attack by sanitizing user input on contact forms. Some of these plugins are discussed in the following section. Although not all websites built with WordPress are secure from the attack, between the presence of the plugins on some websites, and getting tagged as `spambots' by others, we were able to do vulnerability analysis on few sites powered by WordPress.		
 		
 		\item E-Mail libraries\\
         E-Mail libraries like the PHP Extension and Application Repository's (PEAR) mail library provide sanitization checks for user input. While this is technically not a limitation of our project, it still makes it such that we are not able to inject these sites successfully.
@@ -21,6 +30,29 @@
         
         \item Websites that are not in English\\
         Because we are only searching for the words \texttt{e-mail}, \texttt{mail} or \texttt{email} within the form, if the website does not use English names for its forms, our system will not be able to find the presence of an e-mail field. An example is shown in Listing~\ref{code:htmlfrench}. Here, the French word for \texttt{e-mail} --- courrier électronique --- is used, and our system is unable to find the presence of the e-mail form.
+        
+        \item Handling Malformed HTML\\
+        The parser that we use for HTML parsing --- Beautiful Soup --- does not try to parse malformed HTML, and throws an exception on encountering malformed content. Thus, we have designed the system to exit gracefully on such occasions. A side-effect of this is that our system is unable to parse websites with bad markup\,\footnotemark.
+        
+        \footnotetext{We do not have any data about whether bad markup indicates an overall lower quality of the website, and thus cannot comment on whether such websites are more likely to have vulnerabilities, although the author strongly suspects that that might be the case.}
+        
+        
+        \item Black-box Testing\\
+        The approach that we have selected --- Black-box testing --- is highly beneficial as explained in Section \ref{sys:appr}. However, it also has a drawback in that we cannot verify whether the reported vulnerability exists in the source code or is a feature of the website (e.g., the website allows users to send bulk e-mail, adding as many \texttt{cc} or \texttt{bcc} headers). We have to manually e-mail the developers to get this feedback.
+        
+       	\item \label{issues:fpr}False Positive rate for the E-Mail Field Checker\\
+       	As discussed in Section \ref{Comp:EMFC}, we only search for the words \texttt{email}, \texttt{mail} or \texttt{e-mail} (case insensitive) inside the forms to detect the presence of e-mail fields, instead of searching for an \colorbox{lightgray}{\lstinline{<input type = email>}}. This might result in a false positive in certain forms, like the one shown in Listing. \ref{code:false_positive}.
+       	
+       	\lstset{language=HTML,caption={E-Mail field checker - false positives, the system\\incorrectly classifies this as an e-mail form.},label={code:false_positive}}
+       	\begin{lstlisting}
+       	<form method="post">
+       	E-Mail us if you have any questions!!
+       	<input type="text" name="query"><br>
+       	<input type="submit" value="Search">
+       	</form>
+       	\end{lstlisting}
+       	
+       	The word \texttt{E-Mail} on Line 2 will result in our system classifying this form as a potential e-mail form, while it clearly is not. However, as we will see, this is not really a significant issue, as despite being added to the \texttt{email\_forms} table, this form will never be injected in the `fuzzer' due to the absence of the appropriate input field in the form. We chose to go with this design, as it allows us to detect almost every form that provides the capability to send or receive e-mail.
 	\end{itemize}
 	
 \lstset{language=HTML,caption={HTML page with e-mail form, written in a different language - French.},label={code:htmlfrench}, literate=%
