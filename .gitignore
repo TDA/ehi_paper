@@ -1,0 +1,16 @@
+Thumbs.db
+*-blx.bib
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.log
+*.run.xml
+*.synctex.gz
+*.toc
+*.def
+*.dvi
+paper.pdf
+*.bak
+*.bat
+*.out
