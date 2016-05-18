@@ -7,45 +7,45 @@ Warning--empty journal in rfc1738
 Warning--empty journal in rfc2142
 Warning--empty journal in rfc5322
 Warning--empty journal in ShkapenyukTorstenSuel2001
-You've used 46 entries,
+You've used 45 entries,
             2118 wiz_defined-function locations,
-            731 strings with 10193 characters,
-and the built_in function-call counts, 13030 in all, are:
-= -- 1260
-> -- 525
+            726 strings with 9974 characters,
+and the built_in function-call counts, 12813 in all, are:
+= -- 1238
+> -- 518
 < -- 11
-+ -- 215
-- -- 166
-* -- 668
-:= -- 2086
-add.period$ -- 133
-call.type$ -- 46
-change.case$ -- 218
++ -- 212
+- -- 164
+* -- 662
+:= -- 2049
+add.period$ -- 129
+call.type$ -- 45
+change.case$ -- 214
 chr.to.int$ -- 0
-cite$ -- 50
-duplicate$ -- 538
-empty$ -- 1179
-format.name$ -- 166
-if$ -- 2857
+cite$ -- 49
+duplicate$ -- 531
+empty$ -- 1157
+format.name$ -- 164
+if$ -- 2809
 int.to.chr$ -- 0
-int.to.str$ -- 46
+int.to.str$ -- 45
 missing$ -- 27
-newline$ -- 220
-num.names$ -- 90
-pop$ -- 370
+newline$ -- 214
+num.names$ -- 88
+pop$ -- 362
 preamble$ -- 1
-purify$ -- 176
+purify$ -- 173
 quote$ -- 0
-skip$ -- 446
+skip$ -- 440
 stack$ -- 0
-substring$ -- 576
-swap$ -- 136
+substring$ -- 571
+swap$ -- 135
 text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 178
+type$ -- 174
 warning$ -- 4
-while$ -- 123
-width$ -- 48
-write$ -- 460
+while$ -- 121
+width$ -- 47
+write$ -- 448
 (There were 4 warnings)
