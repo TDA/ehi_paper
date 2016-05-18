@@ -54,6 +54,11 @@ A.~Doup{\'e}, M.~Cova, and G.~Vigna.
 \bibitem{Injection}
 2010.
 
+\bibitem{spoofing_attack}
+E.~W. Felten, D.~Balfanz, D.~Dean, and D.~S. Wallach.
+\newblock Web spoofing: An internet con game.
+\newblock {\em Software World}, 28(2):6--8, 1997.
+
 \bibitem{sql0}
 W.~G. Halfond, J.~Viegas, and A.~Orso.
 \newblock A classification of sql-injection attacks and countermeasures.
@@ -87,6 +92,12 @@ H.~H. Injection.
 \bibitem{InternetLiveStats2016}
 {Internet Live Stats}.
 \newblock {Total Number of Websites}, 2016.
+
+\bibitem{phishing}
+M.~Jakobsson and S.~Myers.
+\newblock {\em Phishing and countermeasures: understanding the increasing
+  problem of electronic identity theft}.
+\newblock John Wiley \& Sons, 2006.
 
 \bibitem{Injection1}
 T.~Jim, N.~Swamy, and M.~Hicks.
@@ -137,14 +148,6 @@ P.~Payet, A.~Doup\'e, C.~Kruegel, and G.~Vigna.
   Vulnerabilities}.
 \newblock In {\em Proceedings of the ACM Symposium on Applied Computing (SAC)},
   Coimbra, Portugal, March 2013.
-
-\bibitem{wiki:Phishing}
-Phishing.
-\newblock {Phishing} --- {W}ikipedia{,} the free encyclopedia.
-\newblock
-  \url{http://en.wikipedia.org/w/index.php?title=Phishing&oldid=706223617},
-  2016.
-\newblock [Online; accessed 27-February-2016].
 
 \bibitem{PHPDocs}
 PHP-Manual.
@@ -239,14 +242,6 @@ Wikipedia.
   \url{http://en.wikipedia.org/w/index.php?title=Regression%20toward%20the%20mean&oldid=703369877},
   2016.
 \newblock [Online; accessed 08-March-2016].
-
-\bibitem{wiki:Spoofing_attack}
-Wikipedia.
-\newblock {Spoofing attack} --- {W}ikipedia{,} the free encyclopedia.
-\newblock
-  \url{http://en.wikipedia.org/w/index.php?title=Spoofing%20attack&oldid=711407565},
-  2016.
-\newblock [Online; accessed 23-April-2016].
 
 \bibitem{captchas}
 J.~Yan and A.~S.~E. Ahmad.

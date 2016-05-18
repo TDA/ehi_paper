@@ -3,53 +3,49 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: paper.aux
 The style file: abbrv.bst
 Database file #1: biblio.bib
-Repeated entry---line 251 of file biblio.bib
- : @inproceedings{captchas2
- :                         ,
-I'm skipping whatever remains of this entry
 Warning--empty journal in rfc1738
 Warning--empty journal in rfc2142
 Warning--empty journal in rfc5322
 Warning--empty journal in ShkapenyukTorstenSuel2001
 You've used 46 entries,
             2118 wiz_defined-function locations,
-            733 strings with 10321 characters,
-and the built_in function-call counts, 12854 in all, are:
-= -- 1247
-> -- 503
+            731 strings with 10193 characters,
+and the built_in function-call counts, 13030 in all, are:
+= -- 1260
+> -- 525
 < -- 11
-+ -- 207
-- -- 158
-* -- 637
-:= -- 2053
-add.period$ -- 135
++ -- 215
+- -- 166
+* -- 668
+:= -- 2086
+add.period$ -- 133
 call.type$ -- 46
-change.case$ -- 215
+change.case$ -- 218
 chr.to.int$ -- 0
 cite$ -- 50
-duplicate$ -- 529
-empty$ -- 1178
-format.name$ -- 158
-if$ -- 2830
+duplicate$ -- 538
+empty$ -- 1179
+format.name$ -- 166
+if$ -- 2857
 int.to.chr$ -- 0
 int.to.str$ -- 46
-missing$ -- 24
-newline$ -- 222
+missing$ -- 27
+newline$ -- 220
 num.names$ -- 90
-pop$ -- 372
+pop$ -- 370
 preamble$ -- 1
-purify$ -- 172
+purify$ -- 176
 quote$ -- 0
-skip$ -- 444
+skip$ -- 446
 stack$ -- 0
-substring$ -- 563
+substring$ -- 576
 swap$ -- 136
 text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 180
+type$ -- 178
 warning$ -- 4
-while$ -- 121
+while$ -- 123
 width$ -- 48
-write$ -- 463
-(There was 1 error message)
+write$ -- 460
+(There were 4 warnings)
