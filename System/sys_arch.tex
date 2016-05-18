@@ -3,14 +3,14 @@
 The black-box testing system can be divided broadly into two modules; Data Gathering and Payload Injection.
 \begin{enumerate}
 	\item Data Gathering\\
-	The Data Gathering module (shown in Figure~\ref{fig:crawler}) is primarily responsible for the following activities:
+	The Data Gathering module is primarily responsible for the following activities:
 	\begin{itemize}
 		\item Interface with the Crawler (Section \ref{Comp:Crawler}) and receive the URLs.
 		\item Parse the HTML for the corresponding URL and store the relevant form data (Section \ref{Comp:FP}).
 		\item Check for the presence of forms that allow the user to send/receive e-mail, and store references to these forms (Section \ref{Comp:EMFC}).
 	\end{itemize} 
 	\item Payload Injection\\
-	The Payload Injection module (shown in Figure~\ref{fig:fuzzer}) is primarily responsible for the following activities:
+	The Payload Injection module is primarily responsible for the following activities:
 	\begin{itemize}
 		\item Retrieve the forms that allow users of a website to send/receive e-mail and reconstruct these forms (Section \ref{Comp:EMFR}).
 		\item Inject these forms with benign data (non-malicious payloads) and generate an HTTP request to the corresponding URL (Section \ref{Comp:Fuzzer:nmp}).
