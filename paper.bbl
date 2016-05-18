@@ -22,6 +22,11 @@ T.~Berners-Lee, L.~Masinter, and M.~McCahill.
 BestWebSoft.
 \newblock {Contact Form by BestWebSoft — WordPress Plugins}, 2016.
 
+\bibitem{wiki:Regression_toward_the_mean}
+J.~M. Bland and D.~G. Altman.
+\newblock Statistic notes: Regression towards the mean.
+\newblock {\em BMJ}, 308(6942):1499, 1994.
+
 \bibitem{sql1}
 S.~W. Boyd and A.~D. Keromytis.
 \newblock Sqlrand: Preventing sql injection attacks.
@@ -51,13 +56,15 @@ A.~Doup{\'e}, M.~Cova, and G.~Vigna.
 \newblock In {\em Detection of Intrusions and Malware, and Vulnerability
   Assessment}, pages 111--131. Springer, 2010.
 
-\bibitem{Injection}
-2010.
-
 \bibitem{spoofing_attack}
 E.~W. Felten, D.~Balfanz, D.~Dean, and D.~S. Wallach.
 \newblock Web spoofing: An internet con game.
 \newblock {\em Software World}, 28(2):6--8, 1997.
+
+\bibitem{wiki:Law_of_large_numbers}
+G.~Grimmett and D.~Stirzaker.
+\newblock {\em Probability and random processes}.
+\newblock Oxford university press, 2001.
 
 \bibitem{sql0}
 W.~G. Halfond, J.~Viegas, and A.~Orso.
@@ -163,6 +170,11 @@ C.~Pope and K.~Kaur.
 \newblock Is it human or computer? defending e-commerce with captchas.
 \newblock {\em IT Professional}, 7(2):43--49, Mar 2005.
 
+\bibitem{wiki:Law_of_averages}
+D.~G. Rees.
+\newblock {\em Essential statistics}, volume~50.
+\newblock CRC Press, 2000.
+
 \bibitem{rfc5322}
 P.~W. Resnick.
 \newblock {Internet Message Format - RFC 5322}.
@@ -173,6 +185,9 @@ A.~Sadeghian, M.~Zamani, and A.~A. Manaf.
 \newblock A taxonomy of sql injection detection and prevention techniques.
 \newblock In {\em Informatics and Creative Multimedia (ICICM), 2013
   International Conference on}, pages 53--56. IEEE, 2013.
+
+\bibitem{Injection}
+{Email Injection - Secure PHP Wiki}, 2010.
 
 \bibitem{ShkapenyukTorstenSuel2001}
 V.~{Shkapenyuk Torsten Suel}.
@@ -209,31 +224,6 @@ L.~von Ahn, M.~Blum, and J.~Langford.
 W3techs.
 \newblock {Usage Statistics and Market Share of PHP for Websites, February
   2016}, 2016.
-
-\bibitem{wiki:Law_of_averages}
-Wikipedia.
-\newblock {Law of averages} --- {W}ikipedia{,} the free encyclopedia.
-\newblock
-  \url{http://en.wikipedia.org/w/index.php?title=Law%20of%20averages&oldid=706716293},
-  2016.
-\newblock [Online; accessed 08-March-2016].
-
-\bibitem{wiki:Law_of_large_numbers}
-Wikipedia.
-\newblock {Law of large numbers} --- {W}ikipedia{,} the free encyclopedia.
-\newblock
-  \url{http://en.wikipedia.org/w/index.php?title=Law%20of%20large%20numbers&oldid=706596753},
-  2016.
-\newblock [Online; accessed 08-March-2016].
-
-\bibitem{wiki:Regression_toward_the_mean}
-Wikipedia.
-\newblock {Regression toward the mean} --- {W}ikipedia{,} the free
-  encyclopedia.
-\newblock
-  \url{http://en.wikipedia.org/w/index.php?title=Regression%20toward%20the%20mean&oldid=703369877},
-  2016.
-\newblock [Online; accessed 08-March-2016].
 
 \bibitem{captchas}
 J.~Yan and A.~S.~E. Ahmad.
