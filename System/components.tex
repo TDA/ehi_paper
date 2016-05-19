@@ -24,7 +24,7 @@ The E-Mail Field Checker script is the final stage in the Data Gathering pipelin
 
 The E-Mail Field Checker searches for the words \texttt{e-mail}, \texttt{mail} or \texttt{email} within the form, instead of an explicit e-mail field (e.g.,\ \colorbox{lightgray}{\lstinline{<input type="email">}}). This is by design, taking into account a very common design pattern used by web developers, where they may have a text field with an \texttt{id} or \texttt{name} set to \texttt{email}, instead of an actual e-mail field, for purposes of backward compatibility with older browsers.
 
-Compared to searching for explicit e-mail fields, by searching for the presence of the words \texttt{e-mail}, \texttt{mail} or \texttt{email} in the form, we are assured very few false negatives. This is because our system is bound to find e-mail fields with their \texttt{type}, \texttt{name}, or \texttt{id} set to one of these words. The system is also substantially faster as we do not have to parse the individual form fields at this point in the pipeline. However, despite the advantages, this might also lead to a false positive rate. We discuss this possibility in detail in Section \ref*{issues:fpr} - Design Issues. 
+Compared to searching for explicit e-mail fields, by searching for the presence of the words \texttt{e-mail}, \texttt{mail} or \texttt{email} in the form, we are assured very few false negatives. This is because our system is bound to find e-mail fields with their \texttt{type}, \texttt{name}, or \texttt{id} set to one of these words. The system is also substantially faster as we do not have to parse the individual form fields at this point in the pipeline. However, despite the advantages, this might also lead to a false positive rate. We discuss this possibility in detail in Section~\ref*{issues:fpr} - Design Issues.
 
 The output of this stage is stored in the database for persistence and acts as the input to the `Payload Injection' pipeline.
 
@@ -45,7 +45,7 @@ The two different types of payloads we use for fuzzing are:
 \paragraph{Non-Malicious Payload}
 \label{Comp:Fuzzer:nmp}
 The regular or non-malicious payload is a straight forward E-Mail address of the format -- \texttt{reguser(xxxx)@example.com}, where \texttt{xxxx} is replaced by our internal \texttt{form\_id}, to create a one-to-one mapping of the payloads to the forms, and \texttt{example.com} is replaced by the required domain.
-This non-malicious payload allows us to check whether we can inject data into a form and whether we can overcome the `anti-bot' measures on the given website, without attempting to fuzz the website. 
+This non-malicious payload allows us to check whether we can inject data into a form and whether we can overcome the `anti-bot' measures on the given website, without attempting to fuzz the website.
 
 \paragraph{Malicious Payload}
 \label{Comp:Fuzzer:mp}
@@ -110,9 +110,9 @@ The Injection Verification module checks for the presence of injected data in th
 To find this, we read through each received e-mail, and check whether \emph{any} of the fields we injected with data appear as part of either the headers or the body of the e-mail. If they do, we add them to the list of fields that can potentially result in an E-Mail Header Injection for the given e-mail. we then pass on this information back to the Fuzzer pipeline, along with the \texttt{form\_id}, so that the Fuzzer can now inject the malicious payloads into the same form.
 
 \paragraph{Analyzing e-mail with payloads}
-The `e-mails with payloads' refer to e-mails received by either the \colorbox{lightgray}{\lstinline{nuser(xxxx)@example.com}} or \colorbox{lightgray}{\lstinline{maluser(xxxx)@example.com}} accounts. These e-mails were received due to injecting the malicious payloads that were discussed in Section. \ref{Comp:Fuzzer:mp}. Analysis of these e-mails is considerably simpler than that of the regular e-mails. This is due to the fact that this involves lesser processing of the contents of the e-mail compared to the previous section.
+The `e-mails with payloads' refer to e-mails received by either the \colorbox{lightgray}{\lstinline{nuser(xxxx)@example.com}} or \colorbox{lightgray}{\lstinline{maluser(xxxx)@example.com}} accounts. These e-mails were received due to injecting the malicious payloads that were discussed in Section~\ref{Comp:Fuzzer:mp}. Analysis of these e-mails is considerably simpler than that of the regular e-mails. This is due to the fact that this involves lesser processing of the contents of the e-mail compared to the previous section.
 \paragraph{Detecting injected \texttt{bcc} headers}
-As discussed in the payloads section (\ref{Comp:Fuzzer:mp}), the payloads were crafted in such a way that the e-mails received by \texttt{maluser} account directly indicate the presence of the injected \texttt{bcc} field. Thus, we simply parse the E-Mails and store them in the Database.
+As discussed in the payloads section~(\ref{Comp:Fuzzer:mp}), the payloads were crafted in such a way that the e-mails received by \texttt{maluser} account directly indicate the presence of the injected \texttt{bcc} field. Thus, we simply parse the E-Mails and store them in the Database.
 
 \label{analyze:detect_x_check}
 \paragraph{Detecting injected \texttt{x-check} headers}
@@ -120,5 +120,5 @@ E-Mails not received by the \texttt{maluser} account but by the \texttt{nuser} a
 These e-mails could have been generated due to two reasons:
 \begin{enumerate}
 	\item The websites performed some sanitization routines and stripped out the \texttt{bcc} part of the payload, thereby sending e-mails only to the \texttt{nuser} account. These e-mails then act as proof that the vulnerability was not found on the given website.
-	\item A more conducive scenario is when the \texttt{bcc} header was ignored for some reason, e.g.\ Python's default behavior when it encounters duplicate headers. In this case, we check whether the e-mail contains the custom header \texttt{x-check}. If it does, then this is a successful exploit of the vulnerability, and we store it in the database.
+	\item A more conducive scenario is when the \texttt{bcc} header was ignored for some reason, e.g.,\ Python's default behavior when it encounters duplicate headers. In this case, we check whether the e-mail contains the custom header \texttt{x-check}. If it does, then this is a successful exploit of the vulnerability, and we store it in the database.
 \end{enumerate}

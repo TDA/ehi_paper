@@ -9,7 +9,7 @@ In addition to the limitations that were already discussed, we made certain assu
 	
 	It is unrealistic because Crawlers work on the concept of proximity. They detect for the presence of In-Links and Out-Links from a particular URL, and hence the returned URLs are usually related to each other (at least the ones that are returned adjacent to each other).
 	
-	However, this assumption is reasonable due to the `Law of averages' \cite{wiki:Law_of_averages}, the `Law of big numbers' \cite{wiki:Law_of_large_numbers}, and the concept of `Regression to the mean' \cite{wiki:Regression_toward_the_mean}. Simply stated, a crawl of this large magnitude should give us a very distributed sample of the overall Web, eventually converging to the average of all websites in existence.
+	However, this assumption is reasonable due to the `Law of averages'~\cite{wiki:Law_of_averages}, the `Law of big numbers'~\cite{wiki:Law_of_large_numbers}, and the concept of `Regression to the mean'~\cite{wiki:Regression_toward_the_mean}. Simply stated, a crawl of this large magnitude should give us a very distributed sample of the overall Web, eventually converging to the average of all websites in existence.
 	
 	\item \textbf{Injection of \texttt{bcc} indicates the existence of E-Mail Header Injection Vulnerability} \\
 	We assume that the ability to inject a \texttt{bcc} header field is proof that the E-Mail Header Injection vulnerability exists in the application. We do not inject any additional payloads that can modify the subject, message body, etc.\ as this analysis is designed to be as benign as possible.
