@@ -10,3 +10,4 @@
 	* Microsoft Excel for Tables, then use a Macro to o/p them to LaTeX, using Sublime to regex-replace.
 	* Wikipedia BiBTeX generator - http://irl.github.io/bibwiki/
 	* Google Scholar --> Cite BiBTeX.
+	* Chrisper --> Tool to detect bugs according to `bugs in writing` book.
