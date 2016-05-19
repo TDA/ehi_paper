@@ -3,21 +3,23 @@
 from email.parser import Parser
 import cgi
 form = cgi.FieldStorage()
-to = form["email"] # input() exhibits the same behavior
+to = form["email"] # input() exhibits 
+# the same behavior
 msg = """To: """ + to + """\n
 From: <user@example.com>\n
 Subject: Test message\n\n
 Body would go here\n"""
 
-f = FeedParser() # Parser.parsestr() also 
-# contains the same vulnerability
+f = FeedParser() # Parser.parsestr() 
+# also contains the same vulnerability
 f.feed(msg)
 headers = FeedParser.close(f)
 
-# attack string => 'sai@sai.com\nBCC:spc@spc.com'
+# attack string => 
+# 's@s.com\nBCC:spc@spc.com'
 # for form["email"]
 
-# to:sai@sai.com AND bcc:spc@spc.com 
+# to:s@s.com AND bcc:spc@spc.com 
 # are added to the headers
 print 'To: %s' % headers['to']
 print 'BCC: %s' % headers['bcc']
