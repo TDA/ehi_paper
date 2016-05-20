@@ -43,8 +43,9 @@
        	\item \label{issues:fpr}False Positive rate for the E-Mail Field Checker\\
        	As discussed in Section~\ref{Comp:EMFC}, we only search for the words \texttt{email}, \texttt{mail} or \texttt{e-mail} (case insensitive) inside the forms to detect the presence of e-mail fields, instead of searching for an \colorbox{lightgray}{\lstinline{<input type = email>}}. This might result in a false positive in certain forms, like the one shown in Listing~\ref{code:false_positive}.
 
-       	\lstset{language=HTML,caption={E-Mail field checker - false positives, the system incorrectly classifies this as an e-mail form.},label={code:false_positive}}
-       	\begin{lstlisting}
+       	\begin{lstlisting}[language=HTML,caption={E-Mail field checker
+              - false positives, the system incorrectly classifies
+              this as an e-mail form.},label={code:false_positive}, float]
 <form method="post">
 E-Mail us if you have any questions!!
 <input type="text" name="query"><br>
@@ -55,9 +56,9 @@ E-Mail us if you have any questions!!
        	The word \texttt{E-Mail} on Line 2 will result in our system classifying this form as a potential e-mail form, while it clearly is not. However, as we will see, this is not really a significant issue, as despite being added to the \texttt{email\_forms} table, this form will never be injected in the `fuzzer' due to the absence of the appropriate input field in the form. We chose to go with this design, as it allows us to detect almost every form that provides the capability to send or receive e-mail.
 	\end{itemize}
 
-\lstset{language=HTML,caption={HTML page with e-mail form, written in a different language - French.},label={code:htmlfrench}, literate=%
-	{é}{{\'e}}1}
-\begin{lstlisting}
+
+\begin{lstlisting}[language=HTML,caption={HTML page with e-mail form, written in a different language - French.},label={code:htmlfrench}, literate=%
+	{é}{{\'e}}1, float]
 <!doctype html>
 <html lang="fr">
 <head>

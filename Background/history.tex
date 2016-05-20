@@ -1,12 +1,18 @@
-\subsection{History of E-Mail Injection}
+\subsection{History of \ehi}
 
-E-Mail Header Injection seems to have been first documented over a decade ago, in a late 2004 article on phpsecure.info~\cite{Tobozo} accredited to user \lstinline|tobozo@phpsecure.info| describing how this vulnerability existed in the reference implementation of the \texttt{mail()} function in PHP, and how it can be exploited. More recently, a blog post by Damon Kohler~\cite{DK} and an accompanying wiki article~\cite{Injection} describe the attack vector and outline a few defense measures for the same.
+We found the first \ehi description in a late 2004 article on phpsecure.info~\cite{Tobozo} accredited to user \lstinline|tobozo@phpsecure.info| describing how an \ehi vulnerability existed in the implementation of the \texttt{mail()} function in PHP and how it can be exploited. More recently, a blog post by Damon Kohler~\cite{DK} and an accompanying wiki article~\cite{Injection} describe the attack vector and outline few defense measures for \ehi vulnerabilities.
 
-As this vulnerability was initially found in the \texttt{mail()} function of PHP, E-Mail Header Injection can be traced to as early as the beginning of the 2000's, present in the \texttt{mail()} implementation of PHP 4.0. 
+%% As this vulnerability was initially found in the \texttt{mail()} function of PHP, \ehi can be traced to as early as the beginning of the 2000's, present in the \texttt{mail()} implementation of PHP 4.0. 
 
 An example of the vulnerable code written in PHP is shown in Listing~\ref{code:phpemi}. This code takes in user input from the PHP superglobal \texttt{\$\_REQUEST[\textquotesingle email\textquotesingle]}, and stores it in the variable \texttt{\$from}, which is later passed to the \texttt{mail()} function to construct and send the e-mail.
+
 \input{Background/php.tex}
-	
-When this code is given the malicious input \texttt{\lstinline{sai@sai.com\\nBCC:spc@spc.com}} as the value of the \texttt{\$\_REQUEST[\textquotesingle email\textquotesingle]}, it generates the SMTP Headers shown in Listing~\ref{code:smtpheaders}. It can be seen that the \texttt{CC} (carbon copy) header that we injected appears as part of the resulting SMTP message. This will make the e-mail get sent to the e-mail address specified as part of the \texttt{CC} as well.
+
+% TODO: Change all domains to example.com
+% TODO: Sai, this is the first time we mention SMTP, need more background and a reference to the RFC.
+
+\textbf{Adam: This example is not correct, the STMP headers in listing 2 should have the "From" headers from the injection.}
+
+When this code is given the malicious input \texttt{\lstinline{sai@sai.com\\nCC:spc@spc.com}} as the value of the \texttt{\$\_REQUEST[\textquotesingle email\textquotesingle]}, it generates the SMTP Headers shown in Listing~\ref{code:smtpheaders}. It can be seen that the \texttt{CC} (carbon copy) header that we injected appears as part of the resulting SMTP message. This will make the e-mail get sent to the e-mail address specified as part of the \texttt{CC} as well. 
 \input{Background/smtpheaders}
 %\input{Background/history_table}

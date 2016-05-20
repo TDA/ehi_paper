@@ -12,13 +12,15 @@ RERUN = "(There were undefined (references|citations)|Rerun to get (cross-refere
 RERUNBIB = "No file.*\.bbl|Citation.*undefined"
 TARDIR = $(DOC:.tex=-src)
 
+TEXFILES := $(shell find . -name '*.tex')
+
 .PHONY: pdf clean
 
 pdf: $(DOC:.tex=.pdf)
 
 all: pdf
 
-%.pdf: %.tex *.tex *.bib
+%.pdf: %.tex $(TEXFILES) *.bib
 	rm -f $(DOC_BASE).bbl
 	${LATEX} $<
 	egrep -c $(RERUNBIB) $*.log && ($(BIBTEX) $*;$(LATEX) $<) ; true

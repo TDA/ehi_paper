@@ -1,49 +1,52 @@
-\subsection{Potential Impact}
+\subsection{Impact of \ehi}
 
-The impact of the vulnerability can be pretty far-reaching.
-Table~\ref{tab:usage} shows the current server-side language usage statistics on the Web~\cite{W3techs}. 
+The impact of an \ehi vulnerability can be far-reaching. According to
+w3tech, PHP, Java, Python, and Ruby (combined) account for over
+85\%\,\footnotemark{} of the server-side programming languages in
+websites measured, and the default implementation of the \email functionality of these languages is vulnerable to \ehi. 
 
-\begin{table}[!tb]
-	\centering
-	\begin{tabular}{|p{4cm}|p{4cm}|}
-		\hline
-		\multicolumn{1}{|c|}{\textbf{Server Side Language}} & \multicolumn{1}{c|}{\textbf{\% of Usage}}\\
-		\hline
-		PHP & 81.9\\
-		\hline
-		Java & 3.1\\
-		\hline
-		Ruby & 0.6\\
-		\hline
-		Python & 0.2\\
-		\hline
+\footnotetext{A website may use more than one server-side programming language.}
+
+
+
+%% \begin{table}[!tb]
+%% 	\centering
+%% 	\begin{tabular}{|p{4cm}|p{4cm}|}
+%% 		\hline
+%% 		\multicolumn{1}{|c|}{\textbf{Server Side Language}} & \multicolumn{1}{c|}{\textbf{\% of Usage}}\\
+%% 		\hline
+%% 		PHP & 81.9\\
+%% 		\hline
+%% 		Java & 3.1\\
+%% 		\hline
+%% 		Ruby & 0.6\\
+%% 		\hline
+%% 		Python & 0.2\\
+%% 		\hline
 		
-	\end{tabular}
-	\caption[\titlecap{Language usage statistics}]{Language usage statistics compiled from w3techs~\cite{W3techs}.}
-	\label{tab:usage}
-\end{table}
+%% 	\end{tabular}
+%% 	\caption[\titlecap{Language usage statistics}]{Language usage statistics compiled from w3techs~\cite{W3techs}.}
+%% 	\label{tab:usage}
+%% \end{table}
 
-PHP, Java, Python, and Ruby (combined) account for over 85\%\,\footnotemark{} of the websites measured. The vulnerability can be exploited to do potentially any of the following:
+An \ehi vulnerability can be exploited to do potentially any of the
+following:
 
-\footnotetext{A website may use more than one server-side programming language}
-
-\begin{itemize}
-	\item Phishing and Spoofing Attacks\\
-    Phishing~\cite{phishing} (a variation of spoofing~\cite{spoofing_attack}) refers to an attack where the recipient of an e-mail is made to believe that the e-mail is a legitimate one. The e-mail usually redirects them to a malicious website, which then steals their credentials. 
+\noindent \textbf{Phishing and Spoofing Attacks} 
+    Phishing~\cite{phishing} (a variation of spoofing~\cite{spoofing_attack}) refers to an attack where the recipient of an \email is made to believe that the \email is  legitimate when it was really created by a malicious party. The \email usually redirects the victim to a malicious website, which then steals their credentials or infects their computer with malware (via a drive-by-download).  
     
-    E-Mail Header Injection gives attackers the ability to inject arbitrary headers into an e-mail sent by a website and control the output of the e-mail. This adds credibility to the generated e-mail, as it is sent right from the websites and people are more ready to trust e-mail that is received from the website directly and can thus result in more successful phishing attacks.
+    \ehi gives attackers the ability to inject arbitrary headers into an \email sent by a website \emph{and control the output of the \email}. This adds credibility to the generated \email, as it is sent from the website's mail server and users (and anti-spam defenses) are more likely to trust an e-mail that is received from the proper mail server. Therefore, attackers could leverage \ehi vulnerabilities to perform enhanced phishing attacks. 
 	
-	\item Spam Networks\\
-	Spam networks can use E-Mail Header Injection vulnerabilities on the ability to send a large amount of e-mail from servers that are trusted. By adding additional \texttt{cc} or \texttt{bcc} headers to the generated e-mail, attackers can easily achieve this effect. 
+\noindent\textbf{Spam Networks}
+	Spam networks can use \ehi vulnerabilities to send a large amount of \email from servers that are trusted. By adding additional \texttt{cc} or \texttt{bcc} headers to the generated e-mail, attackers can easily choose the recipient of the spam email. 
 	
-	Due to the e-mails being from trusted domains, recipient e-mail clients might not flag them as spam. If they do flag them as spam, then that can lead to the website being blacklisted as a spam generator. 
+	Due to the \email being from trusted domains, recipient \email clients and anti-spam systems might not flag them as spam. If they do flag them as spam, then that can lead to the website being blacklisted as a spam generator (which would cause a Denial of Service on the vulnerable web application). 
 	
-	\item Information Extraction of legitimate users\\
-	E-Mails can contains sensitive data that is meant to be accessed only by the user. Due to E-Mail Header Injection, an attacker can easily add a \texttt{bcc} header, and send the e-mail to himself, thereby extracting important information.
+\noindent\textbf{Information Extraction}
+	\emails can contain sensitive data that is meant to be accessed only by the user. Due to an \ehi vulnerability, an attacker can add a \texttt{bcc} header, and the \email server will send a copy of the private \email to the attacker, thereby extracting important information.
 	User privacy can thus be compromised, and loss of private information can by itself lead to other attacks.
-	
-	\item Denial of service by attacking the underlying mail server\\
-    Denial of service attacks (DoS), can also be aided by E-Mail Header Injection. The ability to send hundreds of thousands of e-mails by just injecting one header field can result in overloading the mail server, and cause crashes and/or instability. 
-\end{itemize}
 
-It is evident that E-Mail Header Injection is a critical vulnerability that web applications must address.
+    \noindent\textbf{Denial of Service}
+    Denial of service attacks (DoS), can also be caused by exploiting an \ehi vulnerability. The ability to send many \emails by injecting one header field can result in overloading the mail server and cause crashes or instability. 
+
+%It is evident that E-Mail Header Injection is a critical vulnerability that web applications must address.
