@@ -55,6 +55,9 @@
 \definecolor{lightgray}{rgb}{0.92,0.92,0.92}
 \definecolor{darkgreen}{rgb}{0,0.7,0}
 
+% Great package for spaces in commands
+\usepackage{xspace}
+
 % for footnotes in tables
 \usepackage{tablefootnote}
 
@@ -84,31 +87,35 @@
 	
 \newcommand{\dq}[1]{``{#1}''}
 %% THIS IS THE DATA FOR OUR THESIS, UPDATING HERE WILL UPDATE EVERYWHERE %%
-\newcommand{\urls}{21,675,680}
+\newcommand{\urls}{21,675,680\xspace}
 
-\newcommand{\forms}{6,794,917}
-\newcommand{\formsDelta}{31.35\%}
+\newcommand{\forms}{6,794,917\xspace}
+\newcommand{\formsDelta}{31.35\%\xspace}
 
-\newcommand{\emailforms}{1,132,157}
-\newcommand{\emailformsDelta}{16.66\%}
+\newcommand{\emailforms}{1,132,157\xspace}
+\newcommand{\emailformsDelta}{16.66\%\xspace}
 
-\newcommand{\fuzzed}{934,016}
-\newcommand{\fuzzedDelta}{82.50\%}
+\newcommand{\fuzzed}{934,016\xspace}
+\newcommand{\fuzzedDelta}{82.50\%\xspace}
 
-\newcommand{\recd}{52,724}
-\newcommand{\recdDelta}{5.64\%}
+\newcommand{\recd}{52,724\xspace}
+\newcommand{\recdDelta}{5.64\%\xspace}
 
-\newcommand{\malfuzzed}{46,156}
-\newcommand{\malfuzzedDelta}{87.54\%}
+\newcommand{\malfuzzed}{46,156\xspace}
+\newcommand{\malfuzzedDelta}{87.54\%\xspace}
 
-\newcommand{\success}{673}
-\newcommand{\successDelta}{1.46\%}
+\newcommand{\success}{673\xspace}
+\newcommand{\successDelta}{1.46\%\xspace}
 
-\newcommand{\domains}{296}
-\newcommand{\ips}{413}
+\newcommand{\domains}{296\xspace}
+\newcommand{\ips}{413\xspace}
+
+\newcommand{\ipsblacklist}{106\xspace}
+
+
 % these refer to unique domains, not unique forms
-\newcommand{\uniqueforms}{1,019,921}
-\newcommand{\uniqueemailforms}{197,570}
+\newcommand{\uniqueforms}{1,019,921\xspace}
+\newcommand{\uniqueemailforms}{197,570\xspace}
 
 
 \begin{document}
@@ -175,7 +182,9 @@
 	% reasons) and the remaining two appear in the \additionalauthors section.
 	%
 
-    % Note: For CCS submission we need to have it anonymous 
+    % Note: For CCS submission we need to have it anonymous
+    % The author list will be:
+    % Sai, Pierre-Marie, Giovanni, Ziming, Adam, Gail
     
 	\author{
 		% You can go ahead and credit any number of authors here,
