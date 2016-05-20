@@ -84,6 +84,11 @@
 	showstringspaces=false,
 	upquote=true
 }
+
+% Important for the layout
+\clubpenalty=10000
+\widowpenalty=10000
+
 	
 \newcommand{\dq}[1]{``{#1}''}
 %% THIS IS THE DATA FOR OUR THESIS, UPDATING HERE WILL UPDATE EVERYWHERE %%
@@ -116,6 +121,8 @@
 % these refer to unique domains, not unique forms
 \newcommand{\uniqueforms}{1,019,921\xspace}
 \newcommand{\uniqueemailforms}{197,570\xspace}
+
+\newcommand{\ehi}{E-\nobreak{}mail Header Injection\xspace}
 
 
 \begin{document}
@@ -248,6 +255,11 @@
 	% number that will appear in the \additionalauthors section.
 	
 	\maketitle
+
+    
+    \renewcommand{\email}{e-\nobreak{}mail\xspace}
+    \newcommand{\emails}{\email{}s}
+    
 	\input{abstract}
 	
 	

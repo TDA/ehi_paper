@@ -1,22 +1,27 @@
 \section{Introduction}
-	The World Wide Web has single-handedly brought about a change in the way we use computers. The ubiquitous nature of the Web has made it possible for the general public to access it anywhere and on multiple devices like phones, laptops, personal digital assistants, and even on TVs and cars. This has ushered in an era of responsive web applications which depend on user input. While this rapid pace of development has improved the speed of dissemination of information, it does come at a cost. Attackers have an added incentive to break into user's e-mail accounts more than ever. E-Mail accounts are usually connected to almost all other online accounts of a user, and e-mails continue to serve as the principal mode of official communication on the web for most institutions. Thus, the impact an attacker can have by having control over the e-mail communication sent by websites to users is of an enormous magnitude.
+The World Wide Web has single-handedly brought about a change in the way we use computers. The ubiquitous nature of the web has made it possible for anyone to access information and services anywhere and on multiple devices such as phones, laptops, personal digital assistants, TVs, and cars. This access has ushered in an era of web applications which depend on user input. While this rapid pace of development has improved the speed of dissemination of information, it does come at a cost. As users move more and more of their personal and financial information to web applications, attackers are responding by using web application vulnerabilities to access this lucrative data.
 
-	Since attackers typically masquerade themselves as users of the system, if user input is to be trusted, then developers need to have proper sanitization routines in place. Many different injection attacks such as SQL injection or cross-site scripting (XSS)~\cite{OWASPT10} are possible due to improper sanitization of user input.
+%% Adam: I don't see how this adds to our story
+%% Attackers have an added incentive to break into user's e-mail accounts more than ever. E-Mail accounts are usually connected to almost all other online accounts of a user, and e-mails continue to serve as the principal mode of official communication on the web for most institutions. Thus, the impact an attacker can have by having control over the \email communication sent by websites to users is of an enormous magnitude.
 
-	Our research focuses on a lesser known injection attack known as E-Mail Header Injection. E-Mail Header Injection can be considered as the e-mail equivalent of HTTP Header Injection vulnerability~\cite{wiki:HTTP_headerinjection}. The vulnerability exists in the reference implementation of the built-in \texttt{mail} functionality in popular languages like PHP, Java, Python, and Ruby. With the proper injection string, this vulnerability can be exploited to inject additional headers and/or modify existing headers in an e-mail message --- with the potential to alter the contents of the e-mail message --- while still appearing to be from a legitimate source.
+% TODO: Sai, can you add a reference to command injection vulnerabilities here?
+Many common and well-known web application vulnerabilities, such as SQL Injection and Cross-Site Scripting~\cite{OWASPT10}, are command injection vulnerabilities, where malicious user input is used to alter the structure of a command (a SQL query in the case of SQL Injection and JavaScript code in the case of Cross-Site Scripting). Developers of web applications must have proper sanitization routines in place to use user input as part of these commands. 
 
-	E-Mail Header Injection attacks have the potential to allow an attacker to perform e-mail spoofing, resulting in phishing attacks that can lead to identity theft.
-	The objective of our research is to study the prevalence of this vulnerability on the World Wide Web, and identify whether further research is required in this area.
+\ehi vulnerabilities are a lesser-known command injection vulnerability. \ehi can be considered as the \email equivalent of HTTP Header Injection~\cite{wiki:HTTP_headerinjection}. This vulnerability exists in the implementation of the built-in \texttt{mail} functionality in popular languages such as PHP, Java, Python, and Ruby. With the proper injection string, \ehi vulnerabilities can be exploited by an attacker to inject additional headers, modify existing headers, or alter the contents of the \email---while still appearing to be from a legitimate source. \ehi exploits allow an attacker to perform \email spoofing, resulting in phishing attacks \emph{that are sent from the actual \email server}.
 
-	We performed an expansive crawl of the web, extracting forms with e-mail fields, and injecting them with different payloads to infer the existence of E-Mail Header Injection vulnerability. We then audited received e-mails to see if any of the injected data was present. This allowed us to classify whether a particular URL was vulnerable to the attack. The entire system works in a black-box manner, without looking at the web application's source code, and only analyzes the e-mails we receive based on the injected payloads.
+%% The objective of our research is to study the prevalence of this vulnerability on the World Wide Web, and identify whether further research is required in this area.
 
-We hope that our research sheds some light on this relatively less well-known vulnerability, and find out its prevalence on the World Wide Web. In summary, we make the following contributions:
+While some command injection vulnerabilities have received extensive attention from the research community, \ehi vulnerabilities have received little focus. Therefore, we study the prevalence of \ehi vulnerabilities on the web. We performed a crawl of the web, extracted forms with \email fields, and injected them with different payloads to infer the existence of an \ehi vulnerability. We then audited received \emails to see if any of the injected data was present. This allowed us to classify whether a particular URL was vulnerable to the attack. Our automated system works in a black-box manner, without looking at the web application's source code, and only analyzes the \emails we receive based on the injected payloads.
+\\
+
+\noindent{}In summary, we make the following contributions:
+
 \begin{itemize}
 
-	\item{A black-box approach to detecting the presence of E-Mail Header Injection vulnerability in a web application.}
+\item We develop a black-box approach to detect \ehi vulnerabilities in a web application.
 
-	\item{A detection and classification tool based on the above approach, which will automatically detect such E-Mail Header Injection vulnerabilities in a web application.}
+\item We develop a system to crawl the web and automatically detect \ehi vulnerabilities.
 
-	\item{A quantification of the presence of such vulnerabilities on the World Wide Web, based on a crawl of the Web, including \urls\ URLs and \forms\ forms.}
+\item We use our system to crawl \urls URLs, and we find \success URLs vulnerable to \ehi across \domains domains. 
 
 \end{itemize}
