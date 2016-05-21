@@ -16,10 +16,10 @@ f.feed(msg)
 headers = FeedParser.close(f)
 
 # attack string => 
-# 's@s.com\nBCC:spc@spc.com'
+# 'abc@example.com\nBCC:spc@example.com'
 # for form["email"]
 
-# to:s@s.com AND bcc:spc@spc.com 
+# to:abc@example.com AND bcc:spc@example.com 
 # are added to the headers
 print 'To: %s' % headers['to']
 print 'BCC: %s' % headers['bcc']

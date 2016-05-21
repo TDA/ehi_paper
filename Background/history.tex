@@ -8,11 +8,11 @@ An example of the vulnerable code written in PHP is shown in Listing~\ref{code:p
 
 \input{Background/php.tex}
 
-% TODO: Change all domains to example.com
+% TODO: Change all domains to example.com - DONE.
 % TODO: Sai, this is the first time we mention SMTP, need more background and a reference to the RFC.
 
-\textbf{Adam: This example is not correct, the STMP headers in listing 2 should have the "From" headers from the injection.}
-
-When this code is given the malicious input \texttt{\lstinline{sai@sai.com\\nCC:spc@spc.com}} as the value of the \texttt{\$\_REQUEST[\textquotesingle email\textquotesingle]}, it generates the SMTP Headers shown in Listing~\ref{code:smtpheaders}. It can be seen that the \texttt{CC} (carbon copy) header that we injected appears as part of the resulting SMTP message. This will make the e-mail get sent to the e-mail address specified as part of the \texttt{CC} as well. 
+\begin{sloppypar}
+When this code is given the malicious input \texttt{\lstinline{abc@example.com\\nCC:spc@example.com}} as the value of the \texttt{\$\_REQUEST[\textquotesingle email\textquotesingle]}, it generates the equivalent SMTP Headers shown in Listing~\ref{code:smtpheaders}. It can be seen that the \texttt{CC} (carbon copy) header that we injected appears as part of the resulting SMTP message. This will make the e-mail get sent to the e-mail address specified as part of the \texttt{CC} as well. 
 \input{Background/smtpheaders}
 %\input{Background/history_table}
+\end{sloppypar}
