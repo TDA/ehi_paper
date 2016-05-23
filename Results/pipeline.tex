@@ -1,9 +1,11 @@
-\subsection[The Pipeline]{Understanding the pipeline}
+\subsection[The Pipeline]{Understanding the Pipeline}
 This section serves to represent our pipeline quantitatively and graphically. Table~\ref{tab:pipeline} showcases the data gathered by our pipeline, with the differential changes at each stage of the pipeline. 
 
-At each stage of the pipeline, the amount of data trickles down, for instance, out of the \urls\ URLs we crawled, only \forms\ forms (\formsDelta) were found. Out of these, only \emailforms\ forms (\emailformsDelta) contained e-mail fields.
+At each stage of the pipeline, the amount of data decreases, for instance, out of the \urls\ URLs we crawled, only \forms\ forms (\formsDelta) were found. Out of these, only \emailforms\ forms (\emailformsDelta) contained e-mail fields.
 
 In our fuzzing attempts, the same behavior is repeated. We fuzzed \fuzzed\ forms with the regular payload, which resulted in a total of \recd\ e-mails (\recdDelta). After analysis of the received e-mails, we further fuzzed \fuzzed\ forms, which resulted in \success\ e-mails (\successDelta) which contain the vulnerability.
 \input{Results/pipeline_table}
 
-From our research, it is clear that E-Mail Header Injection is quite widespread as a vulnerability, appearing on \successDelta\ of forms that we were able to perform automated attacks on. This value acts as a lower bound for E-Mail Header Injection vulnerability, and can quite easily be much more if the attacks were of a more concentrated nature, crafted for the individual websites and less automated.
+
+% Adam: this is an important part of our contribution, but I don't think that it belongs here. 
+%% From our research, it is clear that E-Mail Header Injection is quite widespread as a vulnerability, appearing on \successDelta\ of forms that we were able to perform automated attacks on. This value acts as a lower bound for E-Mail Header Injection vulnerability, and can quite easily be much more if the attacks were of a more concentrated nature, crafted for the individual websites and less automated.

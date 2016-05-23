@@ -1,29 +1,32 @@
 \subsection{Responsible Disclosure of Discovered Vulnerabilities}
-After we had discovered E-Mail Header Injection vulnerability on a particular website, we e-mailed the developers of these vulnerable websites disclosing the pages that contained the vulnerability, along with a brief description of the vulnerability.
-We chose to e-mail the following mailboxes, following the rules specified in RFC~2142~\cite{rfc2142}:
+After we discovered an \ehi vulnerability on a particular website, we attempted to notify the developers of the vulnerable web application, along with a brief description of the vulnerability.
+We chose to \email the following mailboxes, following the rules specified in RFC~2142~\cite{rfc2142}:
+% Adam: don't we use \texttt for all the email addresses in the paper? We should use the same thing here
 \begin{itemize}
 	\item security@domain.com - Used for Security bulletins or queries.
 	\item admin@domain.com - Used to contact the administrator of a website.
 	\item webmaster@domain.com - Synonym for administrator, same functionality as admin.
 \end{itemize}
 
-Out of the \domains\ vulnerable domains found, only 108 websites had the mailboxes specified above set-up to receive e-mails. For the remaining domains, we used the \texttt{whois}~\cite{whois} data to get the contact details of the owner, and then e-mailed them with the same disclosure data. The number of emails we sent out and the number of developer responses we received is shown in Table~\ref{tab:devresp}.
+% Adam: sai, is this number up-to-date? 
+Out of the \domains\ vulnerable domains found, only 108 websites had the mailboxes able to receive \emails. For the remaining domains, we used the \texttt{whois}~\cite{whois} data to find the contact details of the owner, then we \emailed. The number of emails we sent and the number of developer responses we received is shown in Table~\ref{tab:devresp}.
 
-\begin{table}
+\begin{table}[tbp]
 \centering
 \begin{tabular}{|c|c|c|}
 	\hline
-	\multicolumn{1}{|p{2cm}}{\centering \textbf{E-Mailed websites}} &
+	\multicolumn{1}{|p{2cm}}{\centering \textbf{Notified websites}} &
 	\multicolumn{1}{|p{2cm}|}{\centering \textbf{Developer Responses}} &
 	\multicolumn{1}{p{2cm}|}{\centering \textbf{Confirmed discoveries}}\\
 	\hline
 	\domains\ & 13 & 9 \\
 	\hline
 \end{tabular}
-	\caption[\titlecap{Data gathered by our pipeline}]{Responsible disclosure of the discovered vulnerabilities to developers and the number of received responses.}
+	\caption[\titlecap{}]{Responsible disclosure of the discovered vulnerabilities to developers and the number of received responses.}
 	\label{tab:devresp}
 \end{table}
 
+% Adam: did we get updated notifications?
 We received 13 developer responses, confirming 9 discovered vulnerabilities. Two of the developers fixed the vulnerability on their website.
 % is this done?
-From our research, it is clear that E-Mail Header Injection is quite widespread as a vulnerability, appearing on \successDelta\ of forms that we were able to perform automated attacks on. This value acts as a \dq{lower bound} for E-Mail Header Injection vulnerability, and can quite easily be much more if the attacks were of a more concentrated nature, crafted for the individual websites and less automated. We discuss this possibility, and other concepts such as limitations and methods for mitigation of the vulnerability in the following section.
+From our research, it is clear that \ehi is quite widespread as a vulnerability, appearing on \successDelta\ of forms that we were able to perform automated attacks on. This value acts as a \emph{lower bound} for prevalence of \ehi vulnerability, and can quite easily be larger if the attacks were broader, crafted for the individual web application, and  less automated. 
