@@ -7,16 +7,16 @@ get '/hello' do
 email = params[:email]
 
 message = """
-From: Sai <schand31@asu.edu>
+From: Sch <sch@example.com>
 Subject: SMTP e-mail test
 To: #{email}
 
 This is a test e-mail message.
 """
 # construct a post request with email set to attack_string
-# attack_string => sai@sai.com%0abcc:spc@spc.com%0aSubject:Hello
+# attack_string => sai@example.com%0abcc:spc@example.com%0aSubject:Hello
 Net::SMTP.start('localhost', 1025) do |smtp|
-smtp.send_message message, 'schand31@asu.edu',
+smtp.send_message message, 'sch@example.com',
 'to@todomain.com'
 end
 # Headers get added, and Subject field changes to what we set.

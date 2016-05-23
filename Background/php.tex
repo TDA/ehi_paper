@@ -3,13 +3,13 @@
 $from = $_REQUEST['email'];
 $subject = 'Hello XYZ';
 $message = 'We need you to reset your password';
-$to = 'xyz@xyz.edu';
+$to = 'xyz@example.com';
 
 // example attack string to be 
 // injected as the value for
 // $_REQUEST['email'] => 
-// 's@s.com\nCC:spc@spc.com'
+// 'abc@example.com\nCC:spc@example.com'
 $retValue = mail($to, $subject, $message, "From: $from");
 // E-Mail gets sent to both 
-// xyz@xyz.edu AND spc@spc.com
+// xyz@example.com AND spc@example.com
 \end{lstlisting}
