@@ -1,15 +1,19 @@
-\subsection*{Proof of Concept Attacks}
-This section describes how we validated our expectations. In order to do this, we constructed three sets of web applications in PHP, Python, and Ruby. Each of these applications was a simple web app that accepted user input to construct and send an E-Mail.
+\subsection{Validation}
+To validate our system, we constructed three sets of web applications in PHP, Python, and Ruby. Each of these applications was a simple web application that accepted user input to construct and send an \Email.
 
-The front-end for each of the three applications is shown in Listing~\ref{code:html}. The server-side code for the PHP and Python are shown in Listings~\ref{code:phpemi} and \ref{code:pyemi} respectively.
+The front-end for each of the three applications is shown in Listing~\ref{code:html}. The server-side code for the PHP and Python is shown in Listings~\ref{code:phpemi} and \ref{code:pyemi} respectively.
 
-We tested for the headers being injected in real-time by running an instance of MailCatcher, set to listen on all SMTP messages. A sample screenshot of a fuzzed request for the Ruby backend (generated in PostMan) is shown in Figure~\ref{fig:postmanruby}. The e-mail sent due to injecting this payload (as captured by MailCatcher) is shown in Figure~\ref{fig:mailcatcherruby}. It can be seen that the headers have been added to the resulting e-mail, and we have successfully managed to overwrite the \texttt{Subject} field with our message, `hello'.
+% Adam: I think it might be nice to have the Ruby code here too. 
 
-The astute reader might have noticed that in the given example we have used \texttt{\%0a} to separate the headers, while in Section~\ref{Comp:Fuzzer:mp}, we had used \texttt{\textbackslash{}n}. This is due to URL encoding~\cite{rfc1738}, wherein special characters in th URL are `encoded' or `escaped' with their ASCII equivalent.
-The reason why we do not have to do this with the payloads our system injects is due to the fact that the Python Requests library that we use to generate the HTTP requests automatically does this encoding for us.
+Before performing out wide scan of the web, we verified that our system was able to detect the \ehi vulnerabilities present in all the sample web applications. 
+
+%% We tested for the headers being injected in real-time by running an instance of MailCatcher, set to listen on all SMTP messages. A sample screenshot of a fuzzed request for the Ruby backend (generated in PostMan) is shown in Figure~\ref{fig:postmanruby}. The \email sent due to injecting this payload (as captured by MailCatcher) is shown in Figure~\ref{fig:mailcatcherruby}. It can be seen that the headers have been added to the resulting \email, and we have successfully managed to overwrite the \texttt{Subject} field with our message, `hello'.
+
+%% The astute reader might have noticed that in the given example we have used \texttt{\%0a} to separate the headers, while in Section~\ref{Comp:Fuzzer:mp}, we had used \texttt{\textbackslash{}n}. This is due to URL encoding~\cite{rfc1738}, wherein special characters in th URL are `encoded' or `escaped' with their ASCII equivalent.
+%% The reason why we do not have to do this with the payloads our system injects is due to the fact that the Python Requests library that we use to generate the HTTP requests automatically does this encoding for us.
 
 \begin{lstlisting}[language=HTML,caption={HTML page for showcasing
-      e-mail header injection, a simple front-end for our
+      \ehi, a simple front-end for our
       examples.},label={code:html}, float]
 <!doctype html>
 <html lang="en">
@@ -20,7 +24,7 @@ The reason why we do not have to do this with the payloads our system injects is
 </head>
 <body>
 <form action="{path-to-back-end}" method="post">
-<input type="text" placeholder="Email" name="email" id="e-mail"><br>
+<input type="text" placeholder="Email" name="email" id="\email"><br>
 <textarea name="msg" rows="20" cols="120"></textarea>
 <input type="submit" value="Email Me!">
 </form>
@@ -28,16 +32,16 @@ The reason why we do not have to do this with the payloads our system injects is
 </html>
 \end{lstlisting}
 
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[width=\linewidth]{System/EMI_Postman_Ruby}
-	\caption[\titlecap{Fuzzing a request for the Ruby backend}]{Fuzzing a request for the Ruby backend, the payload can be seen inside the address bar.}
-	\label{fig:postmanruby}
-\end{figure}
+%% \begin{figure}[!htbp]
+%% 	\centering
+%% 	\includegraphics[width=\linewidth]{System/EMI_Postman_Ruby}
+%% 	\caption[\titlecap{Fuzzing a request for the Ruby backend}]{Fuzzing a request for the Ruby backend, the payload can be seen inside the address bar.}
+%% 	\label{fig:postmanruby}
+%% \end{figure}
 
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[width=\linewidth]{System/EMI_Mailcatcher_Ruby}
-	\caption[\titlecap{E-Mail header injection proof of concept - Ruby}]{E-Mail header injection proof of concept - Ruby, we can see that multiple headers (bcc, x-check, subject) have been inserted into the resulting e-mail.}
-	\label{fig:mailcatcherruby}
-\end{figure}
+%% \begin{figure}[!htbp]
+%% 	\centering
+%% 	\includegraphics[width=\linewidth]{System/EMI_Mailcatcher_Ruby}
+%% 	\caption[\titlecap{\Email Header Injection proof of concept - Ruby}]{\Email header injection proof of concept - Ruby, we can see that multiple headers (bcc, x-check, subject) have been inserted into the resulting \email.}
+%% 	\label{fig:mailcatcherruby}
+%% \end{figure}
