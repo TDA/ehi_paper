@@ -1,37 +1,39 @@
 \subsection{System Components}
 \label{Comp}
 
-The Data Gathering module and Payload Injection module are made up of a number of smaller components. This section describes in detail the functionality of each of the components.
+The Data Gathering module and Payload Injection modules are composed of smaller components. This section describes the functionality of each of the components.
 
 \subsubsection{Crawler}
 \label{Comp:Crawler}
-We used an open-source Apache Nutch based Crawler. The Crawler provides us with a continuous feed of URLs and the HTML contained in those pages. This feed is sent to our Form Parser over a Celery Queue.
+We used an open-source Apache Nutch based Crawler~\cite{nutch}. The Crawler continuously crawls the web. The Crawler provides the system with a continuous feed of URLs and the HTML contained in those pages. 
 
 \subsubsection{Form Parser}
 \label{Comp:FP}
-The actual pipeline begins at the Form Parser. This module is responsible for parsing the HTML and retrieving data about the forms on the page, including the following:
+The actual analysis pipeline begins at the Form Parser. This module is responsible for parsing the HTML and retrieving data about the HTML forms on the page, including the following:
 \begin{itemize}
-	\item Form attributes, such as method and action. These dictate where we send the HTTP request and what kind of request it is (GET or POST).
-	\item Data about the input fields, such as their attributes, names, and default values. The default values are essential for fields like \colorbox{lightgray}{\lstinline{<input type="hidden">}} as these fields are usually used to check for the submission of forms by bots.
-	\item Presence of the \colorbox{lightgray}{\lstinline{<base>}} element in the HTML, as this affects the final URL to which the form is to be submitted.
-	\item Headers associated with the page, such as \texttt{referrer}. Once again, these were required to avoid the website from ignoring our system as a bot.
+	\item Form attributes, such as \texttt{method} and \texttt{action}. These dictate the resulting URL for the HTTP request and the method of the HTTP request.
+	\item Data about the form input fields, such as their attributes, names, and default values. The default values are essential for fields like \colorbox{lightgray}{\lstinline{<input type="hidden">}} as these fields are usually used to check for the submission of forms by bots.
+	\item Presence of the \colorbox{lightgray}{\lstinline{<base>}} element in the HTML, as this affects the final URL to which the form is to be submitted (if the \texttt{action} attribute is a relative URL).
+      % Adam: this is not correct, the referrer header won't be used when we make the request. We will set the referrer header when we make the request to URL that the form is on
+	%% \item Headers associated with the page, such as \texttt{referrer}. Once again, these were required to avoid the website from ignoring our system as a bot.
 \end{itemize} 
-The Form Parser stores all this data in our database, so as to allow us to reconstruct the forms later for fuzzing, as required.
+The Form Parser stores all this data in our database, so as to allow the system to reconstruct all data necessary for fuzzing the web application.
 
-\subsubsection{E-Mail Field Checker}
+\subsubsection{\Email Field Checker}
 \label{Comp:EMFC}
-The E-Mail Field Checker script is the final stage in the Data Gathering pipeline. It receives the output of the previous stage---form data from the queue---and checks for the presence of e-mail fields in those forms. If any e-mail fields are found, it stores references to these forms in a separate table. This separates the forms that are potentially vulnerable from the forms that are not.
+The \Email Field Checker is the final stage in the Data Gathering module. It receives the output of the previous stage---HTML form data---and checks for the presence of \email fields in those forms. If any \email fields are found, it stores references to these forms.
+The intuition here is that we do not want to try to fuzz all HTML forms on the web to look for \ehi vulnerabilities, rather just those HTML forms that are likely to invoke server-side email functionality.
 
-The E-Mail Field Checker searches for the words \texttt{e-mail}, \texttt{mail} or \texttt{email} within the form, instead of an explicit e-mail field (e.g.,\ \colorbox{lightgray}{\lstinline{<input type="email">}}). This is by design, taking into account a very common design pattern used by web developers, where they may have a text field with an \texttt{id} or \texttt{name} set to \texttt{email}, instead of an actual e-mail field, for purposes of backward compatibility with older browsers.
+The \Email Field Checker searches for the words \texttt{e-mail}, \texttt{mail} or \texttt{email} within the form, instead of an explicit HTML5 \email field (e.g.,\ \colorbox{lightgray}{\lstinline{<input type="email">}}). This is by design, taking into account a common design pattern used by web developers, where they may have a text field with an \texttt{id} or \texttt{name} attribute set to \texttt{email}, instead of an actual \email type attribute, for purposes of backward compatibility with older browsers.
 
-Compared to searching for explicit e-mail fields, by searching for the presence of the words \texttt{e-mail}, \texttt{mail} or \texttt{email} in the form, we are assured very few false negatives. This is because our system is bound to find e-mail fields with their \texttt{type}, \texttt{name}, or \texttt{id} set to one of these words. The system is also substantially faster as we do not have to parse the individual form fields at this point in the pipeline. However, despite the advantages, this might also lead to a false positive rate. We discuss this possibility in detail in Section~\ref*{issues:fpr} - Design Issues.
+%% Compared to searching for explicit \email fields, by searching for the presence of the words \texttt{\email}, \texttt{mail} or \texttt{email} in the form, we are assured very few false negatives. This is because our system is bound to find \email fields with their \texttt{type}, \texttt{name}, or \texttt{id} set to one of these words. The system is also substantially faster as we do not have to parse the individual form fields at this point in the pipeline. However, despite the advantages, this might also lead to a false positive rate. We discuss this possibility in detail in Section~\ref*{issues:fpr} - Design Issues.
 
-The output of this stage is stored in the database for persistence and acts as the input to the `Payload Injection' pipeline.
+The output of this stage is stored in the database for persistence and acts as the input to the Payload Injection module.
 
-
-\subsubsection{E-Mail Form Retriever}
+% Adam: This is where I am editing
+\subsubsection{\Email Form Retriever}
 \label{Comp:EMFR}
-The E-Mail Form Retriever is the first stage in the Payload Injection Pipeline. It has the following important functions:
+The \Email Form Retriever is the first stage in the Payload Injection module. It has the following important functions:
 \begin{itemize}
 	\item Retrieve the newly inserted forms in the \texttt{email\_forms} table, checking to ensure no duplication occurs before the fuzzing stage.
 	\item Reconstruct each form, using the data stored in the \texttt{form} table, complete with input fields and their values.
@@ -44,12 +46,12 @@ The Fuzzer is the heart of the system and is the only component that interacts d
 The two different types of payloads we use for fuzzing are:
 \paragraph{Non-Malicious Payload}
 \label{Comp:Fuzzer:nmp}
-The regular or non-malicious payload is a straight forward E-Mail address of the format -- \texttt{reguser(xxxx)@example.com}, where \texttt{xxxx} is replaced by our internal \texttt{form\_id}, to create a one-to-one mapping of the payloads to the forms, and \texttt{example.com} is replaced by the required domain.
+The regular or non-malicious payload is a straight forward \Email address of the format -- \texttt{reguser(xxxx)@example.com}, where \texttt{xxxx} is replaced by our internal \texttt{form\_id}, to create a one-to-one mapping of the payloads to the forms, and \texttt{example.com} is replaced by the required domain.
 This non-malicious payload allows us to check whether we can inject data into a form and whether we can overcome the `anti-bot' measures on the given website, without attempting to fuzz the website.
 
 \paragraph{Malicious Payload}
 \label{Comp:Fuzzer:mp}
-In the malicious payload scenario, we inject the fields with the \texttt{bcc} (blind carbon copy) element. If the vulnerability is present, this will cause the server to send a copy of the e-mail to the e-mail address we added as part of the \texttt{bcc} field.
+In the malicious payload scenario, we inject the fields with the \texttt{bcc} (blind carbon copy) element. If the vulnerability is present, this will cause the server to send a copy of the \email to the \email address we added as part of the \texttt{bcc} field.
 
 We consider a special case: the addition of a \texttt{x-check:in} header field to the payloads. This is due to Python's exhibited behavior when attaching
 headers. Instead of overwriting a header if it is already present, it ignores duplicate headers. So, in case the \texttt{bcc} field is already present as part of the headers, our injected \texttt{bcc} header would be ignored. To overcome this, we need to inject a new header that is not likely to be generated by the web application. Hence, we inject our own \texttt{x-check:in} header to ensure we can get results if the injection was successful.
@@ -97,28 +99,28 @@ The \texttt{xxxx} in all of the payloads is replaced by our internal \texttt{for
 \end{table}
 Along with the payload, the Fuzzer also injects data into the other fields of the form. This data must pass validation constraints on the individual input fields e.g.,\ for a name field, numbers might not be allowed. It is essential that the data we inject into the input fields adhere to the constraints. Our Fuzzer does this by making use of a `Data Dictionary' which has predefined `keys' and `values' for standard input fields such as \texttt{name}, \texttt{date}, \texttt{username}, \texttt{password}, \texttt{text}, and \texttt{submit}. The default values for these are generated on-the-fly for each form, based on generally followed guidelines for such fields. For example, password fields should consist of at least one uppercase letter, one lowercase letter, and a special character.
 
-Once the data (including the payload) for the form is ready, the Fuzzer constructs the appropriate HTTP request (GET or POST) and sends the HTTP request to the URL that was generated by the E-Mail Form Retriever (Section~\ref{Comp:EMFR}). 
+Once the data (including the payload) for the form is ready, the Fuzzer constructs the appropriate HTTP request (GET or POST) and sends the HTTP request to the URL that was generated by the \Email Form Retriever (Section~\ref{Comp:EMFR}). 
 
 
 \subsubsection{Injection Verification}
 \label{Comp:EMA}
-The Injection Verification module checks for the presence of injected data in the received e-mails. This module works on the e-mails received and stored by our Postfix server, and depending on the user who received the e-mail, it performs different functions.
-\paragraph{Analyzing regular e-mail}
+The Injection Verification module checks for the presence of injected data in the received \emails. This module works on the \emails received and stored by our Postfix server, and depending on the user who received the \email, it performs different functions.
+\paragraph{Analyzing regular \email}
 \sloppy
-`Regular e-mail' refers to the e-mails received by the \colorbox{lightgray}{\lstinline{reguser(xxxx)@example.com}} --- where \texttt{xxxx} is our internal \texttt{form\_id} --- that were sent due to injecting the `regular or non-malicious' payload (discussed in Section~\ref{Comp:Fuzzer:nmp}). The objective of the analysis on this e-mail is identify if the input fields that we injected with data appear on the resulting e-mail, and if so, which fields appear where.
+`Regular \email' refers to the \emails received by the \colorbox{lightgray}{\lstinline{reguser(xxxx)@example.com}} --- where \texttt{xxxx} is our internal \texttt{form\_id} --- that were sent due to injecting the `regular or non-malicious' payload (discussed in Section~\ref{Comp:Fuzzer:nmp}). The objective of the analysis on this \email is identify if the input fields that we injected with data appear on the resulting \email, and if so, which fields appear where.
 
-To find this, we read through each received e-mail, and check whether \emph{any} of the fields we injected with data appear as part of either the headers or the body of the e-mail. If they do, we add them to the list of fields that can potentially result in an E-Mail Header Injection for the given e-mail. we then pass on this information back to the Fuzzer pipeline, along with the \texttt{form\_id}, so that the Fuzzer can now inject the malicious payloads into the same form.
+To find this, we read through each received \email, and check whether \emph{any} of the fields we injected with data appear as part of either the headers or the body of the \email. If they do, we add them to the list of fields that can potentially result in an \ehi for the given \email. we then pass on this information back to the Fuzzer pipeline, along with the \texttt{form\_id}, so that the Fuzzer can now inject the malicious payloads into the same form.
 
-\paragraph{Analyzing e-mail with payloads}
-The `e-mails with payloads' refer to e-mails received by either the \colorbox{lightgray}{\lstinline{nuser(xxxx)@example.com}} or \colorbox{lightgray}{\lstinline{maluser(xxxx)@example.com}} accounts. These e-mails were received due to injecting the malicious payloads that were discussed in Section~\ref{Comp:Fuzzer:mp}. Analysis of these e-mails is considerably simpler than that of the regular e-mails. This is due to the fact that this involves lesser processing of the contents of the e-mail compared to the previous section.
+\paragraph{Analyzing \email with payloads}
+The `\emails with payloads' refer to \emails received by either the \colorbox{lightgray}{\lstinline{nuser(xxxx)@example.com}} or \colorbox{lightgray}{\lstinline{maluser(xxxx)@example.com}} accounts. These \emails were received due to injecting the malicious payloads that were discussed in Section~\ref{Comp:Fuzzer:mp}. Analysis of these \emails is considerably simpler than that of the regular \emails. This is due to the fact that this involves lesser processing of the contents of the \email compared to the previous section.
 \paragraph{Detecting injected \texttt{bcc} headers}
-As discussed in the payloads section~(\ref{Comp:Fuzzer:mp}), the payloads were crafted in such a way that the e-mails received by \texttt{maluser} account directly indicate the presence of the injected \texttt{bcc} field. Thus, we simply parse the E-Mails and store them in the Database.
+As discussed in the payloads section~(\ref{Comp:Fuzzer:mp}), the payloads were crafted in such a way that the \emails received by \texttt{maluser} account directly indicate the presence of the injected \texttt{bcc} field. Thus, we simply parse the \emails and store them in the Database.
 
 \label{analyze:detect_x_check}
 \paragraph{Detecting injected \texttt{x-check} headers}
-E-Mails not received by the \texttt{maluser} account but by the \texttt{nuser} account constitute a special category of e-mails.
-These e-mails could have been generated due to two reasons:
+\Emails not received by the \texttt{maluser} account but by the \texttt{nuser} account constitute a special category of \emails.
+These \emails could have been generated due to two reasons:
 \begin{enumerate}
-	\item The websites performed some sanitization routines and stripped out the \texttt{bcc} part of the payload, thereby sending e-mails only to the \texttt{nuser} account. These e-mails then act as proof that the vulnerability was not found on the given website.
-	\item A more conducive scenario is when the \texttt{bcc} header was ignored for some reason, e.g.,\ Python's default behavior when it encounters duplicate headers. In this case, we check whether the e-mail contains the custom header \texttt{x-check}. If it does, then this is a successful exploit of the vulnerability, and we store it in the database.
+	\item The websites performed some sanitization routines and stripped out the \texttt{bcc} part of the payload, thereby sending \emails only to the \texttt{nuser} account. These \emails then act as proof that the vulnerability was not found on the given website.
+	\item A more conducive scenario is when the \texttt{bcc} header was ignored for some reason, e.g.,\ Python's default behavior when it encounters duplicate headers. In this case, we check whether the \email contains the custom header \texttt{x-check}. If it does, then this is a successful exploit of the vulnerability, and we store it in the database.
 \end{enumerate}
