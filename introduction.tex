@@ -9,7 +9,7 @@ Many common and well-known web application vulnerabilities, such as SQL Injectio
 
 \ehi vulnerabilities are a lesser-known command injection vulnerability. \ehi can be considered as the \email equivalent of HTTP Header Injection~\cite{wiki:HTTP_headerinjection}. This vulnerability exists in the implementation of the built-in \texttt{mail} functionality in popular languages such as PHP, Java, Python, and Ruby. The format of \email messages is defined by the Simple Mail Transfer Protocol (SMTP)~\cite{rfc5322}. Each \email message is represented by a series of headers separated by newlines, followed by the body content (separated from the headers by two newlines). Some of these headers are mandatory (From, To, Date), but the headers could also include other information like the Subject, CC, BCC, etc.
 
-\textbf{Sai: I believe that the discussion of SMTP Headers belongs here, before we say that E-Mail Header Injection can manipulate the headers. Do I need to include the message format as a listing? I think its superfluous, but let me know.}
+%\textbf{Sai: I believe that the discussion of SMTP Headers belongs here, before we say that E-Mail Header Injection can manipulate the headers. Do I need to include the message format as a listing? I think its superfluous, but let me know.}
 
 With the proper injection string, \ehi vulnerabilities can be exploited by an attacker to inject additional headers, modify existing headers, or alter the contents of the \email---while still appearing to be from a legitimate source. \ehi exploits allow an attacker to perform \email spoofing, resulting in phishing attacks \emph{that are sent from the actual \email server}.
 
