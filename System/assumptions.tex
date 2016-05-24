@@ -5,10 +5,8 @@ In addition to the limitations that were already discussed, we made certain assu
 	This is a requisite for our system to work. If the Crawler is blocked for any reason, we do not get the data feed for our system, and without this input, it is impossible to discover vulnerabilities. 
 	
 	\item \textbf{The Crawler feed is an ideal representation of the World Wide Web} \\
-
-      
 	This is a reasonable expectation, albeit an unrealistic one.
-	
+
 	It is unrealistic because Crawlers work on the concept of proximity. They detect for the presence of In-Links and Out-Links from a particular URL, and hence the returned URLs are usually related to each other (at least the ones that are returned adjacent to each other).
 	
 	However, this assumption is reasonable due to the ``Law of averages''~\cite{wiki:Law_of_averages}, the ``Law of big numbers''~\cite{wiki:Law_of_large_numbers}, and the concept of ``Regression to the mean''~\cite{wiki:Regression_toward_the_mean}. Simply stated, a crawl of this magnitude should provide a distributed sample of the overall Web, eventually converging to the average of all web applications in existence.
