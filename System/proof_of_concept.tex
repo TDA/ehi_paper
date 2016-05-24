@@ -1,11 +1,11 @@
 \subsection{Validation}
 To validate our system, we constructed three sets of web applications in PHP, Python, and Ruby. Each of these applications was a simple web application that accepted user input to construct and send an \Email.
 
-The front-end for each of the three applications is shown in Listing~\ref{code:html}. The server-side code for the PHP and Python is shown in Listings~\ref{code:phpemi} and \ref{code:pyemi} respectively.
+The front-end for each of the three applications is shown in Listing~\ref{code:html}. The server-side code for PHP, Python, and Ruby is shown in Listings~\ref{code:phpemi}, \ref{code:pyemi}, and \ref{code:rubyemi} respectively.
 
-% Adam: I think it might be nice to have the Ruby code here too. 
+% Adam: I think it might be nice to have the Ruby code here too. - DONE.
 
-Before performing out wide scan of the web, we verified that our system was able to detect the \ehi vulnerabilities present in all the sample web applications. 
+Before performing a wide scan of the web, we verified that our system was able to detect the \ehi vulnerabilities present in all the sample web applications. 
 
 %% We tested for the headers being injected in real-time by running an instance of MailCatcher, set to listen on all SMTP messages. A sample screenshot of a fuzzed request for the Ruby backend (generated in PostMan) is shown in Figure~\ref{fig:postmanruby}. The \email sent due to injecting this payload (as captured by MailCatcher) is shown in Figure~\ref{fig:mailcatcherruby}. It can be seen that the headers have been added to the resulting \email, and we have successfully managed to overwrite the \texttt{Subject} field with our message, `hello'.
 
@@ -31,6 +31,7 @@ Before performing out wide scan of the web, we verified that our system was able
 </body>
 </html>
 \end{lstlisting}
+\input{Background/ruby}
 
 %% \begin{figure}[tbp]
 %% 	\centering
