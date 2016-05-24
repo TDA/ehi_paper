@@ -42,7 +42,7 @@ The \Email Form Retriever is the first stage in the Payload Injection module. It
 \subsubsection{Fuzzer}
 \label{Comp:Fuzzer}
 % Adam: we should call these something else but modules. We already have the top two modules, which are composed of components, now we need to split these into something (not components again). - DONE
-The Fuzzer is the only component that interacts directly with the external web applications. The Fuzzer is split into smaller parts, each of which is responsible for a particular type of fuzzing.  The system injects payloads in two stages: the goal is to reduce the total number of HTTP requests the system generates to detect an \ehi vulnerability. Making HTTP requests is an expensive process~\cite{McGrath2009}, and can cause bottlenecks in a Crawler-Fuzzer system~\cite{ShkapenyukTorstenSuel2001}.
+The Fuzzer is the only component that interacts directly with the external web applications. The Fuzzer is split into smaller parts, each of which is responsible for a particular type of fuzzing.  The system injects payloads in two stages: the goal is to reduce the total number of HTTP requests the system generates to detect an \ehi vulnerability. Making HTTP requests is an expensive process~\cite{httpperf}, and can cause bottlenecks in a Crawler-Fuzzer system~\cite{ShkapenyukTorstenSuel2001}.
 The two different types of payloads used for fuzzing are:
 \paragraph{Non-Malicious Payload}
 \label{Comp:Fuzzer:nmp}
@@ -86,13 +86,9 @@ The coverage provided by each payload is shown in Table~\ref{tab:payloadcov}.\\
 		\hline
 		\multicolumn{1}{|c|}{\textbf{Payload}} & \multicolumn{1}{c}{\textbf{Languages covered}} & \multicolumn{1}{|c|}{\textbf{Platforms covered}}\\
 		\hline
-		1 & PHP, Java, Ruby, etc. & Unix\\
+		1, 2 & PHP, Java, Ruby, etc. & Unix, Windows\\
 		\hline
-		2 & PHP, Java, Ruby, etc. & Windows\\
-		\hline
-		3 & Python & Unix\\
-		\hline
-		4 & Python & Windows\\
+		3, 4 & Python & Unix, Windows\\
 		\hline
 	\end{tabular}
 	\caption[\titlecap{Payload coverage}]{Payload coverage, each payload covers a different platform/language.}
