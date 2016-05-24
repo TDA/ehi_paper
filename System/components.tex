@@ -110,7 +110,7 @@ When the fuzzed data is ready, the Fuzzer constructs the appropriate HTTP reques
 \subsubsection{Injection Verification}
 \label{Comp:EMA}
 The Injection Verification module checks for the presence of injected data in the received \emails. This module works on the \emails received and stored by our Postfix server, and, depending on the user account that received the \email, it performs different functions.
-\paragraph{Analyzing regular \email}
+\paragraph{Analyzing regular e-mail}
 \sloppy
 `Regular \email' refers to the \emails received by account \colorbox{lightgray}{\lstinline{reguser(xxxx)@example.com}} that were sent due to injecting the regular, non-malicious, payload (discussed in Section~\ref{Comp:Fuzzer:nmp}). The objective of the analysis on this \email is identify if the input fields that we injected with data appear on the resulting \email, and if so, which fields appear where.
 
