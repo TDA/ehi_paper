@@ -1,43 +1,72 @@
 \begin{table}[tbp]
 	\centering
-	\begin{tabular}{|p{2cm}|p{12cm}|}
+	\scalebox{0.85}{
+	\begin{tabular}{|c|p{5cm}|c|}
 		\hline
-		\multicolumn{1}{|c|}{\textbf{Year}} & \multicolumn{1}{c|}{\textbf{ Notes}}\\
+		\multicolumn{1}{|c|}{\textbf{CVE No.}} & 
+		\multicolumn{1}{c|}{\textbf{Affected Software}} &
+		\multicolumn{1}{c|}{\textbf{Year}}\\
+		\hline
+		{2002-1575} & {cgiemail} & {2004}\\
+		\hline
+		{2002-1771} & {FormMail 1.9} & {2005}\\
+		\hline
+		{2002-1917} & {Geeklog 1.35} & {2005}\\
+		\hline
+		{2005-0493} & {Biz Mail Form <=2.2} & {2005}\\
+		\hline
+		{2005-2854} & {thesitewizard.com} & {2005}\\
+		\hline
+		{2005-3883} & {PHP mb\_send\_mail} & {2005}\\
+		\hline
+		{2006-0631} & {Perl mailback.pl} & {2006}\\
+		\hline
+		{2006-0712} & {Squishdot 1.5.0} & {2006}\\
+		\hline
+		{2006-1225} & {Drupal 4.5.0-4.5.8 and 4.6.0-4.6.8} & {2006}\\
+		\hline
+		{2006-1305} & {Microsoft Outlook 2000, 2002, and 2003} & {2006}\\
+		\hline
+		{2006-2159} & {Russcom Network} & {2006}\\
+		\hline
+		{2006-2943} & {CGI-RESCUE WebFORM 4.1} & {2006}\\
+		\hline
+		{2006-2944} & {CGI-RESCUE FORM2MAIL 1.21} & {2006}\\
+		\hline
+		{2006-3171} & {CS-Forum <=0.82} & {2006}\\
+		\hline
+		{2006-3473} & {Drupal Module <=1.8.2.2} & {2006}\\
+		\hline
+		{2006-4344} & {CGI-Rescue Mail} & {2006}\\
+		\hline
+		{2006-7020} & {phpwcms 1.2.5-DEV} & {2007}\\
+		\hline
+		{2006-7087} & {Dotdeb PHP} & {2007}\\
+		\hline
+		{2007-1718} & {PHP 4.0-4.4.6 and 5.0-5.2.1} & {2007}\\
+		\hline
+		{2007-1898} & {Jetbox CMS 2.1} & {2007}\\
+		\hline
+		{2007-1900} & {FILTER\_VALIDATE\_EMAIL PHP} & {2007}\\
+		\hline
+		{2007-2731} & {Jetbox CMS 2.1} & {2007}\\
+		\hline
+		{2008-2105} & {Bugzilla} & {2008}\\
+		\hline
+		{2009-1469} & {IceWarp} & {2009}\\
+		\hline
+		{2008-7281} & {OTRS - Open Ticket Request System} & {2011}\\
+		\hline
+		{2014-2957} & {Exim} & {2014}\\
+		\hline
+		{2015-8476} & {PHPMailer} & {2015}\\
+		\hline
+		{2016-4803} & {dotCMS} & {2016}\\
 		\hline
 
-		{Early 2000's } & { PHP 4.0 is released, along with support for the mail() function, which has no protection against E-Mail Header Injection.}\\
-		\hline
-
-		{Jul 2004} & { Next Major version of PHP - Version 5.0 releases}\\
-		\hline
-
-		{Dec 2004} & { First known article about the vulnerability surfaces on phpsecure.info}\\
-		\hline
-
-		{Oct 2007} & {The vulnerability makes its way into a text by Stuttard and Pinto. }\\
-		\hline
-
-		{Dec 2008} & {Blog post and accompanying wiki about the header injection attack in detail with examples.}\\
-		\hline
-
-		{Apr 2009} & {Bug filed about email.header package to fix the issue on Python Bug Tracker}\\
-		\hline
-
-		{Jan 2011} & {Bug fix for Python 3.1, Python 3.2, Python 2.7 for email.header package, backport to older versions not available.}\\
-		\hline
-
-		{Sep 2011} & {The vulnerability is described with an example in the 2nd edition of the text by Stuttard and Pinto.}\\
-		\hline
-
-		{Aug 2013} & {Acunetix adds E-Mail Header Injection to the list of vulnerabilties they detect, as part of their Enterprise Web Vulnerability Scanner Software.}\\
-		\hline
-
-		{May 2014} & {Security Advisory for JavaMail SMTP Header Injection via method setSubject is written by Alexandre Herzog.}\\
-		\hline
-
-		{Dec 2015}  & {PHP 7 releases, mail function still unpatched.}\\
-		\hline
 	\end{tabular}
-	\caption[\titlecap{A brief history of e-mail header injection}]{A brief history of e-mail header injection.}
+	}
+	\caption{History of software found in Common Vulnerabilities and Exposures database affected by e-mail header injection vulnerability}
 	\label{tab:history}
 \end{table}
+%TODO Adam: added this table

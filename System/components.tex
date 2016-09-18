@@ -82,6 +82,7 @@ The coverage provided by each payload is shown in Table~\ref{tab:payloadcov}.\\
 
 \begin{table}[tbp]
 	\centering
+	\normalsize
 	\begin{tabular}{|c|c|c|}
 		\hline
 		\multicolumn{1}{|c|}{\textbf{Payload}} & \multicolumn{1}{c}{\textbf{Languages covered}} & \multicolumn{1}{|c|}{\textbf{Platforms covered}}\\
@@ -114,7 +115,10 @@ The Injection Verification module checks for the presence of injected data in th
 \sloppy
 `Regular \email' refers to the \emails received by account \colorbox{lightgray}{\lstinline{reguser(xxxx)@example.com}} that were sent due to injecting the regular, non-malicious, payload (discussed in Section~\ref{Comp:Fuzzer:nmp}). The objective of the analysis on this \email is identify if the input fields that we injected with data appear on the resulting \email, and if so, which fields appear where.
 
-To find this, we parse each received \email, and check whether \emph{any} of the fields we injected with data appear as part of either the headers or the body of the \email. If they do, we add them to the list of fields that can potentially result in an \ehi vulnerability for the given \email. We then pass on this information back to the Fuzzer pipeline, along with the vulnerable form.
+%TODO Adam: made clear that ALL input fields that appear in the email are fuzzed, with examples like name, username, etc.
+To find this, we parse each received \email, and check whether \emph{any} of the fields we injected with data appear as part of either the headers or the body of the \email. These could be fields such as name, date of birth, username, etc. If they do, we add them to the list of fields that can \emph{potentially} result in an \ehi vulnerability for the given \email. 
+
+We then pass on this information back to the Fuzzer pipeline, along with the vulnerable form, where these fields are \emph{also} fuzzed along with the \email fields to check for the presence of \ehi.
 
 \paragraph{Analyzing \email with payloads}
 The ``\emails with payloads'' refers to \emails received by either the \colorbox{lightgray}{\lstinline{nuser(xxxx)@example.com}} or \colorbox{lightgray}{\lstinline{maluser(xxxx)@example.com}} accounts. These \emails could only be received as a result of injecting the malicious payloads that were discussed in Section~\ref{Comp:Fuzzer:mp}. 
