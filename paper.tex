@@ -145,12 +145,14 @@
 \newcommand{\totalvirusemails}{443\xspace}
 
 \newcommand{\ehi}{E-\nobreak{}mail Header Injection\xspace}
-\renewcommand{\email}{e-\nobreak{}mail\xspace}
 \newcommand{\emails}{\email{}s\xspace}
 \newcommand{\emailed}{\email{}ed\xspace}    
 \newcommand{\Email}{E-\nobreak{}mail\xspace}        
 \newcommand{\Emails}{\Email{}s\xspace}
 
+\makeatletter
+\def\@copyrightspace{\relax}
+\makeatother
 \begin{document}
 	
 	% Copyright
@@ -210,7 +212,7 @@
 	% without further effort on your part as the last section in
 	% the body of your article BEFORE References or any Appendices.
 	
-	\numberofauthors{1} %  in this sample file, there are a *total*
+	\numberofauthors{6} %  in this sample file, there are a *total*
 	% of EIGHT authors. SIX appear on the 'first-page' (for formatting
 	% reasons) and the remaining two appear in the \additionalauthors section.
 	%
@@ -231,17 +233,33 @@
 		% e-mail address with \email.
 		%
 		% 1st. author
-		%% \alignauthor
-		%% Sai Prashanth Chandramouli\\
-		%% \affaddr{Arizona State University}\\
-		%% \email{saipc@asu.edu}
-		%% % 2nd. author
-		%% \alignauthor
-		%% Adam Doup\'{e}\titlenote{The secretary disavows
-		%% 	any knowledge of this author's actions.}\\
-		%% \affaddr{Arizona State University}\\
-		%% \email{doupe@asu.edu}
-		%% % 3rd. author
+		\alignauthor
+		Sai Chandramouli\\
+		\affaddr{Arizona State University}\\
+		saipc@asu.edu
+		% 2nd. author
+		\alignauthor
+		Pierre-Marie Bajan\\
+		\affaddr{University of California, Santa Barbara}\\
+		pm.bajan@free.fr
+		\alignauthor
+		Giovanni Vigna\\
+		\affaddr{University of California, Santa Barbara}\\
+		giovanni.vigna@gmail.com
+		\and
+		\alignauthor
+		Ziming Zhao\\
+		\affaddr{Arizona State University}\\
+		Ziming.Zhao@asu.edu
+		\alignauthor
+		Adam Doup\'{e}\\
+		\affaddr{Arizona State University}\\
+		doupe@asu.edu
+		\alignauthor
+		Gail-Joon Ahn\\
+		\affaddr{Arizona State University}\\
+		Gail-Joon.Ahn@asu.edu
+		% 3rd. author
 		%% \alignauthor Lars Th{\o}rv{\"a}ld\titlenote{This author is the
 		%% 	one who did all the really hard work.}\\
 		%% \affaddr{The Th{\o}rv{\"a}ld Group}\\
@@ -279,7 +297,7 @@
 	% Just remember to make sure that the TOTAL number of authors
 	% is the number that will appear on the first page PLUS the
 	% number that will appear in the \additionalauthors section.
-	
+	\renewcommand{\email}{e-\nobreak{}mail\xspace}
 	\maketitle
 	\input{abstract}
 	
