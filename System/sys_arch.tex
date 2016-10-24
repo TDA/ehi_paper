@@ -3,18 +3,25 @@
 Our system can be broadly divided into two modules: Data Gathering and Payload Injection.
 
 The Data Gathering module is responsible for the following activities:
-	\begin{itemize}
-		\item Interface with the Crawler (Section~\ref{Comp:Crawler}) and receive the URLs.
-		\item Parse the HTML for the corresponding URL and store the relevant form data (Section~\ref{Comp:FP}).
-		\item Check for the presence of HTML forms that could allow a user to send/receive \email and store references to these forms (Section~\ref{Comp:EMFC}).
-	\end{itemize}
+(1) Interface with the Crawler (Section~\ref{Comp:Crawler}) and
+receive the URLs, (2) Parse the HTML for the corresponding URL and
+store the relevant form data (Section~\ref{Comp:FP}), and (3) Check
+for the presence of HTML forms that could allow a user to send/receive
+\email and store references to these forms (Section~\ref{Comp:EMFC}).
+
     
-	The Payload Injection module is responsible for the following activities:
-	\begin{itemize}
-		\item Retrieve the HTML forms that could allow a user to send/receive \email and reconstruct these forms (Section~\ref{Comp:EMFR}).
-		\item Inject these forms with benign data (non-malicious payloads) and generate an HTTP request to the corresponding URL (Section~\ref{Comp:Fuzzer:nmp}).
-		\item Analyze the received \emails, extracting the \email header fields and checking for the presence of the injected payloads (Section~\ref{Comp:EMA}).
-		\item Inject the HTTP requests that sent us \emails with malicious payloads, and generate an HTTP request to the corresponding URL to check if an \ehi vulnerability exists in that web application (Section~\ref{Comp:Fuzzer:mp}).
-	\end{itemize} 
+The Payload Injection module is responsible for the following
+activities: (1) Retrieve the HTML forms that could allow a user to
+send/receive \email and reconstruct these forms
+(Section~\ref{Comp:EMFR}), (2) Inject these forms with benign data
+(non-malicious payloads) and generate an HTTP request to the
+corresponding URL (Section~\ref{Comp:Fuzzer}), (3) Analyze the
+received \emails, extracting the \email header fields and checking for
+the presence of the injected payloads (Section~\ref{Comp:EMA}), and
+(4) Inject the HTTP requests that sent us \emails with malicious
+payloads, and generate an HTTP request to the corresponding URL to
+check if an \ehi vulnerability exists in that web application
+(Section~\ref{Comp:Fuzzer}).
+
 	%% The functionality of each component is discussed further in the `Components' section (Section~\ref{Comp}). The Payload Injection pipeline is not a linear, but cyclic process, as we inject different payloads and analyze the received \emails.
 

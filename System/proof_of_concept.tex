@@ -1,6 +1,7 @@
 To validate our system, we constructed three sets of web applications in PHP, Python, and Ruby. Each of these applications was a simple web application that accepted user input to construct and send an \Email.
 
-The front-end for each of the three applications is shown in Listing~\ref{code:html}. The server-side code for PHP, Python, and Ruby is shown in Listings~\ref{code:phpemi}, \ref{code:pyemi}, and \ref{code:rubyemi} respectively.
+The server-side code for PHP is shown in Listings~\ref{code:phpemi},
+while the Python and Ruby code is not shown for space limitations.
 
 % Adam: I think it might be nice to have the Ruby code here too. - DONE.
 
@@ -8,27 +9,27 @@ Before performing a wide scan of the web, we verified that our system was able t
 
 %% We tested for the headers being injected in real-time by running an instance of MailCatcher, set to listen on all SMTP messages. A sample screenshot of a fuzzed request for the Ruby backend (generated in PostMan) is shown in Figure~\ref{fig:postmanruby}. The \email sent due to injecting this payload (as captured by MailCatcher) is shown in Figure~\ref{fig:mailcatcherruby}. It can be seen that the headers have been added to the resulting \email, and we have successfully managed to overwrite the \texttt{Subject} field with our message, `hello'.
 
-%% The astute reader might have noticed that in the given example we have used \texttt{\%0a} to separate the headers, while in Section~\ref{Comp:Fuzzer:mp}, we had used \texttt{\textbackslash{}n}. This is due to URL encoding~\cite{rfc1738}, wherein special characters in th URL are `encoded' or `escaped' with their ASCII equivalent.
+%% The astute reader might have noticed that in the given example we have used \texttt{\%0a} to separate the headers, while in Section~\ref{Comp:Fuzzer}, we had used \texttt{\textbackslash{}n}. This is due to URL encoding~\cite{rfc1738}, wherein special characters in th URL are `encoded' or `escaped' with their ASCII equivalent.
 %% The reason why we do not have to do this with the payloads our system injects is due to the fact that the Python Requests library that we use to generate the HTTP requests automatically does this encoding for us.
 
-\begin{lstlisting}[language=HTML,caption={HTML page for showcasing
-      \ehi, a simple front-end for our
-      examples.},label={code:html}, float]
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="author" content="XYZ">
-<title>Mock Email</title>
-</head>
-<body>
-<form action="script-path" method="post">
-<input type="text" name="email">
-<textarea name="msg"></textarea>
-<input type="submit" value="Email Me!">
-</form></body></html>
-\end{lstlisting}
-\input{Background/ruby}
+%% \begin{lstlisting}[language=HTML,caption={HTML page for showcasing
+%%       \ehi, a simple front-end for our
+%%       examples.},label={code:html}, float]
+%% <!doctype html>
+%% <html lang="en">
+%% <head>
+%% <meta charset="utf-8">
+%% <meta name="author" content="XYZ">
+%% <title>Mock Email</title>
+%% </head>
+%% <body>
+%% <form action="script-path" method="post">
+%% <input type="text" name="email">
+%% <textarea name="msg"></textarea>
+%% <input type="submit" value="Email Me!">
+%% </form></body></html>
+%% \end{lstlisting}
+%\input{Background/ruby}
 
 %% \begin{figure}[tbp]
 %% 	\centering

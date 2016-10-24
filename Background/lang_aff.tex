@@ -14,9 +14,10 @@ A bug was filed about an \ehi vulnerability in Python's implementation of the \t
 
 Unfortunately, the bug fix was only for the \texttt{email.header} package, and not for other frequently used packages such as \texttt{email.parser}, where both the classic \texttt{Parser()} and the newer \texttt{FeedParser()} contain \ehi vulnerabilities even in the latest versions: \texttt{2.7.11} and \texttt{3.5}. The bug fix was also not backported to older versions of Python.
 There is no mention of the vulnerability in the Python documentation for either library. Contrary to PHP's behavior of overwriting existing headers, Python only recognizes the first occurrence of a header, and ignores duplicate headers.
-A working code sample of the vulnerability, written in Python 2.7.11, is shown in Listing~\ref{code:pyemi}.
 
-\input{Background/py.tex}
+%A working code sample of the vulnerability, written in Python 2.7.11, is shown in Listing~\ref{code:pyemi}.
+
+%\input{Background/py.tex}
 
 \noindent{\textbf{Java}} has a bug report about \ehi filed against its \texttt{JavaMail} API. A detailed write-up by Alexandre Herzog~\cite{Herzog.2014} contains a proof-of-concept program that exploits the API to inject headers.
 

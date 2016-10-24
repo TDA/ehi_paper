@@ -11,11 +11,8 @@ message = """
 
     This is a test e-mail message.
 """
-# construct a post request with email set to attack_string
-# attack_string => s@example.com%0abcc:spc@example.com%0aSubject:Hello
 Net::SMTP.start('localhost',1025) do |smtp|
 smtp.send_message message, 'sch@example.com', 'to@todomain.com'
 end
-# Headers get added, and Subject field changes to what we set.
 end
 \end{lstlisting}

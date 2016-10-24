@@ -4,10 +4,5 @@ $from = $_REQUEST['email'];
 $subject = 'Hello XYZ';
 $message = 'We need you to reset your password';
 $to = 'xyz@example.com';
-// example attack string injected as for
-// $_REQUEST['email'] => 
-// 'abc@example.com\nCC:spc@example.com'
 $retValue = mail($to, $subject, $message, "From: $from");
-// E-Mail gets sent to both 
-// xyz@example.com AND spc@example.com
 \end{lstlisting}

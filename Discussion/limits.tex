@@ -13,7 +13,7 @@
 		
 		\begin{table}
 			\centering
-			\normalsize
+			\scriptsize
 			\begin{tabular}{|p{4cm}|c|c|}
 				\hline
 				\multicolumn{1}{|c}{\textbf{Method}} &
@@ -34,12 +34,15 @@
 
         Because we search for the words \texttt{e-mail}, \texttt{mail}, or \texttt{email} within the HTML form, if the website does not use English names for its forms our system will not be able to find the presence of an \email field. An example is by using the French word for \texttt{e-mail}---courrier {{\'e}}lectronique--- our system is unable to find the presence of the e-mail field. 
         
-		During the crawl, our system was blacklisted by a few web applications (mostly WordPress ones), and Internet Service Providers (ISPs).
-		To overcome this, we did two things:
-		\begin{enumerate}
-			\item Used an IP range of 60 different IP addresses.
-			\item Used a blacklist of our own to prevent our Fuzzer from fuzzing web application that are known to blacklist automated crawlers.  However, we could not gather any data about these web applications.
-		\end{enumerate}
+		During the crawl, our system was blacklisted by a few web
+        applications (mostly WordPress ones), and Internet Service
+        Providers (ISPs). To overcome this, we did two things: (1)
+        used an IP range of 60 different IP addresses, and (2) Used a
+        blacklist of our own to prevent our Fuzzer from fuzzing web
+        application that are known to blacklist automated crawlers.
+        However, we could not gather any data about these web
+        applications.
+
 
 		We found that certain WordPress plugins prevent the \ehi attack by sanitizing user input on contact forms. Although not all  WordPress web applications are secure, between the presence of the plugins on some websites, and getting tagged as ``spambots'' by others, we found few vulnerabilities on WordPress web applications.
 
