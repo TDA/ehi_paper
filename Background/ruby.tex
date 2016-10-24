@@ -2,22 +2,19 @@
       header injection vulnerability.},label={code:rubyemi}, float]
 require 'sinatra'
 require 'net/smtp'
-
 get '/hello' do
 email = params[:email]
-
 message = """
-From: Sch <sch@example.com>
-Subject: SMTP e-mail test
-To: #{email}
+    From: Sch <sch@example.com>
+    Subject: SMTP e-mail test
+    To: #{email}
 
-This is a test e-mail message.
+    This is a test e-mail message.
 """
 # construct a post request with email set to attack_string
 # attack_string => s@example.com%0abcc:spc@example.com%0aSubject:Hello
-Net::SMTP.start('localhost', 1025) do |smtp|
-smtp.send_message message, 'sch@example.com',
-'to@todomain.com'
+Net::SMTP.start('localhost',1025) do |smtp|
+smtp.send_message message, 'sch@example.com', 'to@todomain.com'
 end
 # Headers get added, and Subject field changes to what we set.
 end

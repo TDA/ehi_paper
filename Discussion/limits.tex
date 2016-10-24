@@ -23,16 +23,16 @@
 				\hline
 				\centering Using our pipeline & 629.043 & - \\
 				\hline
-				\centering Adding Selenium to our pipeline & 919.372 & \slowSelenium \\
+				\centering Our pipeline with Selenium & 919.372 & \slowSelenium \\
 				\hline				
-				\centering Detecting \email fields by parsing each field instead of `grep'ing inside form & 707.154 & \slowParse \\								
+				\centering Parsing \email fields instead of `grep'ing inside form & 707.154 & \slowParse \\								
 				\hline
 			\end{tabular}
 			\caption[\titlecap{}]{Running times in seconds for crawling, parsing, and detecting presence of \email fields in 1000 random wikipedia pages.}
 			\label{tab:perf}
 		\end{table}
 
-        Because we search for the words \texttt{e-mail}, \texttt{mail}, or \texttt{email} within the HTML form, if the website does not use English names for its forms our system will not be able to find the presence of an \email field. An example is shown in Listing~\ref{code:htmlfrench}. Here, the French word for \texttt{e-mail}---courrier électronique---is used, and our system is unable to find the presence of the e-mail field. 
+        Because we search for the words \texttt{e-mail}, \texttt{mail}, or \texttt{email} within the HTML form, if the website does not use English names for its forms our system will not be able to find the presence of an \email field. An example is by using the French word for \texttt{e-mail}---courrier {{\'e}}lectronique--- our system is unable to find the presence of the e-mail field. 
         
 		During the crawl, our system was blacklisted by a few web applications (mostly WordPress ones), and Internet Service Providers (ISPs).
 		To overcome this, we did two things:
@@ -65,9 +65,9 @@
 
 %%        	The word \texttt{E-Mail} on Line 2 will result in our system classifying this form as a potential e-mail form, while it clearly is not. However, as we will see, this is not really a significant issue, as despite being added to the \texttt{email\_forms} table, this form will never be injected in the `fuzzer' due to the absence of the appropriate input field in the form. We chose to go with this design, as it allows us to detect almost every form that provides the capability to send or receive e-mail.
 
-\begin{lstlisting}[language=HTML,caption={e-mail field in a different language - French.},label={code:htmlfrench}, literate=%
-	{é}{{\'e}}1, float]
-<input type="text" 
-placeholder="courrier électronique"
-name="courrier_électronique">
-\end{lstlisting}
+%\begin{lstlisting}[language=HTML,caption={e-mail field in a different language - French.},label={code:htmlfrench}, literate=%
+%	{é}{{\'e}}1, float]
+%<input type="text" 
+%placeholder="courrier électronique"
+%name="courrier_électronique">
+%\end{lstlisting}

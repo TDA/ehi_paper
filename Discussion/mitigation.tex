@@ -3,8 +3,8 @@
 After demonstrating that \ehi vulnerabilities exist on the web at large, we now describe the most common measures that can be taken to prevent the occurrence of this vulnerability, or at least reduce the impact.
 \begin{itemize}
 	\item Use Mail Libraries\\
-	Using a safe \email library is the preferred way of preventing \ehi vulnerabilities. Using a library that is well tested can remove the burden of input sanitization from the developer. 
-	A list of known secure libraries for each language and framework discussed previously is shown in Table~\ref{tab:maillib}.
+	Using a safe, well tested \email library is the preferred way of preventing \ehi vulnerabilities (removing the burden of input sanitization from the developer). 
+	A list of known secure libraries for each language and framework discussed is shown in Table~\ref{tab:maillib}.
 	
 	Using libraries such as PEAR Mail, PHPMailer, Apache Commons E-Mail, Contact Form 7, and Swiftmailer can significantly reduce the occurrence of \ehi vulnerability.
 	\begin{table}[tbp]
@@ -34,7 +34,7 @@ After demonstrating that \ehi vulnerabilities exist on the web at large, we now 
 	An example of a secure plug-in is included as part of Table~\ref{tab:maillib}.
 	
 	\item Input Validation\\
-	If neither of the two options are feasible, due to reasons such as the website being an in-house production, or due to lack of support infrastructure, developers can choose to perform proper input sanitization. Sanitization should be done keeping in mind RFC5322~\cite{rfc5322}, and care must be taken to ensure that all edge cases are taken into account.
+	If neither of the two options are feasible (website being an in-house production, or due to lack of support infrastructure), developers can choose to perform proper input sanitization. Sanitization should be done keeping in mind RFC5322~\cite{rfc5322}, and care must be taken to ensure that all edge cases are taken into account.
 	
 	%% Client Side validation alone is not sufficient, and must be supplemented by server-side validation to mitigate the attack. Constant updates to validation methods are required so that new attack vectors do not harm the website in any way.
 	%% Test driven development for such validation methods is also encouraged so that we can be reasonably sure of our defense mechanisms.

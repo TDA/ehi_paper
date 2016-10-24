@@ -43,7 +43,7 @@ following:
 	Due to the \email being from trusted domains, recipient \email clients and anti-spam systems might not flag them as spam. If they do flag them as spam, then that can lead to the website being blacklisted as a spam generator (which would cause a Denial of Service on the vulnerable web application). 
 	
 \noindent\textbf{Information Extraction}
-	\Emails can contain sensitive data that is meant to be accessed only by the user. Due to an \ehi vulnerability, an attacker can add a \texttt{bcc} header, and the \email server will send a copy of the private \email to the attacker, thereby extracting important information.
+	\Emails can contain sensitive data that is meant to be accessed only by the user. Due to an \ehi vulnerability, an attacker can add a \texttt{bcc} header, and the \email server will send a copy of the \email to the attacker, thereby exposing important information.
 	User privacy can thus be compromised, and loss of private information can by itself lead to other attacks.
 
     \noindent\textbf{Denial of Service}

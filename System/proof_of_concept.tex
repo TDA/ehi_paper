@@ -1,4 +1,3 @@
-\subsection{Validation}
 To validate our system, we constructed three sets of web applications in PHP, Python, and Ruby. Each of these applications was a simple web application that accepted user input to construct and send an \Email.
 
 The front-end for each of the three applications is shown in Listing~\ref{code:html}. The server-side code for PHP, Python, and Ruby is shown in Listings~\ref{code:phpemi}, \ref{code:pyemi}, and \ref{code:rubyemi} respectively.
@@ -23,13 +22,11 @@ Before performing a wide scan of the web, we verified that our system was able t
 <title>Mock Email</title>
 </head>
 <body>
-<form action="{path-to-back-end}" method="post">
-<input type="text" placeholder="Email" name="email" id="\email"><br>
-<textarea name="msg" rows="20" cols="120"></textarea>
+<form action="script-path" method="post">
+<input type="text" name="email">
+<textarea name="msg"></textarea>
 <input type="submit" value="Email Me!">
-</form>
-</body>
-</html>
+</form></body></html>
 \end{lstlisting}
 \input{Background/ruby}
 

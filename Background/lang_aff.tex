@@ -1,18 +1,18 @@
 \subsection{Languages Affected}
 \label{languages}
-This section describes the popular programming languages that contain \ehi vulnerabilities in their standard email libraries. This section is not intended as a complete reference of vulnerable functions and methods, but rather as a guide that specifies which parts of the language are vulnerable.
+We now describe the popular programming languages that contain \ehi vulnerabilities in their standard \email libraries. This section is not intended as a complete reference of vulnerable functions and methods, but rather as a guide that specifies which parts of the language are vulnerable.
 
 \noindent{\textbf{PHP}} was one of the first languages found to be vulnerable to \ehi in its implementation of the \texttt{mail()} function at the time of release of PHP~4.0. The early finding of this vulnerability can be attributed in part to the success and popularity of the language for creating web pages. According to w3techs~\cite{W3techs}, PHP is used by 81.9\% of all the websites.
 
 After 13 further iterations of PHP since the 4.0 release (the current version is 7.1), the \texttt{mail()} function is yet to be fixed after 15 years. However, it is specified in the PHP documentation~\cite{PHPDocs} that the \texttt{mail()} function does not protect against \ehi.
-A working code sample of the vulnerability, written in PHP~5.6 (latest well-supported version), is shown in  Listing~\ref{code:phpemi}.
+A working code sample of the vulnerability, written in PHP~5.6 is shown in  Listing~\ref{code:phpemi}.
 
 \begin{sloppypar}
 \noindent{\textbf{Python}}
 A bug was filed about an \ehi vulnerability in Python's implementation of the \texttt{email.header} library and the header parsing functions allowing newlines in early 2009, which was followed by a partial patch in early 2011.
 \end{sloppypar}
 
-Unfortunately, the bug fix was only for the \texttt{email.header} package, and thus exists in other frequently used packages such as \texttt{email.parser}, where both the classic \texttt{Parser()} and the newer \texttt{FeedParser()} contain \ehi vulnerabilities even in the latest versions: \texttt{2.7.11} and \texttt{3.5}. The bug fix was also not backported to older versions of Python.
+Unfortunately, the bug fix was only for the \texttt{email.header} package, and not for other frequently used packages such as \texttt{email.parser}, where both the classic \texttt{Parser()} and the newer \texttt{FeedParser()} contain \ehi vulnerabilities even in the latest versions: \texttt{2.7.11} and \texttt{3.5}. The bug fix was also not backported to older versions of Python.
 There is no mention of the vulnerability in the Python documentation for either library. Contrary to PHP's behavior of overwriting existing headers, Python only recognizes the first occurrence of a header, and ignores duplicate headers.
 A working code sample of the vulnerability, written in Python 2.7.11, is shown in Listing~\ref{code:pyemi}.
 

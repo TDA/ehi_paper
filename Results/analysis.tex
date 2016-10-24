@@ -25,7 +25,7 @@ We explain the combination of these header injections (4-7) as follows:
 
 \begin{itemize}
 	\item \Email Header Injections with both \texttt{bcc} and \texttt{x-check} headers\\
-	  These represent the scenario where an attacker can inject multiple headers into the \emails. We can see that 65.65\% of the received \texttt{bcc} header injected \emails are also susceptible to being injected with additional headers.
+	  These represent the scenario where an attacker can inject multiple headers into the \emails. We can see that 54\% of the received \texttt{bcc} header injected \emails are also susceptible to being injected with additional headers.
       % Adam: What is the exact percentage? We should use that rather than an approximate number - DONE.
 	
 	\item Both \texttt{To} header injections and \texttt{x-check} headers \\
@@ -36,7 +36,7 @@ We explain the combination of these header injections (4-7) as follows:
       % Adam: What is the actual behavior? This is confusing. - Changed. DONE.
 	
 	\item Total successful injections\\
-	  This represents the total number of successful injections. This includes the \ehi with \texttt{bcc} header\,(1), \texttt{To} header injections alone\,(3), and Unique \texttt{x-check} headers found in \texttt{nuser} \emails\,(7). A total of \success vulnerabilities were found by our system.
+	  This represents the total number of successful injections. This includes the \ehi with \texttt{bcc} header\,(1), \texttt{To} header injections\,(3), and Unique \texttt{x-check} headers found in \texttt{nuser} \emails\,(7). A total of \success vulnerabilities were found by our system.
 
       % Adam: we need the actual #s here too. These are the core results of our analysis, they need to be in the text. - DONE.
 	
