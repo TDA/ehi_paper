@@ -29,6 +29,7 @@
 				\hline
 			\end{tabular}
 			\caption[\titlecap{}]{Running times in seconds for crawling, parsing, and detecting presence of \email fields in 1000 random wikipedia pages.}
+            \vspace{-5ex}
 			\label{tab:perf}
 		\end{table}
 
@@ -48,9 +49,7 @@
 
         E-Mail libraries such as the PHP Extension and Application Repository's (PEAR) mail library provide sanitization for user input. While this is not strictly a limitation of our project, it still means that we are not able to inject sites that used these libraries successfully.
 
-        The parser that we use for HTML parsing---Beautiful Soup---does not parse malformed HTML and throws an exception on encountering malformed HTML. Thus, we have designed the system to exit gracefully on such occasions. A side-effect of this is that our system is unable to test web applications with bad HTML markup\,\footnotemark.
-
-        \footnotetext{We do not have any data about whether bad markup indicates an overall lower quality of the web application, and thus cannot comment on whether such websites are more likely to have vulnerabilities.}
+        The parser that we use for HTML parsing---Beautiful Soup---does not parse malformed HTML and throws an exception on encountering malformed HTML. Thus, we have designed the system to exit gracefully on such occasions. A side-effect of this is that our system is unable to test web applications with bad HTML markup.
 
         Black-box testing is highly beneficial as explained in Section~\ref{sys:appr}, however it also has a drawback in that we cannot verify whether the reported vulnerability exists in the source code or is a feature of the website (e.g., the website allows users to send bulk e-mail, adding as many \texttt{cc} or \texttt{bcc} headers). We must manually notify the developers to get this feedback.
 

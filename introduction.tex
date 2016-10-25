@@ -1,6 +1,9 @@
 \section{Introduction}
-The World Wide Web has single-handedly brought about a change in the way we use computers. The ubiquitous nature of the web has made it possible for anyone to access information and services anywhere and on multiple devices such as phones, laptops, TVs, and cars. This access has ushered in an era of web applications which depend on user input. 
-While the rapid pace of development has improved the speed of information dissemination, it comes at a cost. As users move more and more of their personal and financial information to web applications, attackers are responding by using web application vulnerabilities to access this lucrative data.
+The World Wide Web has single-handedly brought about a change in the way we use computers. The ubiquitous nature of the web made it possible for anyone to access information and services anywhere and on multiple devices such as phones, laptops, TVs, and cars. This access has ushered in an era of web applications which depend on user input. 
+While the rapid pace of development has improved the speed of
+information dissemination, it comes at a cost. As users move more and
+more of their personal and financial information to web applications,
+attackers are responding by using web application vulnerabilities to steal lucrative data.
 
 Many common and well-known web application vulnerabilities, such as SQL Injection and Cross-Site Scripting~\cite{OWASPT10}, are command injection vulnerabilities~\cite{commandinjection}, where malicious user input is used to alter the structure of a command (a SQL query in the case of SQL Injection and JavaScript code in the case of Cross-Site Scripting). Developers of web applications must use the correct sanitization routine in all paths leading from user input to a command. 
 
@@ -10,17 +13,24 @@ With the proper injection string, \ehi vulnerabilities can be exploited by an at
 
 While some command injection vulnerabilities have received extensive attention from the research community, \ehi vulnerabilities have received little focus. In fact, the Acunetix vulnerability scanner contains an AcuMonitor component which claims to detect \ehi vulnerabilities while scanning~\cite{acumonitor}. Unfortunately, as a commercial product, little is known about how AcuMonitor detects \ehi vulnerabilities. 
 
-To shed light on this little-studied vulnerability class, we describe \ehi vulnerabilities and measure \ehi vulnerabilities on the web. To perform this measurement, we crawled the web, extracted forms with \email fields, and injected them with different payloads to infer the existence of an \ehi vulnerability. We then audited received \emails to see if any of the injected data was present. This allowed us to classify whether a particular URL was vulnerable to the attack. Our automated system works in a black-box manner, without looking at the web application's source code, and only analyzes the \emails we receive based on the injected payloads.
+To shed light on this little-studied vulnerability class, we describe
+\ehi vulnerabilities and measure \ehi vulnerabilities. To perform this
+measurement, we crawled the web, extracted forms with \email fields,
+and injected them with different payloads to infer the existence of an
+\ehi vulnerability. We then audited received \emails to see if any of
+the injected data was present. This allowed us to classify whether a
+particular URL was vulnerable to the attack. Our automated system
+works in a black-box manner, without looking at the web application's
+source code, and only analyzes the paylods of the \emails.
 %TODO Adam: Added a line to make clear that we wanted a quantification before attempting something like a source-code analyzer. This addresses reviewer 690B's concerns.
 
-The objective of our research is to study the prevalence of this vulnerability on the World Wide Web and identify whether further research is required in this area.
 In summary, we make the following contributions:
 \begin{itemize}
 
 \item We develop a black-box approach to detect \ehi vulnerabilities in a web application.
-
+\vspace{-2ex}
 \item We develop an open-source system to crawl the web and automatically detect \ehi vulnerabilities.
-
+\vspace{-2ex}
 \item We use our system to crawl \urls URLs, and we find \success URLs vulnerable to \ehi across \domains domains. 
-
+\vspace{-2ex}
 \end{itemize}
