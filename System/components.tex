@@ -25,7 +25,7 @@ explicit HTML5 \email field (e.g.,\ {\lstinline{<input type="email">}}). This is
 design pattern used by web developers, where they may have a text
 field with an \texttt{id} or \texttt{name} attribute set to
 \texttt{email}, instead of an actual \email type attribute, for
-purposes of backward compatibility with older browsers. The output of this stage is stored in the database for persistence and acts as the input to the Payload Injection module.
+purposes of backward compatibility with older browsers. The output of this stage is stored in the database and acts as the input to the Payload Injection module.
 
 %% Compared to searching for explicit \email fields, by searching for the presence of the words \texttt{\email}, \texttt{mail} or \texttt{email} in the form, we are assured very few false negatives. This is because our system is bound to find \email fields with their \texttt{type}, \texttt{name}, or \texttt{id} set to one of these words. The system is also substantially faster as we do not have to parse the individual form fields at this point in the pipeline. However, despite the advantages, this might also lead to a false positive rate. We discuss this possibility in detail in Section~\ref*{issues:fpr} - Design Issues.
 
@@ -33,10 +33,10 @@ purposes of backward compatibility with older browsers. The output of this stage
 \subsubsection{\Email Form Retriever}
 \label{Comp:EMFR}
 The \Email Form Retriever is the first stage in the Payload Injection
-module. It has the following functions: (1) Retrieve forms and
-ensure no duplication occurs before the fuzzing stage, (2) reconstruct
+module. It does the following: (1) Retrieve forms and
+remove any duplicates, (2) reconstruct
 each form's input fields
-and values, using the stored form data, and (3) construct the target URL
+and values with the stored form data, and (3) construct the target URL
 to create an HTTP request for fuzzing.
 
 

@@ -1,12 +1,9 @@
 \subsection[The Pipeline]{Understanding the Data Pipeline}
 %This section serves to represent our pipeline quantitatively and graphically. 
-Table~\ref{tab:pipeline} showcases the data gathered by our pipeline, with the differential changes at each stage of the pipeline. 
+Table~\ref{tab:pipeline} showcases the data gathered by our pipeline, with the differential changes at each stage of the pipeline. At each stage of the pipeline, the amount of data decreases, for instance, out of the \urls\ URLs we crawled, only \forms\ forms (\formsDelta) were found. Out of these, only \emailforms\ forms (\emailformsDelta) contained e-mail fields.
 
-At each stage of the pipeline, the amount of data decreases, for instance, out of the \urls\ URLs we crawled, only \forms\ forms (\formsDelta) were found. Out of these, only \emailforms\ forms (\emailformsDelta) contained e-mail fields.
+In our fuzzing attempts, the same behavior is observed. We fuzzed \fuzzed\ forms with the regular payload, which resulted in a total of \recd\ e-mails~(\recdDelta). After analysis of the received e-mails, we further fuzzed \malfuzzed\ forms, which resulted in \success\ e-mails (\successDelta) which contain the vulnerability across \ips IP addresses from \domains domains.
 
-In our fuzzing attempts, the same behavior is repeated. We fuzzed \fuzzed\ forms with the regular payload, which resulted in a total of \recd\ e-mails (\recdDelta). After analysis of the received e-mails, we further fuzzed \malfuzzed\ forms, which resulted in \success\ e-mails (\successDelta) which contain the vulnerability across \ips IP Addresses corresponding to \domains domains.
-
-%TODO Adam: added the reason for the reduction in the numbers, and accept that we do not have the data to quantify about captcha/csrf
 We attribute the difference in the number of forms found to the number of forms fuzzed (a difference of \diffFoundFuzz forms) to the presence of bot-blocking mechanisms on a website (discussed in Section~\ref{limitations}), though we do not know what percentage was caused by the individual bot-blocking mechanisms discussed in Section~\ref{limitations}. 
 
 We would like to remark that over 1\% of the forms that were not fuzzed (100 out of \diffFoundFuzz) were also tested manually using PostMan to generate HTTP requests with payloads to verify that our system was working as intended.

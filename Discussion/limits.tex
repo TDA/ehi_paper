@@ -9,7 +9,7 @@
 		Thus, our system will not see dynamically injected forms and hence is unable to detect whether \ehi vulnerabilities are present in these forms. The workaround would be to use a JavaScript engine to query for the \texttt{document.getElementsByTagName('html')[0].innerHTML} (from inside web browser automation tools such as Selenium), then use that as the source HTML. 
 		
 		%TODO Adam: added a table here, and explanation about performance tradeoffs with Selenium and bs4.
-		A comparison of the running times between the different approaches is shown in Table~\ref{tab:perf}. Because using Selenium results in a slowdown of \slowSelenium, we chose not to do this for performance reasons. 
+		A comparison of the running times between the different approaches is shown in Table~\ref{tab:perf}. We chose not to use Selenium as it results in a slowdown of \slowSelenium. 
 		
 		\begin{table}
 			\centering
@@ -39,9 +39,9 @@
         applications (mostly WordPress ones), and Internet Service
         Providers (ISPs). To overcome this, we did two things: (1)
         used an IP range of 60 different IP addresses, and (2) Used a
-        blacklist of our own to prevent our Fuzzer from fuzzing web
-        application that are known to blacklist automated crawlers.
-        However, we could not gather any data about these web
+        blacklist of our own to prevent our Fuzzer from fuzzing
+        applications that are known to blacklist automated crawlers.
+        This restricted us from gathering data about these
         applications.
 
 
@@ -51,7 +51,7 @@
 
         The parser that we use for HTML parsing---Beautiful Soup---does not parse malformed HTML and throws an exception on encountering malformed HTML. Thus, we have designed the system to exit gracefully on such occasions. A side-effect of this is that our system is unable to test web applications with bad HTML markup.
 
-        Black-box testing is highly beneficial as explained in Section~\ref{sys:appr}, however it also has a drawback in that we cannot verify whether the reported vulnerability exists in the source code or is a feature of the website (e.g., the website allows users to send bulk e-mail, adding as many \texttt{cc} or \texttt{bcc} headers). We must manually notify the developers to get this feedback.
+        Black-box testing is highly beneficial as explained in Section~\ref{sys:appr}, however it also has a drawback in that we cannot verify whether the reported vulnerability exists in the source code or is a feature of the website (e.g., the website allows users to send bulk e-mail, adding many \texttt{cc} or \texttt{bcc} headers). We must manually notify the developers to get this feedback.
 
 %%        	As discussed in Section~\ref{Comp:EMFC}, we only search for the words \texttt{email}, \texttt{mail} or \texttt{e-mail} (case insensitive) inside the forms to detect the presence of e-mail fields, instead of searching for an \colorbox{lightgray}{\lstinline{<input type = email>}}. This might result in a false positive in certain forms, like the one shown in Listing~\ref{code:false_positive}.
 

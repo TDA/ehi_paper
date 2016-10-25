@@ -36,15 +36,13 @@ Table~\ref{tab:maillib}.
 Content management systems such as WordPress and Drupal include
 libraries and plugins to prevent \ehi. Thus, websites built with such
 CMS' are usually resistant to these attacks. However, it is advised to
-use the correct \email plugin, as not all plugins might be secure. An
-example is included as part of
-Table~\ref{tab:maillib}.
-	
-If neither of the two options are feasible (website being an in-house
-production, or due to lack of support infrastructure), developers can
+use the correct \email plugin, as not all plugins might be secure. An example of a secure plugin is shown in Table~\ref{tab:maillib}.
+
+If neither of the two options are feasible (in-house
+production, or lack of support infrastructure), developers can
 choose to perform proper input sanitization. Sanitization should be
-done keeping in mind RFC5322~\cite{rfc5322}, and care must be taken to
-ensure that all edge cases are taken into account.
+done with RFC5322~\cite{rfc5322} in mind to
+ensure that all edge cases are covered.
 	
 	%% Client Side validation alone is not sufficient, and must be supplemented by server-side validation to mitigate the attack. Constant updates to validation methods are required so that new attack vectors do not harm the website in any way.
 	%% Test driven development for such validation methods is also encouraged so that we can be reasonably sure of our defense mechanisms.
