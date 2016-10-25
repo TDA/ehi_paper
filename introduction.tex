@@ -5,7 +5,7 @@ information dissemination, it comes at a cost. As users move more and
 more of their personal and financial information to web applications,
 attackers are responding by using web application vulnerabilities to steal lucrative data.
 
-Many common and well-known web application vulnerabilities, such as SQL Injection and Cross-Site Scripting~\cite{OWASPT10}, are command injection vulnerabilities~\cite{commandinjection}, where malicious user input is used to alter the structure of a command (a SQL query in the case of SQL Injection and JavaScript code in the case of Cross-Site Scripting). Developers of web applications must use the correct sanitization routine in all paths leading from user input to a command. 
+Many common and well-known web application vulnerabilities, such as SQL Injection and Cross-Site Scripting~\cite{OWASPT10}, are command injection vulnerabilities~\cite{commandinjection}, where malicious user input is used to alter the structure of a command (SQL query and JavaScript code respectively). Developers of web applications must use the correct sanitization routine in all paths leading from user input to a command. 
 
 \ehi vulnerabilities are a lesser-known command injection vulnerability. We verified that this vulnerability exists in the implementation of the built-in \email functionality in the popular languages PHP, Java, Python, and Ruby. The format of \email messages is defined by the Simple Mail Transfer Protocol (SMTP)~\cite{rfc5322}. Each \email message is represented by a series of headers separated by newlines, followed by the body content (separated from the headers by two newlines). Some of these headers are mandatory (From, To, Date), but the headers could also include other information such as the Subject, CC, BCC, etc.
 
@@ -21,8 +21,7 @@ and injected them with different payloads to infer the existence of an
 the injected data was present. This allowed us to classify whether a
 particular URL was vulnerable to the attack. Our automated system
 works in a black-box manner, without looking at the web application's
-source code, and only analyzes the paylods of the \emails.
-%TODO Adam: Added a line to make clear that we wanted a quantification before attempting something like a source-code analyzer. This addresses reviewer 690B's concerns.
+source code, and only analyzes the payloads of the \emails.
 
 In summary, we make the following contributions:
 \begin{itemize}

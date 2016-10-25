@@ -2,6 +2,18 @@ From our extensive crawl of the web, we were able to gather the data
 shown in Table~\ref{tab:data}. We ran the system for 76 days, during which our system crawled \urls unique URLs,
 and found a total of \forms\ forms from \uniqueforms\ unique domains. Out of these forms, our system
 found \emailforms\ forms that contained an \email field, from \uniqueemailforms\ unique domains.
-
+Table~\ref{tab:fuzzed_data} shows the quantity of \emails we received for the benign and malicious payloads. 
 \input{data}
+\input{Results/fuzzed_data}
+
+\noindent\textbf{\Email received from forms.} The \emails that we
+received can be categorized into two categories. (1) \Emails due to
+regular payload: This represents the total number of web applications
+that sent \emails to us. This indicates that we were able to
+successfully submit the forms on these sites to trigger the web
+application to send an \email. (2) \Emails due to malicious payload:
+Once we receive an \email from a web application due to the regular
+payload, we fuzz those forms with the malicious payloads. This field
+represents the total number of unique URLs that are contain an \ehi
+vulnerability.
 
