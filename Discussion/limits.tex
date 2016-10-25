@@ -1,6 +1,7 @@
 \subsection[Limitations]{Limitations}
 \label{limitations}
-		Because our system is fully automated, it is also susceptible to being stopped by mechanisms in web applications that prevent automated crawls or form submissions. Measures such as CAPTCHA, hidden form fields and CSRF (Cross-site Request Forgery~\cite{csrf}) tokens are often used to detect bots~\cite{captchas3, captchas2}.
+		Because our system is fully automated, it is also susceptible to being stopped by mechanisms in web applications that prevent automated crawls or form submissions. A common reason for our fuzzing attempts to fail is the bot-blocking mechanisms built into the web applications. CAPTCHAs (Completely Automated Public Turing test to tell Computers and Humans Apart)~\cite{captchas2} pose a very difficult problem for our system to exploit \ehi, even if it is present.
+		Other measures such as hidden form fields and CSRF (Cross-site Request Forgery~\cite{csrf}) tokens are also often used to detect bots~\cite{captchas3, captchas2}.
 
 		We made sure that we do not fuzz hidden fields in the form, and because our system does not depend on authenticated sessions, CSRF tokens do not pose an issue. However, despite considerable active research in breaking CAPTCHAs~\cite{captchas2, captchas}, breaking CAPTCHAs remains out of the scope of this project. 
 		
@@ -33,7 +34,7 @@
 			\label{tab:perf}
 		\end{table}
 
-        Because we search for the words \texttt{e-mail}, \texttt{mail}, or \texttt{email} within the HTML form, if the website does not use English names for its forms our system will not be able to find the presence of an \email field. An example is by using the French word for \texttt{e-mail}---courrier {{\'e}}lectronique--- our system is unable to find the presence of the e-mail field. 
+        Because we search for the words \texttt{e-mail}, \texttt{mail}, or \texttt{email} within the HTML form, if the website does not use English names for its forms, our system will not be able to find the presence of an \email field. An example is by using the French word for \texttt{e-mail}---courrier {{\'e}}lectronique--- our system is unable to find the presence of the e-mail field. 
         
 		During the crawl, our system was blacklisted by a few web
         applications (mostly WordPress ones), and Internet Service
@@ -47,9 +48,9 @@
 
 		We found that certain WordPress plugins prevent the \ehi attack by sanitizing user input on contact forms. Although not all  WordPress web applications are secure, between the presence of the plugins on some websites, and getting tagged as ``spambots'' by others, we found few vulnerabilities on WordPress web applications.
 
-        E-Mail libraries such as the PHP Extension and Application Repository's (PEAR) mail library provide sanitization for user input. While this is not strictly a limitation of our project, it still means that we are not able to inject sites that used these libraries successfully.
+        E-Mail libraries such as the PHP Extension and Application Repository's (PEAR) mail library provide sanitization for user input. While this is not strictly a limitation of our project, it still means that we are not able to inject sites that used these libraries.
 
-        The parser that we use for HTML parsing---Beautiful Soup---does not parse malformed HTML and throws an exception on encountering malformed HTML. Thus, we have designed the system to exit gracefully on such occasions. A side-effect of this is that our system is unable to test web applications with bad HTML markup.
+        The parser that we use for HTML parsing---Beautiful Soup---does not parse heavily malformed HTML and throws an exception on encountering such HTML. Thus, we have designed the system to exit gracefully on such occasions. A side-effect of this is that our system is unable to test web applications with very bad HTML markup.
 
         Black-box testing is highly beneficial as explained in Section~\ref{sys:appr}, however it also has a drawback in that we cannot verify whether the reported vulnerability exists in the source code or is a feature of the website (e.g., the website allows users to send bulk e-mail, adding many \texttt{cc} or \texttt{bcc} headers). We must manually notify the developers to get this feedback.
 

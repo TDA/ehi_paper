@@ -1,13 +1,13 @@
 \subsection{Analysis of the Received \Email Data}
 During our analysis of the received \emails, we found that the \emails that we received belonged to three categories:
 
-\Emails with the \texttt{bcc} header successfully injected. This form
+(1) \Emails with the \texttt{bcc} header successfully injected. This form
 of injection was our initial objective, and we found
 % Adam: Sai, why isn't this number a command? - DONE.
 \ehibcc such \emails in our received \emails. This validates that the
 web applications that sent these \emails are vulnerable to \ehi.
 	
-\Emails with the \texttt{to} header successfully injected. We
+(2) \Emails with the \texttt{to} header successfully injected. We
 discovered an unintended vulnerability class during our analysis,
 which we call \texttt{To~header injection}. These injections reflect
 the ability to inject any number of \email addresses into the
@@ -15,14 +15,13 @@ the ability to inject any number of \email addresses into the
 other header into the \emails. We found \ehito such \emails in our
 received \emails. We attribute this behavior to inconsistent
 sanitization by the application.
-    % Adam: I can't understand what this sentence is trying to say - Removed.
-
+   
 While not allowing us complete control over content of the \emails
 sent, \texttt{To header injection} makes it possible to append any
 number of \email addresses, thereby enabling us to leak information or
 perform DoS (Denial of Service) attacks against the web application.
 	
-\Emails with the \texttt{x-check} header successfully injected. The
+(3) \Emails with the \texttt{x-check} header successfully injected. The
 third category of \emails received were \emails with the
 \texttt{x-check} header injected. As discussed in
 Section~\ref{analyze:detect_x_check}, we can differentiate between
@@ -40,20 +39,20 @@ these header injections (4-7) as follows:
 \input{Results/data_analysis}
 
 \Email Header Injections with both \texttt{bcc} and \texttt{x-check}
-headers. These represent the scenario where an attacker can inject
+headers: These represent the scenario where an attacker can inject
 multiple headers into the \emails. We can see that 54\% of the
 received \texttt{bcc} header injected \emails are also susceptible to
 being injected with additional headers.
       % Adam: What is the exact percentage? We should use that rather than an approximate number - DONE.
 	
-Both \texttt{To} header injections and \texttt{x-check} headers. This
+Both \texttt{To} header injections and \texttt{x-check} headers: This
 combination shows us that in addition to being able to inject into the
 \texttt{To} fields, we injected additional headers into the \email. It
 is not clear what causes this behavior; however, these can be
 exploited to achieve the same result as a regular \ehi.
 	
 Total \texttt{x-check} headers and unique \texttt{x-check} headers
-found in \texttt{nuser} \emails. We found a total of \ehinuserxcheck
+found in \texttt{nuser} \emails: We found a total of \ehinuserxcheck
 \emails in the \texttt{nuser} account. Out of these,
 \ehiuniquenuserxcheck had unique form ids that were \emph{not} already
 found in the \texttt{maluser} account. We attribute these \emails to
@@ -63,7 +62,7 @@ duplicate headers while constructing an \email, thus appending the
 \texttt{x-check} header and \emph{not} the \texttt{bcc} header.
       % Adam: What is the actual behavior? This is confusing. - Changed. DONE.
 	
-Total successful injections. This represents the total number of
+Total successful injections: This represents the total number of
 successful injections. This includes the \ehi with \texttt{bcc}
 header\,(1), \texttt{To} header injections\,(3), and Unique
 \texttt{x-check} headers found in \texttt{nuser} \emails\,(7). A total

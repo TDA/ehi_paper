@@ -119,7 +119,7 @@ The Injection Verification module checks for the presence of injected data in th
 `Regular \email' refers to the \emails received by account {\lstinline{reguser#@example.com}} that were sent due to injecting the regular, non-malicious, payload (discussed in Section~\ref{Comp:Fuzzer}). The objective of the analysis on this \email is identify if the input fields that we injected with data appear on the resulting \email, and if so, which fields appear where.
 
 %TODO Adam: made clear that ALL input fields that appear in the email are fuzzed, with examples like name, username, etc.
-To find this, we parse each received \email, and check whether \emph{any} of the fields we injected with data appear as part of either the headers or the body of the \email. These could be fields such as name, date of birth, username, etc. If they do, we add them to the list of fields that can \emph{potentially} result in an \ehi vulnerability for the given \email. 
+To find this, we parse each received \email, and check whether \emph{any} of the fields we injected with data appear in either the headers or body of the \email. These could be fields such as name, username, age, etc. If they do, we add them to the list of fields that can \emph{potentially} result in an \ehi vulnerability for the given \email. 
 
 We then pass on this information back to the Fuzzer pipeline, along with the vulnerable form, where these fields are \emph{also} fuzzed along with the \email fields to check for the presence of \ehi.
 
