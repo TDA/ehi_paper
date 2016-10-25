@@ -7,8 +7,6 @@ preventing \ehi vulnerabilities (removing the burden of input
 sanitization from the developer). A list of known secure libraries for
 each language and framework discussed is shown in
 Table~\ref{tab:maillib}.
-	
-	Using libraries such as PEAR Mail, PHPMailer, Apache Commons E-Mail, Contact Form 7, and Swiftmailer can significantly reduce the occurrence of \ehi vulnerability.
 	\begin{table}[tbp]
 		\centering
 		\scriptsize
@@ -17,15 +15,15 @@ Table~\ref{tab:maillib}.
 			\multicolumn{1}{|c|}{\textbf{Language}} &
 			\multicolumn{1}{c|}{\textbf{Mail Libraries}} \\
 			\hline
-			PHP & {{PEAR Mail\tablefootnote{PEAR Mail Website: https://pear.php.net/package/Mail}, PHPMailer\tablefootnote{PHPMailer Website:\\ https://github.com/PHPMailer/PHPMailer}, Swiftmailer\tablefootnote{Swiftmailer Website: http://swiftmailer.org/}}}\\
+			PHP & {{PEAR Mail\cite{Hagenbuch2016}, PHPMailer\cite{PHPMailer2016}, Swiftmailer\cite{SwiftMailer2016}}}\\
 			\hline
 			Python & SMTPLib with email.header.Header\\
 			\hline
-			Java & Apache Commons E-Mail\tablefootnote{Apache Commons E-Mail: https://commons.apache.org/proper/commons-email/}\\
+			Java & Apache Commons E-Mail\cite{ACE2016}\\
 			\hline
-			Ruby & Ruby Mail \textgreater{}= 2.6\tablefootnote{Ruby Mail Website: https://rubygems.org/gems/mail}\\
+			Ruby & Ruby Mail \textgreater{}= 2.6\cite{RubyMailGem2016}\\
 			\hline
-			WordPress & Contact Form 7\tablefootnote{Contact Form 7 Download: https://wordpress.org/plugins/contact-form-7/}\\
+			WordPress & Contact Form 7\cite{CF7}\\
 			\hline
 		\end{tabular}
 		\caption[\titlecap{Mail libraries that prevent e-mail header injection}]{Mail libraries that prevent e-mail header injection.}
