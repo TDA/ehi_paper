@@ -11,3 +11,5 @@
 	* Wikipedia BiBTeX generator - http://irl.github.io/bibwiki/
 	* Google Scholar --> Cite BiBTeX.
 	* Chrisper --> Tool to detect bugs according to `bugs in writing` book.
+* This is for WWW - World Wide Web, 2017, Australia.
+* Paper got largely positive reviews, but did not make it.
